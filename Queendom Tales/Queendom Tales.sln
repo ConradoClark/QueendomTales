@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queendom Tales.CSharp.Plugins", "Queendom Tales.CSharp.Plugins.csproj", "{6CC91A7D-7A4F-0815-E0C7-534B39B660EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queendom Tales.CSharp", "Queendom Tales.CSharp.csproj", "{9B1E359D-ED67-730E-CC1B-C75013997FC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queendom Tales.CSharp.Editor", "Queendom Tales.CSharp.Editor.csproj", "{5B279DF3-92FE-D587-BABD-9B2B820C498C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CC91A7D-7A4F-0815-E0C7-534B39B660EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC91A7D-7A4F-0815-E0C7-534B39B660EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC91A7D-7A4F-0815-E0C7-534B39B660EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC91A7D-7A4F-0815-E0C7-534B39B660EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1E359D-ED67-730E-CC1B-C75013997FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1E359D-ED67-730E-CC1B-C75013997FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1E359D-ED67-730E-CC1B-C75013997FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1E359D-ED67-730E-CC1B-C75013997FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B279DF3-92FE-D587-BABD-9B2B820C498C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B279DF3-92FE-D587-BABD-9B2B820C498C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B279DF3-92FE-D587-BABD-9B2B820C498C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B279DF3-92FE-D587-BABD-9B2B820C498C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

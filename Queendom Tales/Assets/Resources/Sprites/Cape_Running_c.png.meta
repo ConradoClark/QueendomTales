@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: c28193ee0bfe4da48b10364b4e43b5b6
+timeCreated: 1465223606
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Cape_Running_c_0
+    21300002: Cape_Running_c_1
+    21300004: Cape_Running_c_2
+    21300006: Cape_Running_c_3
+    21300008: Cape_Running_c_4
+    21300010: Cape_Running_c_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 256
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Cape_Running_c_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 19}
+        - {x: -16, y: 15}
+        - {x: -16, y: 4}
+        - {x: -7, y: -5}
+        - {x: -1, y: -5}
+        - {x: 5, y: 3}
+        - {x: 5, y: 11}
+        - {x: 2, y: 19}
+    - name: Cape_Running_c_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 19}
+        - {x: -16, y: 12}
+        - {x: -16, y: 2}
+        - {x: -13, y: -5}
+        - {x: 4, y: -5}
+        - {x: 5, y: -3}
+        - {x: 5, y: 15}
+        - {x: 4, y: 19}
+    - name: Cape_Running_c_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 19}
+        - {x: -13, y: 10}
+        - {x: -13, y: -1}
+        - {x: -6, y: -5}
+        - {x: 0, y: -5}
+        - {x: 1, y: -4}
+        - {x: 5, y: 5}
+        - {x: 5, y: 8}
+        - {x: 1, y: 19}
+    - name: Cape_Running_c_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 18}
+        - {x: -11, y: 8}
+        - {x: -11, y: -3}
+        - {x: -7, y: -5}
+        - {x: 5, y: -5}
+        - {x: 5, y: 9}
+        - {x: 2, y: 18}
+    - name: Cape_Running_c_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 19}
+        - {x: -16, y: 10}
+        - {x: -16, y: 4}
+        - {x: -10, y: -5}
+        - {x: 0, y: -5}
+        - {x: 5, y: 3}
+        - {x: 5, y: 9}
+        - {x: 0, y: 19}
+    - name: Cape_Running_c_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 18}
+        - {x: -5, y: 18}
+        - {x: -16, y: 13}
+        - {x: -16, y: 4}
+        - {x: -8, y: -5}
+        - {x: 0, y: -5}
+        - {x: 5, y: 3}
+        - {x: 5, y: 12}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
