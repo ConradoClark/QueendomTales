@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4b28c5e23fed7384ab6fa2c7a566cb23
-timeCreated: 1464874338
+timeCreated: 1465238378
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -61,16 +61,16 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.225, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -28, y: 30}
-        - {x: -31, y: 23}
-        - {x: -31, y: -31}
-        - {x: -28, y: -32}
-        - {x: -2, y: -32}
-        - {x: -2, y: 30}
+      - - {x: -10.4, y: 30}
+        - {x: -13.4, y: 23}
+        - {x: -13.4, y: -31}
+        - {x: -10.4, y: -32}
+        - {x: 15.6, y: -32}
+        - {x: 15.6, y: 30}
     - name: char_test_standanim_1
       rect:
         serializedVersion: 2
@@ -78,17 +78,17 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.225, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -26, y: 30}
-        - {x: -32, y: 19}
-        - {x: -32, y: -29}
-        - {x: -31, y: -32}
-        - {x: -2, y: -32}
-        - {x: -2, y: 29}
-        - {x: -6, y: 30}
+      - - {x: -8.400002, y: 30}
+        - {x: -14.400002, y: 19}
+        - {x: -14.400002, y: -29}
+        - {x: -13.400002, y: -32}
+        - {x: 15.599998, y: -32}
+        - {x: 15.599998, y: 29}
+        - {x: 11.599998, y: 30}
     - name: char_test_standanim_2
       rect:
         serializedVersion: 2
@@ -96,16 +96,16 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.225, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -9, y: 30}
-        - {x: -32, y: 30}
-        - {x: -32, y: -32}
-        - {x: -2, y: -32}
-        - {x: -2, y: 22}
-        - {x: -3, y: 27}
+      - - {x: 8.600006, y: 30}
+        - {x: -14.399994, y: 30}
+        - {x: -14.399994, y: -32}
+        - {x: 15.600006, y: -32}
+        - {x: 15.600006, y: 22}
+        - {x: 14.600006, y: 27}
     - name: char_test_standanim_3
       rect:
         serializedVersion: 2
@@ -113,17 +113,17 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.225, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -26, y: 30}
-        - {x: -32, y: 19}
-        - {x: -32, y: -29}
-        - {x: -31, y: -32}
-        - {x: -2, y: -32}
-        - {x: -2, y: 29}
-        - {x: -6, y: 30}
+      - - {x: -8.399994, y: 30}
+        - {x: -14.399994, y: 19}
+        - {x: -14.399994, y: -29}
+        - {x: -13.399994, y: -32}
+        - {x: 15.600006, y: -32}
+        - {x: 15.600006, y: 29}
+        - {x: 11.600006, y: 30}
     outline: []
   spritePackingTag: 
   userData: 

@@ -78,8 +78,9 @@ namespace Assets.Frosty2D.Scripts.Core.Movement
             return direction;
         }
 
-        public void Reactivate(bool keepSpeed = true)
+        public void Reactivate(bool keepSpeed = true, bool evenIfActive=true)
         {
+            if (active && !evenIfActive) return;
             this.active = true;
             this.ChangeState(FrostySingleMovementPattern.STATE_ACTIVATION);
             this.currentMinSpeed = keepSpeed ? this.speedWhenChanged : minSpeed;
@@ -95,6 +96,11 @@ namespace Assets.Frosty2D.Scripts.Core.Movement
             this.currentTime = 0f;
             this.currentState = newState;
             this.speedWhenChanged = currentSpeed;
+        }
+
+        public float GetCurrentTime()
+        {
+            return currentTime;
         }
     }
 }

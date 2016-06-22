@@ -34,7 +34,7 @@ Material:
       data:
         first:
           name: _Luminance
-        second: 0
+        second: -0.53
       data:
         first:
           name: _Opacity
@@ -227,6 +227,10 @@ Material:
         first:
           name: _FadeInStripsVerticalProgress
         second: 0
+      data:
+        first:
+          name: _LightInfluence
+        second: 0.661
     m_Colors:
       data:
         first:

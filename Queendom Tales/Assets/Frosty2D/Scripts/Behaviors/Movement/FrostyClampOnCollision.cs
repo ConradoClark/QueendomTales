@@ -20,7 +20,10 @@ public class FrostyClampOnCollision : FrostyOnCollision
                 RaycastHit2D hit = collision.AllHits[j];
                 if (hit.collider != null)
                 {
-                    value = true;
+                    if (hit.distance < 0.1f)
+                    {
+                        value = true;
+                    }
                     kinematics.ClampPosition(collision.direction, -collision.direction.y * (transform.position.y + (collision.direction * hit.distance).y) + collision.direction.x * (transform.position.x + (collision.direction * hit.distance).x));
                 }
             }

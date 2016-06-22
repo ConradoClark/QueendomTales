@@ -26,7 +26,7 @@ Material:
       data:
         first:
           name: _Saturation
-        second: 0
+        second: -0.66
       data:
         first:
           name: _Hue

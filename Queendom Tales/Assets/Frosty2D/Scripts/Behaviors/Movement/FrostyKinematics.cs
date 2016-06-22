@@ -30,6 +30,13 @@ public class FrostyKinematics : MonoBehaviour
         ResetMovement();
     }
 
+    public float GetSpeed(Vector2 direction)
+    {
+        if (forces == null) forces = new List<Vector2>();
+        direction.Normalize();
+        return Vector2.Dot(direction, forces.Any() ? forces.Aggregate((v1, v2) => v1 + v2) : Vector2.zero);
+    }
+
     private void Move()
     {
         Vector3 allForces = forces.Any() ? forces.Aggregate((v1, v2) => v1 + v2) : (Vector2) this.transform.position;
