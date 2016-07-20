@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [ExecuteInEditMode]
 [AddComponentMenu("Frosty-Rendering/TiledSprite")]
@@ -37,6 +39,12 @@ public class FrostyTiledSprite : MonoBehaviour
     private int instanceID = 0;
     private bool shouldRecreateMaterial;
     private bool forceUpdate;
+
+    void Start()
+    {
+        var mr = this.gameObject.GetComponent<MeshRenderer>();
+        mr.sharedMaterial.mainTexture.wrapMode = TextureWrapMode.Repeat;
+    }
 
     void GenerateQuads()
     {

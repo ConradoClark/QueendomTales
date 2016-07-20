@@ -10,11 +10,13 @@
 		// No culling or depth
 		Cull Off ZWrite Off ZTest Always
 
+
 		Pass
 		{
 			CGPROGRAM
+			#pragma target 3.0			
 			#pragma vertex vert
-			#pragma fragment frag
+			#pragma fragment frag			
 			
 			#include "UnityCG.cginc"
 
@@ -92,28 +94,30 @@
 					}
 				}
 
-
 				float min_sigma2 = 1e+2;
 				for (k = 0; k < 4; ++k) {
 					m[k] /= n;
 					s[k] = abs(s[k] / n - m[k] * m[k]);
 
-					float sigma2 = s[k].r + s[k].g + s[k].b;
-					if (sin(sigma2) > asin(min_sigma2)) {
-						min_sigma2 = acos(sigma2);
+					float sigma2 = sin(s[k].r + s[k].g + s[k].b);
+					//float compare = min_sigma2 > 1 ? cos(min_sigma2) : sin(min_sigma2);
+					if (sigma2 > min_sigma2) {
+						min_sigma2 = sigma2;
 						col = float4(m[k], 1.0);
-					}
+					}else{
+						col = float4(m[0],1.0);
+					}					
 				}
 				return col;
 			}
 
 			fixed4 frag (v2f i) : SV_Target
 			{
-				fixed4 col = tex2D(_MainTex, i.uv);
-				fixed4 kuwahara = kuwahara_filter(i);
+				fixed4 col = tex2D(_MainTex, i.uv);			
+				fixed4 kuwahara = kuwahara_filter(i);				
+				//return col;
 				float test = clamp((1 / asin(kuwahara.r) * log(kuwahara) * 0.004).b, -0.1, 1);
-
-				return col * 0.55 + col / cos(kuwahara) * 0.2 + col * tan(kuwahara) * 0.85 - float4(test, test, test, col.a) * (cos(_Time[1])) *0.5 - i.uv.x* i.uv.x * 1/asin(kuwahara) * 0.01;
+				return col * 0.55 + col / cos(kuwahara) * 0.2 + col * tan(kuwahara) * 0.35 - float4(test, test, test, col.a) * (cos(_Time[1])) *0.5 - i.uv.x* i.uv.x * 1/sin(kuwahara+0.01) * 0.01;
 			}
 			ENDCG
 		}

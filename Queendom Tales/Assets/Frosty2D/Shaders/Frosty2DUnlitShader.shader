@@ -117,8 +117,9 @@
 		Pass
 		{
 			CGPROGRAM
+			#pragma target 3.0
 			#pragma vertex vert
-			#pragma fragment frag
+			#pragma fragment frag			
 			
 			#include "UnityCG.cginc"
 
@@ -137,7 +138,7 @@
 				float2 uv : TEXCOORD0;
 				float2 screenPos:TEXCOORD2;
 				UNITY_FOG_COORDS(1)
-				float4 vertex : SV_POSITION;
+				float4 vertex : POSITION;
 			};
 
 			sampler2D _MainTex;

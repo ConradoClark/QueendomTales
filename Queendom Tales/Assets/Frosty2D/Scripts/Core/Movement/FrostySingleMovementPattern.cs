@@ -73,7 +73,7 @@ namespace Assets.Frosty2D.Scripts.Core.Movement
             float calculatedMinSpeed = (currentState == STATE_ACTIVATION ? this.currentMinSpeed : minSpeed);
 
             float curveResult = currentCurve.Evaluate(currentTime);
-            speed = currentSpeed = calculatedMinSpeed + curveResult * (calculatedMaxSpeed - calculatedMinSpeed);
+            speed = currentSpeed = (calculatedMinSpeed + curveResult * (calculatedMaxSpeed - calculatedMinSpeed)) * deltaTime*60;
             currentTime += deltaTime;
             return direction;
         }

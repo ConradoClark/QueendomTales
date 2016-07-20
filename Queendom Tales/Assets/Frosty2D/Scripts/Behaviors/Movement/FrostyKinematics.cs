@@ -22,11 +22,11 @@ public class FrostyKinematics : MonoBehaviour
 
     void Update()
     {
-        //ApplyMovement(new Vector2(1,1), 5);
-        //ClampPosition(Vector2.right, 400);
-        //ClampPosition(Vector2.down, -194);
-
         Move();
+    }
+
+    void LateUpdate()
+    {
         ResetMovement();
     }
 

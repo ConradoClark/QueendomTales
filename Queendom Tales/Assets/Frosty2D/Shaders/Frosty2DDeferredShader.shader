@@ -108,6 +108,7 @@
 		Blend SrcAlpha OneMinusSrcAlpha 
 
 		CGPROGRAM
+		#pragma target 3.0
 		#pragma surface surf Lambert vertex:vert alpha:fade
 		#include "UnityCG.cginc"
 		#define GammaCorrection(color, gamma)  pow(color, 1.0 / gamma)

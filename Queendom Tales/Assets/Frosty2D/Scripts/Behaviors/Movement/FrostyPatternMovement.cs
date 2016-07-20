@@ -13,6 +13,7 @@ public class FrostyPatternMovement : MonoBehaviour
     public FrostySingleMovementPattern[] patterns;
 
     [Header("Conditions")]
+    public FrostyMovementPredicate[] resetOnPredicate;
     public FrostyMovementPredicate[] reactivateOnPredicate;
     public FrostyMovementPredicate[] deactivateOnPredicate;
     public FrostyMovementPredicate[] abortOnPredicate;
@@ -27,9 +28,24 @@ public class FrostyPatternMovement : MonoBehaviour
         rawMovement = Vector2.zero;
         currentDirection = Vector2.zero;
 
+        if (resetOnPredicate.Any(pred => pred.Value))
+        {
+            Reactivate(false, true);
+        }
+
         if (reactivateOnPredicate.Any(pred => pred.Value))
         {
             Reactivate(false, false);
+        }
+
+        if (deactivateOnPredicate.Any(pred => pred.Value))
+        {
+            this.Deactivate();
+        }
+
+        if (abortOnPredicate.Any(pred => pred.Value) && this.IsActive())
+        {
+            this.Abort();
         }
 
         if (patterns == null) return;
@@ -38,7 +54,7 @@ public class FrostyPatternMovement : MonoBehaviour
         {
             FrostySingleMovementPattern pattern = patterns[i];
             float speed;
-            Vector2 dir = pattern.Evaluate(Time.smoothDeltaTime, out speed);
+            Vector2 dir = pattern.Evaluate(Time.fixedDeltaTime, out speed);
             rawMovement += (dir.normalized * speed);
         }
 
@@ -48,12 +64,6 @@ public class FrostyPatternMovement : MonoBehaviour
         if (kinematics != null)
         {
             kinematics.ApplyMovement(currentDirection, currentSpeed);
-        }
-
-        if (abortOnPredicate.Any(pred => pred.Value))
-        {
-            this.Deactivate();
-            return;
         }
     }
 
@@ -141,6 +151,15 @@ public class FrostyPatternMovement : MonoBehaviour
         for (int i = 0; i < patterns.Length; i++)
         {
             patterns[i].Deactivate();
+        }
+    }
+
+    public void Abort()
+    {
+        for (int i = 0; i < patterns.Length; i++)
+        {
+            patterns[i].Deactivate();
+            patterns[i].active = false;
         }
     }
 }
