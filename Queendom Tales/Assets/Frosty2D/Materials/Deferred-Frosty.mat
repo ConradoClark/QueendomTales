@@ -174,7 +174,7 @@ Material:
       second: 1
     - first:
         name: _Saturation
-      second: 0
+      second: -0.3
     - first:
         name: _VAutoScroll
       second: 0
@@ -214,7 +214,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _Colorize
-      second: {r: 1, g: 1, b: 1, a: 0}
+      second: {r: 0, g: 0.7103448, b: 1, a: 0}
     - first:
         name: _LevelsCustom1Color
       second: {r: 1, g: 1, b: 1, a: 0}

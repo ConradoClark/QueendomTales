@@ -21,7 +21,7 @@ public class FrostyEventOnCollision : FrostyOnCollision
                 RaycastHit2D hit = collision.AllHits[j];
                 if (hit.collider != null)
                 {
-                    if (hit.distance < 0.1f)
+                    if (hit.distance < 0.5f)
                     {
                         value = true;
                     }

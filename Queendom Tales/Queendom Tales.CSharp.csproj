@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebGL:20</UnityBuildTarget>
     <UnityVersion>5.4.0b22</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -94,19 +96,21 @@
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementPredicateCondition.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostySingleMovementPattern.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\PixelTransform.cs" />
-    <Compile Include="Assets\Scripts\Character\Animation\AnimGroup.cs" />
-    <Compile Include="Assets\Scripts\Character\Animation\ChangeFaceAnimGroup.cs" />
-    <Compile Include="Assets\Scripts\Character\Animation\OneTimeAnimGroup.cs" />
-    <Compile Include="Assets\Scripts\Character\Animation\StandAnimGroup.cs" />
+    <Compile Include="Assets\Scripts\Character\Animation\Slash2Behavior.cs" />
+    <Compile Include="Assets\Scripts\Character\Animation\Slash1Behavior.cs" />
+    <Compile Include="Assets\Scripts\Character\Animation\AttackBehavior.cs" />
+    <Compile Include="Assets\Scripts\Character\Character.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Character\Effects\CreateObjectOnPredicate.cs" />
     <Compile Include="Assets\Scripts\Character\Effects\WalkingPoof.cs" />
     <Compile Include="Assets\Scripts\Character\FullCharacterController.cs" />
     <Compile Include="Assets\Scripts\CreateOnClick.cs" />
     <Compile Include="Assets\Scripts\FadeParticle.cs" />
     <Compile Include="Assets\Scripts\FadeSize.cs" />
     <Compile Include="Assets\Scripts\FollowMouseLightTest.cs" />
+    <Compile Include="Assets\Scripts\Helper\FixParticleRandomizeBug.cs" />
     <Compile Include="Assets\Scripts\TestRightButton.cs" />
     <Compile Include="Assets\Scripts\UI\UICounter.cs" />
-    <Compile Include="Assets\TestXFlip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Frosty2D\Shaders\Frosty2DDeferredShader.shader" />

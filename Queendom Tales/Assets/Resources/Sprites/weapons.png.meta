@@ -31,7 +31,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 64
   textureSettings:
-    filterMode: 2
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -46,13 +46,16 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 2
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: weapons_0
+    - serializedVersion: 2
+      name: weapons_0
       rect:
         serializedVersion: 2
         x: 0
@@ -62,15 +65,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -14, y: 7}
-        - {x: -14, y: 0}
-        - {x: -6, y: -12}
-        - {x: 10, y: -12}
-        - {x: 13, y: -8}
-        - {x: 13, y: -4}
-        - {x: 4, y: 7}
-    - name: weapons_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: weapons_1
       rect:
         serializedVersion: 2
         x: 32
@@ -80,16 +78,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 12}
-        - {x: -12, y: 9}
-        - {x: -15, y: 6}
-        - {x: -16, y: 3}
-        - {x: -16, y: -11}
-        - {x: -5, y: -15}
-        - {x: 15, y: -15}
-        - {x: 15, y: -2}
-        - {x: 3, y: 12}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

@@ -171,7 +171,7 @@ Material:
       second: 1
     - first:
         name: _Luminance
-      second: -1
+      second: -0.4
     - first:
         name: _MaximumLight
       second: 0
@@ -220,7 +220,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _Colorize
-      second: {r: 1, g: 1, b: 1, a: 0}
+      second: {r: 0.2352941, g: 0.2216919, b: 0.20934255, a: 1}
     - first:
         name: _LevelsCustom1Color
       second: {r: 1, g: 1, b: 1, a: 0}

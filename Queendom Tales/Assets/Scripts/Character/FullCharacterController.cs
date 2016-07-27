@@ -8,13 +8,20 @@ public class FullCharacterController : MonoBehaviour
     public FrostyMovementPredicate grounded;
     public FrostyMovementPredicate landing;
     public FrostyPatternMovement jump;
+    private bool updatingAnimator;
+    private bool createdAttackPrefab;
 
     void Start()
+    {
+        InitializeDirection();
+    }
+
+    void InitializeDirection()
     {
         characterAnimator.SetFloat("x", 1);
     }
 
-    void Update()
+    void CheckGlobalStates()
     {
         float inputAxisX = Input.GetAxisRaw("Horizontal");
         bool isMoving = inputAxisX != 0;
@@ -26,12 +33,23 @@ public class FullCharacterController : MonoBehaviour
         characterAnimator.SetBool("jumped", jump.IsActivating);
         characterAnimator.SetBool("grounded", grounded.Value);
         characterAnimator.SetBool("landing", landing.Value);
+    }
 
+    void CheckAttacks()
+    {
+        
+    }
+
+    void Update()
+    {
+        CheckGlobalStates();
+        CheckAttacks();
     }
 
     void LateUpdate()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f) * horizontal);
+        float inputAxisX = Input.GetAxisRaw("Horizontal");
+        characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX);
+        characterAnimator.SetFloat("ySpeed", (kinematics.GetSpeed(Vector2.up)));
     }
 }

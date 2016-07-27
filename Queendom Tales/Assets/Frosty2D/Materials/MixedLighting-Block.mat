@@ -165,13 +165,13 @@ Material:
       second: 0
     - first:
         name: _LightInfluence
-      second: 0.651
+      second: 0.677
     - first:
         name: _LightStrength
-      second: 2.4
+      second: 1
     - first:
         name: _Luminance
-      second: 0.39
+      second: 0
     - first:
         name: _MaximumLight
       second: 0
@@ -220,7 +220,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _Colorize
-      second: {r: 0.36246055, g: 0.3303958, b: 0.46323532, a: 0}
+      second: {r: 0.21234418, g: 0.18398571, b: 0.30147058, a: 1}
     - first:
         name: _LevelsCustom1Color
       second: {r: 1, g: 1, b: 1, a: 0}

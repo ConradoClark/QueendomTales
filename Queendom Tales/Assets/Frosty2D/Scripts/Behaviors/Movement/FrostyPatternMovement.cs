@@ -92,7 +92,6 @@ public class FrostyPatternMovement : MonoBehaviour
         }
     }
 
-
     public bool IsOnLoop
     {
         get
