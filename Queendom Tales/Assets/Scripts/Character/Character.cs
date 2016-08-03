@@ -14,6 +14,10 @@ public class Character : MonoBehaviour {
     public GameObject Slash2Prefab_Left;
     public Vector3 Slash2Offset;
 
+    public GameObject Slash3Prefab_Right;
+    public GameObject Slash3Prefab_Left;
+    public Vector3 Slash3Offset;
+
     [Header("Stats")]
     public CharacterStats CurrentStats;
     public CharacterStats OriginalStats;

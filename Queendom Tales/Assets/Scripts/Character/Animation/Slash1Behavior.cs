@@ -11,6 +11,9 @@ public class Slash1Behavior : StateMachineBehaviour
         var obj = GameObject.Instantiate(animator.GetFloat("x") == -1 ? chara.Slash1Prefab_Left : chara.Slash1Prefab_Right);
         obj.transform.SetParent(animator.transform, false);
         obj.transform.localPosition = GetCharacter(animator).Slash1Offset * animator.GetFloat("x");
+
+        animator.SetBool("combo", false);
+        animator.SetFloat("comboTime", 0f);
     }
 
     Character GetCharacter(Animator animator)
@@ -24,12 +27,24 @@ public class Slash1Behavior : StateMachineBehaviour
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            //animator.SetBool("combo", true);
+        }
+
+        animator.SetFloat("comboTime", animator.GetFloat("comboTime") + Time.smoothDeltaTime);
+
+        if (animator.GetFloat("comboTime") > 0.35f)
+        {
+            animator.CrossFade("Melee " + Random.Range(2, 4), 0.1f);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //animator.CrossFade("Melee " + Random.Range(2, 4), 0f);
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

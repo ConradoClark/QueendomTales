@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[AddComponentMenu("Frosty-Movement/Conditions/Custom")]
+[AddComponentMenu("Frosty-Movement/Conditions/FrostyPredicateCustom")]
 public class FrostyMovementPredicateCustom : FrostyMovementPredicate
 {
     private bool value { get; set; }

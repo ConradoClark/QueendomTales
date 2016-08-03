@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 20d775e673a323e4f9ff413c77746c56
-timeCreated: 1469467009
+guid: 2a8b72d529d994243af879e92b1f6a75
+timeCreated: 1470085803
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Fire1_0
-    21300002: Fire1_1
-    21300004: Fire1_2
-    21300006: Fire1_3
+    21300000: Props1_0
+    21300002: Props1_1
+    21300004: Props1_2
+    21300006: Props1_3
+    21300008: Props1_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,10 +31,10 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 128
+  textureFormat: -3
+  maxTextureSize: 64
   textureSettings:
-    filterMode: 0
+    filterMode: 2
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -57,11 +58,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire1_0
+      name: Props1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -70,11 +71,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Fire1_1
+      name: Props1_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -83,11 +84,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Fire1_2
+      name: Props1_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -96,11 +97,24 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Fire1_3
+      name: Props1_3
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Props1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
         width: 16
         height: 16
       alignment: 0

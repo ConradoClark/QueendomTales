@@ -18,9 +18,14 @@ public class FrostyPatternMovement : MonoBehaviour
     public FrostyMovementPredicate[] deactivateOnPredicate;
     public FrostyMovementPredicate[] abortOnPredicate;
 
+    [Header("Modifiers")]
+    public FrostyMovementDampener[] movementDampeners;
+
     private Vector2 currentDirection;
     private float currentSpeed;
     private Vector2 rawMovement;
+    private float currentDamp = 1;
+    private float currentDampSpeed = 0;
 
     void Update()
     {
@@ -48,6 +53,11 @@ public class FrostyPatternMovement : MonoBehaviour
             this.Abort();
         }
 
+        var damp = movementDampeners.Where(d => d.predicates.All(p => p.Value)).ToArray();
+        float dampAmount = damp.Aggregate<FrostyMovementDampener, float>(1, (val, d) => val * d.dampAmount);
+        dampAmount = Mathf.SmoothDamp(currentDamp, dampAmount, ref currentDampSpeed, 0.15f);
+        currentDamp = dampAmount;
+
         if (patterns == null) return;
 
         for (int i = 0; i < patterns.Length; i++)
@@ -55,7 +65,7 @@ public class FrostyPatternMovement : MonoBehaviour
             FrostySingleMovementPattern pattern = patterns[i];
             float speed;
             Vector2 dir = pattern.Evaluate(Time.fixedDeltaTime, out speed);
-            rawMovement += (dir.normalized * speed);
+            rawMovement += (dir.normalized * speed) * dampAmount;
         }
 
         currentDirection = rawMovement.normalized;
@@ -70,6 +80,17 @@ public class FrostyPatternMovement : MonoBehaviour
     public float GetCurrentTime()
     {
         return patterns.Select(p=>p.GetCurrentTime()).DefaultIfEmpty(0).Sum();
+    }
+
+    public Vector2 GetDirection()
+    {
+        Vector2 sum = Vector2.zero;
+        for (int i = 0; i < patterns.Length; i++)
+        {
+            FrostySingleMovementPattern pattern = patterns[i];
+            sum += pattern.direction;
+        }
+        return sum.normalized;
     }
 
     public bool IsActive()

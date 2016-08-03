@@ -57,13 +57,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -158, y: -146.9, z: 7}
+  m_LocalPosition: {x: -124.3, y: -146.9, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 482224}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &464602
 Transform:
   m_ObjectHideFlags: 1
@@ -73,10 +73,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 12.800003, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 482224}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &482224
 Transform:
   m_ObjectHideFlags: 1
@@ -86,6 +86,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0999908, y: 32.399994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013328943954}
   - {fileID: 4000010686066278}
@@ -93,7 +94,6 @@ Transform:
   - {fileID: 464602}
   m_Father: {fileID: 437562}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6187496
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -117,7 +117,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 0.99264705, g: 0.90878546, b: 0.6350022, a: 1}
+  m_Color: {r: 1, g: 0.6, b: 0, a: 1}
   m_Intensity: 1.8
   m_Range: 200
   m_SpotAngle: 30
@@ -125,6 +125,7 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
+    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -245,7 +246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010310028674
 GameObject:
   m_ObjectHideFlags: 1
@@ -288,10 +289,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.000015258789, y: 11.599998, z: -7}
   m_LocalScale: {x: 0.5, y: 0.7, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 482224}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000011409552190
 Transform:
   m_ObjectHideFlags: 1
@@ -301,10 +302,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 12.8, z: -250}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 482224}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000013328943954
 Transform:
   m_ObjectHideFlags: 1
@@ -314,10 +315,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.3000183, y: 12.300003, z: -7}
   m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 482224}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95000010950977860
 Animator:
   serializedVersion: 3
@@ -344,14 +345,15 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 0.99264705, g: 0.90878546, b: 0.6350022, a: 1}
-  m_Intensity: 2.3
+  m_Color: {r: 1, g: 0.7470588, b: 0.36764705, a: 1}
+  m_Intensity: 1.09
   m_Range: 1000
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
+    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -363,7 +365,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ShadowRadius: 0
@@ -414,7 +416,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}

@@ -10,6 +10,8 @@ public class FullCharacterController : MonoBehaviour
     public FrostyPatternMovement jump;
     private bool updatingAnimator;
     private bool createdAttackPrefab;
+    private Vector2 facingDirection;
+    public TargetCursor targetCursor;
 
     void Start()
     {
@@ -19,15 +21,20 @@ public class FullCharacterController : MonoBehaviour
     void InitializeDirection()
     {
         characterAnimator.SetFloat("x", 1);
+        facingDirection = Vector2.right;
     }
 
     void CheckGlobalStates()
     {
         float inputAxisX = Input.GetAxisRaw("Horizontal");
         bool isMoving = inputAxisX != 0;
-        if (isMoving)
+        if (isMoving && !targetCursor.lockedOn)
         {
             characterAnimator.SetFloat("x", inputAxisX);
+            facingDirection = new Vector2(inputAxisX,0);
+        }else if (targetCursor.lockedOn)
+        {
+            characterAnimator.SetFloat("x", targetCursor.GetLockOnFacingDirection().x);
         }
         characterAnimator.SetBool("isMoving", isMoving);
         characterAnimator.SetBool("jumped", jump.IsActivating);
@@ -37,7 +44,17 @@ public class FullCharacterController : MonoBehaviour
 
     void CheckAttacks()
     {
-        
+        //test
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (!targetCursor.lockedOn)
+            {
+                targetCursor.LockOn();
+            }else
+            {
+                targetCursor.LockOff();
+            }            
+        }
     }
 
     void Update()
@@ -47,9 +64,15 @@ public class FullCharacterController : MonoBehaviour
     }
 
     void LateUpdate()
-    {
+    {        
         float inputAxisX = Input.GetAxisRaw("Horizontal");
-        characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX);
+        bool lockOnBackwards = targetCursor.lockedOn && targetCursor.GetLockOnFacingDirection().x != inputAxisX;
+        characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX * (lockOnBackwards ? -1 : 1));
         characterAnimator.SetFloat("ySpeed", (kinematics.GetSpeed(Vector2.up)));
+    }
+
+    public Vector2 GetFacingDirection()
+    {
+        return facingDirection;
     }
 }

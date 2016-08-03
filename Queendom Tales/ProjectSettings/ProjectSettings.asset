@@ -4,6 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
+  productGUID: d7dd2fbdfff5da144a546ffa364f25cb
   AndroidProfiler: 0
   defaultScreenOrientation: 2
   targetDevice: 2
@@ -99,7 +100,6 @@ PlayerSettings:
   xboxOneDisableKinectGpuReservation: 0
   singlePassStereoRendering: 0
   protectGraphicsMemory: 0
-  productGUID: d7dd2fbdfff5da144a546ffa364f25cb
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 21
   AndroidPreferredInstallLocation: 1
@@ -288,6 +288,7 @@ PlayerSettings:
   ps4attribMoveSupport: 0
   ps4attrib3DSupport: 0
   ps4attribShareSupport: 0
+  ps4attribExclusiveVR: 0
   ps4disableAutoHideSplash: 0
   ps4IncludedModules: []
   monoEnv: 

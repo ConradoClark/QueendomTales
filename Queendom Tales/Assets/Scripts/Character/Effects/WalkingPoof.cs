@@ -3,12 +3,13 @@ using System.Collections;
 
 public class WalkingPoof : MonoBehaviour
 {
+    public FrostyKinematics kinematics;
     public FrostyPatternMovement movement;
     public FrostyMovementPredicate condition;
     public GameObject poofObject;
     public float frequency;
     public Vector3 offset;
-
+    public float minSpeed;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class WalkingPoof : MonoBehaviour
         yield return new WaitForSeconds(frequency);
         while (movement.IsActive())
         {
-            if (condition.Value)
+            if (condition.Value && kinematics.GetSpeed(movement.GetDirection()) > minSpeed)
             {
                 var poof = GameObject.Instantiate(poofObject);
                 poof.transform.position = this.transform.position + offset;

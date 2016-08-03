@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e51e91ebca410e242936101319bf326d
-timeCreated: 1468947679
+timeCreated: 1469633638
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,10 @@ TextureImporter:
     21300010: Body_5
     21300012: Body_6
     21300014: Body_7
+    21300016: Body_8
+    21300018: Body_9
+    21300020: Body_10
+    21300022: Body_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -157,6 +161,58 @@ TextureImporter:
         serializedVersion: 2
         x: 448
         y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Body_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Body_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Body_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Body_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
         width: 64
         height: 64
       alignment: 0

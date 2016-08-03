@@ -99,6 +99,9 @@ Material:
       second: 0.02
     - first:
         name: _Radius
+      second: 2
+    - first:
+        name: _RadiusVariance
       second: 5
     - first:
         name: _SrcBlend

@@ -17,7 +17,7 @@
     </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebGL:20</UnityBuildTarget>
-    <UnityVersion>5.4.0b22</UnityVersion>
+    <UnityVersion>5.4.0f2</UnityVersion>
     <RootNamespace>
     </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
@@ -91,24 +91,32 @@
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\MovementPredicates\FrostyMovementReversePredicate.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\FrostyTag.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementControllerInput.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementDampener.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementOptions.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementPredicate.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementPredicateCondition.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostySingleMovementPattern.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\PixelTransform.cs" />
-    <Compile Include="Assets\Scripts\Character\Animation\Slash2Behavior.cs" />
-    <Compile Include="Assets\Scripts\Character\Animation\Slash1Behavior.cs" />
     <Compile Include="Assets\Scripts\Character\Animation\AttackBehavior.cs" />
+    <Compile Include="Assets\Scripts\Character\Animation\Slash1Behavior.cs" />
+    <Compile Include="Assets\Scripts\Character\Animation\Slash2Behavior.cs" />
+    <Compile Include="Assets\Scripts\Character\Animation\Slash3Behavior.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Character\Effects\CreateObjectOnPredicate.cs" />
     <Compile Include="Assets\Scripts\Character\Effects\WalkingPoof.cs" />
     <Compile Include="Assets\Scripts\Character\FullCharacterController.cs" />
     <Compile Include="Assets\Scripts\CreateOnClick.cs" />
-    <Compile Include="Assets\Scripts\FadeParticle.cs" />
-    <Compile Include="Assets\Scripts\FadeSize.cs" />
+    <Compile Include="Assets\Scripts\Effects\FadeParticle.cs" />
+    <Compile Include="Assets\Scripts\Effects\FadeSize.cs" />
     <Compile Include="Assets\Scripts\FollowMouseLightTest.cs" />
     <Compile Include="Assets\Scripts\Helper\FixParticleRandomizeBug.cs" />
+    <Compile Include="Assets\Scripts\Helper\MonoBehaviourExtended.cs" />
+    <Compile Include="Assets\Scripts\Helper\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Helper\Toolbox.cs" />
+    <Compile Include="Assets\Scripts\Targeting\TargetCursor.cs" />
+    <Compile Include="Assets\Scripts\Targeting\TargetableObject.cs" />
+    <Compile Include="Assets\Scripts\Targeting\TargetableObjectManager.cs" />
     <Compile Include="Assets\Scripts\TestRightButton.cs" />
     <Compile Include="Assets\Scripts\UI\UICounter.cs" />
   </ItemGroup>
