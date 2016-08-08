@@ -9,7 +9,8 @@ public class FrostySlopeMovement : MonoBehaviour
     public FrostyEventOnCollision onCollisionEvent;
     public FrostyPatternMovement jumpMovement;
     public FrostyMovementPredicate onGround;
-    private float speed;
+    private float speed_x;
+    private float speed_y;
     private int direction;
     private Vector2 normal;
     private float timeElapsed;
@@ -19,8 +20,8 @@ public class FrostySlopeMovement : MonoBehaviour
     {
         if (isColliding.Value && onCollisionEvent.impactOnPoints.Count > 0 && !jumpMovement.IsActive())
         {
-            speed = kinematics.GetSpeed(new Vector2(slopeDirection.x, 0));
-            direction = speed > 0 ? 1 : -1;
+            speed_x = speed_y = kinematics.GetSpeed(new Vector2(slopeDirection.x, 0));
+            direction = speed_x > 0 ? 1 : -1;
             var slope = onCollisionEvent.impactOnPoints[0].collider.GetComponent<FrostySlope>();
             normal = slope != null ? slope.direction / 2 : Vector2.zero;
             timeElapsed = 0;
@@ -30,14 +31,28 @@ public class FrostySlopeMovement : MonoBehaviour
         if (!jumpMovement.IsActive())
         {
             bool sameDir = slopeDirection.x * direction > 0;
-            kinematics.ApplyMovement(new Vector2(slopeDirection.x / 2, slopeDirection.y * 5), (normal * speed).magnitude * direction * (direction == -1 ? 4 : 1));
+            //kinematics.ApplyMovement(new Vector2(slopeDirection.x / 2, slopeDirection.y * 5), (normal * speed).magnitude * direction * (direction == -1 ? 4 : 1));
+            kinematics.ApplyMovement(new Vector2(0, slopeDirection.y * 5), (normal * speed_y).magnitude * direction * (direction == -1 ? 4 : 1));
             animSpeed = direction == -1 ? 1.1f : 0.65f;
         }
         else
         {
-            speed = 0;
+            if (direction == 1)
+            {
+                speed_x = 0;
+            }
+            speed_y = 0;
             animSpeed = 1f;
         }
-        speed = direction == -1 && timeElapsed < 0.3f ? speed : 0;
+
+        kinematics.ApplyMovement(new Vector2(slopeDirection.x / 2, 0), (normal * speed_x).magnitude * direction * (direction == -1 ? 4 : 1)/5f);
+        speed_y = direction == -1 && timeElapsed < 0.3f ? speed_y : 0;
+        if (speed_x > 0)
+        {
+            speed_x = Mathf.Clamp(speed_x - Time.smoothDeltaTime, 0, float.MaxValue);
+        }else
+        {
+            speed_x = Mathf.Clamp(speed_x + Time.smoothDeltaTime, float.MinValue, 0);
+        }
     }
 }
