@@ -12,6 +12,10 @@ public class FullCharacterController : MonoBehaviour
     private bool createdAttackPrefab;
     private Vector2 facingDirection;
     public TargetCursor targetCursor;
+    public FrostyMovementPredicate rightSlope;
+    public FrostyMovementPredicate leftSlope;
+    public FrostySlopeMovement slopeMovementR;
+    public FrostySlopeMovement slopeMovementL;
 
     void Start()
     {
@@ -40,6 +44,7 @@ public class FullCharacterController : MonoBehaviour
         characterAnimator.SetBool("jumped", jump.IsActivating);
         characterAnimator.SetBool("grounded", grounded.Value);
         characterAnimator.SetBool("landing", landing.Value);
+        characterAnimator.SetBool("slope", rightSlope.Value || leftSlope.Value);
     }
 
     void CheckAttacks()
@@ -67,7 +72,7 @@ public class FullCharacterController : MonoBehaviour
     {        
         float inputAxisX = Input.GetAxisRaw("Horizontal");
         bool lockOnBackwards = targetCursor.lockedOn && targetCursor.GetLockOnFacingDirection().x != inputAxisX;
-        characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX * (lockOnBackwards ? -1 : 1));
+        characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX * (lockOnBackwards ? -1 : 1) * slopeMovementR.animSpeed * slopeMovementL.animSpeed);
         characterAnimator.SetFloat("ySpeed", (kinematics.GetSpeed(Vector2.up)));
     }
 

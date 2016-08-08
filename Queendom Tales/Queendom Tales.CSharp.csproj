@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebGL:20</UnityBuildTarget>
     <UnityVersion>5.4.0f2</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -87,8 +85,11 @@
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyKinematics.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyOnCollision.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyPatternMovement.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostySlope.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostySlopeMovement.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\MovementPredicates\FrostyMovementPredicateCustom.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\MovementPredicates\FrostyMovementReversePredicate.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\MovementPredicates\FrostyPredicateOr.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\FrostyTag.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementControllerInput.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementDampener.cs" />

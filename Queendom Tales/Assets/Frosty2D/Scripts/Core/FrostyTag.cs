@@ -10,7 +10,8 @@ public class FrostyTag : MonoBehaviour
     {
         Platform = 1,
         Wall = 2,
-        Ceiling = 3
+        Ceiling = 3,
+        Slope = 4
     }
 
     public FrostyTags[] tags = new FrostyTags[0];

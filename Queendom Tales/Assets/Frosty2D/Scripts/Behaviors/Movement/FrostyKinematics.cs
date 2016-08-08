@@ -39,7 +39,7 @@ public class FrostyKinematics : MonoBehaviour
 
     private void Move()
     {
-        Vector3 allForces = forces.Any() ? forces.Aggregate((v1, v2) => v1 + v2) : (Vector2) this.transform.position;
+        Vector3 allForces = forces.Any() ? forces.Aggregate((v1, v2) => v1 + v2) : Vector2.zero;
         allForces += this.transform.position;
         float clampX = Mathf.Clamp(allForces.x, float.IsNaN(clamp[CLAMP_LEFT]) ? allForces.x : clamp[CLAMP_LEFT],
                                                 float.IsNaN(clamp[CLAMP_RIGHT]) ? allForces.x : clamp[CLAMP_RIGHT]);

@@ -37,17 +37,20 @@ public class FrostyMovementPredicateCondition : FrostyMovementPredicate
                 StartCoroutine(PreserveValue());
             }
 
-            bool isActivating = movement.IsActivating;
-            bool isOnLoop = movement.IsOnLoop;
-            bool isDeactivating = movement.IsDeactivating;
+            if (movement != null)
+            {
+                bool isActivating = movement.IsActivating;
+                bool isOnLoop = movement.IsOnLoop;
+                bool isDeactivating = movement.IsDeactivating;
 
-            if (preventIfActive && (movement.IsActive() && !isDeactivating)) return false;
-            if (changeIfActivating && !isActivating) return false;
-            if (changeIfOnLoop && !isOnLoop) return false;
-            if (changeIfDeactivating && !isDeactivating) return false;
+                if (preventIfActive && (movement.IsActive() && !isDeactivating)) return false;
+                if (changeIfActivating && !isActivating) return false;
+                if (changeIfOnLoop && !isOnLoop) return false;
+                if (changeIfDeactivating && !isDeactivating) return false;
 
-            if (changeOnlyAfterSeconds > 0 && !isDeactivating && movement.GetCurrentTime() < changeOnlyAfterSeconds) return false;
-            if (changeOnlyBeforeSeconds > 0 && !isDeactivating && movement.GetCurrentTime() > changeOnlyBeforeSeconds) return false;
+                if (changeOnlyAfterSeconds > 0 && !isDeactivating && movement.GetCurrentTime() < changeOnlyAfterSeconds) return false;
+                if (changeOnlyBeforeSeconds > 0 && !isDeactivating && movement.GetCurrentTime() > changeOnlyBeforeSeconds) return false;
+            }
 
             if (debug && (preservedValue ?? predicate.Value))
             {
