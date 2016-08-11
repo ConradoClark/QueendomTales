@@ -2,11 +2,17 @@
 using System.Linq;
 using System.Collections;
 using Assets.Frosty2D.Scripts.Core.Movement;
+using System.Collections.Generic;
 
 [AddComponentMenu("Frosty-Movement/Movement Controller")]
 public class FrostyMovementController : MonoBehaviour
 {
     public FrostyMovementControllerInput[] inputs;
+    public float releaseTolerance=0f;
+    private float currentReleaseTolerance = 0f;
+    bool isEvaluating = false;
+    bool isReleasing = false;
+    IEnumerator<bool> enumerator;
 
     void Update()
     {
@@ -14,20 +20,30 @@ public class FrostyMovementController : MonoBehaviour
         for (int i =0; i< orderedInputs.Length;i++)
         {
             FrostyMovementControllerInput input = orderedInputs[i];
-            bool isHeld = Input.GetKey(input.key);
-            bool isPressed = Input.GetKeyDown(input.key);
-            bool isReleased = Input.GetKeyUp(input.key);
-            
-            if (!isPressed && isHeld && input.repeatOnHold && input.conditions.All(condition => condition.Value))
+
+            if (input.action == null) return;
+
+            if (!isEvaluating)
             {
-                if (!input.movement.IsActivating)
-                {
-                    input.movement.Reactivate(input.keepSpeed);
-                }
-                continue;
+                enumerator = input.action.EvaluateInput();
             }
 
-            if (isPressed && input.conditions.All(condition=>condition.Value))
+            if (!enumerator.MoveNext())
+            {
+                isEvaluating = false;
+                return;
+            }
+
+            if (!enumerator.Current && !isReleasing)
+            {
+                isReleasing = true;
+                currentReleaseTolerance = releaseTolerance;
+            }
+
+            bool isHeld = enumerator.Current;
+            bool isReleased = !enumerator.Current && currentReleaseTolerance <= releaseTolerance;
+
+            if ((isHeld && !input.movement.IsActive()) && input.conditions.All(condition=>condition.Value))
             {
                 if (input.toggle && !input.movement.HasFinished)
                 {
@@ -52,6 +68,12 @@ public class FrostyMovementController : MonoBehaviour
             if (isReleased && !input.toggle && input.deactivateOnRelease)
             {
                 input.movement.Deactivate();
+            }
+
+            if (isReleasing)
+            {
+                currentReleaseTolerance -= Time.deltaTime;
+                if (currentReleaseTolerance <= 0) isReleasing = false;
             }
         }
     }

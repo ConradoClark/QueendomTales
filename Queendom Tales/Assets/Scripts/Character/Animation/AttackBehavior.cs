@@ -24,7 +24,7 @@ public class AttackBehavior : StateMachineBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             //Character chara = GetCharacter(animator);
-            animator.CrossFade("Melee 1", 0f);
+            animator.CrossFade("Melee 3", 0f);
             //var obj = GameObject.Instantiate(animator.GetFloat("x") == -1 ? chara.Slash1Prefab_Left : chara.Slash1Prefab_Right);
             //obj.transform.SetParent(animator.transform, false);
             //obj.transform.localPosition = GetCharacter(animator).Slash1Offset * animator.GetFloat("x");

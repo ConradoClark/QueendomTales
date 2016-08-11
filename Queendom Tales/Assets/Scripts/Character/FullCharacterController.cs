@@ -16,6 +16,11 @@ public class FullCharacterController : MonoBehaviour
     public FrostyMovementPredicate leftSlope;
     public FrostySlopeMovement slopeMovementR;
     public FrostySlopeMovement slopeMovementL;
+    public FrostyInputActionFragment lockOnAction;
+
+    float turnDelay = 0.3f;
+    float currentTurnDelay = 0f;
+    bool turning = false;
 
     void Start()
     {
@@ -30,35 +35,57 @@ public class FullCharacterController : MonoBehaviour
 
     void CheckGlobalStates()
     {
+        float currentFacingX = characterAnimator.GetFloat("x");
+        float newX = currentFacingX;
         float inputAxisX = Input.GetAxisRaw("Horizontal");
         bool isMoving = inputAxisX != 0;
+
         if (isMoving && !targetCursor.lockedOn)
         {
-            characterAnimator.SetFloat("x", inputAxisX);
-            facingDirection = new Vector2(inputAxisX,0);
-        }else if (targetCursor.lockedOn)
+            newX = inputAxisX;
+            facingDirection = new Vector2(inputAxisX, 0);
+        } else if (targetCursor.lockedOn)
         {
-            characterAnimator.SetFloat("x", targetCursor.GetLockOnFacingDirection().x);
+            newX = targetCursor.GetLockOnFacingDirection().x;
         }
+
+        if (currentFacingX != newX && !turning)
+        {
+            currentTurnDelay = turnDelay;
+            turning = true;
+        }
+
+        if (currentTurnDelay<=0)
+        {
+            turning = false;
+        }
+
+        characterAnimator.SetFloat("x", turning ? currentFacingX : newX);
         characterAnimator.SetBool("isMoving", isMoving);
         characterAnimator.SetBool("jumped", jump.IsActivating);
         characterAnimator.SetBool("grounded", grounded.Value);
         characterAnimator.SetBool("landing", landing.Value);
         characterAnimator.SetBool("slope", rightSlope.Value || leftSlope.Value);
+
+        if (currentTurnDelay > 0)
+        {
+            currentTurnDelay -= Time.deltaTime;
+        }
     }
 
     void CheckAttacks()
     {
-        //test
-        if (Input.GetKeyDown(KeyCode.X))
+        var input = lockOnAction.EvaluateInput();
+        if (input.MoveNext() && input.Current)
         {
             if (!targetCursor.lockedOn)
             {
                 targetCursor.LockOn();
-            }else
+            }
+            else
             {
                 targetCursor.LockOff();
-            }            
+            }
         }
     }
 
@@ -71,7 +98,7 @@ public class FullCharacterController : MonoBehaviour
     void LateUpdate()
     {        
         float inputAxisX = Input.GetAxisRaw("Horizontal");
-        bool lockOnBackwards = targetCursor.lockedOn && targetCursor.GetLockOnFacingDirection().x != inputAxisX;
+        bool lockOnBackwards = currentTurnDelay > 0 || (targetCursor.lockedOn && targetCursor.GetLockOnFacingDirection().x != inputAxisX);
         characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX * (lockOnBackwards ? -1 : 1) * slopeMovementR.animSpeed * slopeMovementL.animSpeed);
         characterAnimator.SetFloat("ySpeed", (kinematics.GetSpeed(Vector2.up)));
     }

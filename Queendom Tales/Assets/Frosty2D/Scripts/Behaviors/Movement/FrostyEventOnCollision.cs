@@ -19,6 +19,8 @@ public class FrostyEventOnCollision : FrostyOnCollision
 
     void Update()
     {
+        if (impactOnPoints == null) return;
+
         impactOnPoints.Clear();
         if (kinematics == null) return;
 

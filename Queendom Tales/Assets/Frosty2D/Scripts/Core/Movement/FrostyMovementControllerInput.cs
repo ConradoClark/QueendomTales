@@ -13,13 +13,14 @@ namespace Assets.Frosty2D.Scripts.Core.Movement
         public FrostyMovementPredicate[] conditions;
 
         [Header("Input")]
-        public KeyCode key;
+        public FrostyInputActionFragment action;
         public FrostyMovementOptions behavior;
         public bool toggle;
         public bool exclusive;
         public bool deactivateOnRelease;
         public bool repeatOnHold;
         public bool keepSpeed;
-        public int priority;   
+        public int priority;
+        public bool repeatWhenInactive;  
     }
 }

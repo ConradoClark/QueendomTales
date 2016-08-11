@@ -34,7 +34,7 @@ public class Slash3Behavior : StateMachineBehaviour
 
         animator.SetFloat("comboTime", animator.GetFloat("comboTime") + Time.smoothDeltaTime);
 
-        if (animator.GetFloat("comboTime")>0.35f)
+        if (animator.GetFloat("comboTime")>0.35f && animator.GetBool("combo"))
         {
             animator.CrossFade("Melee " + Random.Range(1, 3), 0.25f);
         }

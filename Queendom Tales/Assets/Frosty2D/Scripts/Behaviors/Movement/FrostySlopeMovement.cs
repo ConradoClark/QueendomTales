@@ -16,6 +16,11 @@ public class FrostySlopeMovement : MonoBehaviour
     private float timeElapsed;
     public float animSpeed { get; private set; }
 
+    void Start()
+    {
+        animSpeed = 1f;
+    }
+
     void Update()
     {
         if (isColliding.Value && onCollisionEvent.impactOnPoints.Count > 0 && !jumpMovement.IsActive())
@@ -31,9 +36,11 @@ public class FrostySlopeMovement : MonoBehaviour
         if (!jumpMovement.IsActive())
         {
             bool sameDir = slopeDirection.x * direction > 0;
-            //kinematics.ApplyMovement(new Vector2(slopeDirection.x / 2, slopeDirection.y * 5), (normal * speed).magnitude * direction * (direction == -1 ? 4 : 1));
             kinematics.ApplyMovement(new Vector2(0, slopeDirection.y * 5), (normal * speed_y).magnitude * direction * (direction == -1 ? 4 : 1));
-            animSpeed = direction == -1 ? 1.1f : 0.65f;
+            if (speed_x > 0)
+            {
+                animSpeed = direction == -1 ? 1.1f : 0.65f;
+            }
         }
         else
         {

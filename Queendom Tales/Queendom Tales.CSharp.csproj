@@ -79,7 +79,14 @@
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Graphics\FrostyImageEffect.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Graphics\FrostySnapToGrid.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Graphics\FrostyTiledSprite.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyInput.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyInputActionFragment.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyInputCombination.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyInputManager.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyInputSequence.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyKeyboardInput.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyMovementController.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostySingleInputFragment.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyCollision.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyEventOnCollision.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyKinematics.cs" />
@@ -104,6 +111,7 @@
     <Compile Include="Assets\Scripts\Character\Animation\Slash3Behavior.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterWeapon.cs" />
     <Compile Include="Assets\Scripts\Character\Effects\CreateObjectOnPredicate.cs" />
     <Compile Include="Assets\Scripts\Character\Effects\WalkingPoof.cs" />
     <Compile Include="Assets\Scripts\Character\FullCharacterController.cs" />
@@ -118,6 +126,7 @@
     <Compile Include="Assets\Scripts\Targeting\TargetCursor.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetableObject.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetableObjectManager.cs" />
+    <Compile Include="Assets\Scripts\TestCombo.cs" />
     <Compile Include="Assets\Scripts\TestRightButton.cs" />
     <Compile Include="Assets\Scripts\UI\UICounter.cs" />
   </ItemGroup>

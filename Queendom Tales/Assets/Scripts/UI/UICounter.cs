@@ -37,22 +37,22 @@ public class UICounter : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             this.Increase(10);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             this.Increase(50);
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             this.Decrease(10);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             this.Decrease(50);
         }
