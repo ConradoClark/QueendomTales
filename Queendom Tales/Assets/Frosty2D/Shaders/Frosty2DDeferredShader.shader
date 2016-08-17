@@ -97,6 +97,14 @@
 		_FadeInStripsVerticalStrips("FadeIn - VerticalStrips - Number of Strips per UV", float) = 1
 		[MaterialToggle] _FadeInStripsVerticalReverse("FadeIn - VerticalStrips - Reverse", float) = 0
 		_FadeInStripsVerticalProgress("FadeIn - VerticalStrips - Progress",Range(0,1)) = 0
+
+		//_VerticalDeform("Vertical Deformation", Vector) = (0,0,0,0)
+
+	/*	[Header(Deformation Effects)]
+		_VerticalDeformStart("Vertical Deformation Start", Range(0,1)) = 0
+		_VerticalDeformEnd("Vertical Deformation End", Range(0,1)) = 1
+		_VerticalDeformX ("Vertical Deformation X", Range(0,1)) = 0
+		_VerticalDeformAmount("Vertical Deformation Amount", Range(-1,1)) = 0*/
 	}
 	SubShader
 	{
@@ -110,6 +118,7 @@
 		CGPROGRAM
 		#pragma target 3.0
 		#pragma surface surf Lambert vertex:vert alpha:fade
+		#pragma enable_d3d11_debug_symbols
 		#include "UnityCG.cginc"
 		#define GammaCorrection(color, gamma)  pow(color, 1.0 / gamma)
 		#define LevelsControlInputRange(color, minInput, maxInput) min(max(color - half4(minInput,minInput,minInput,0), 0.0) / ( half4(maxInput,maxInput,maxInput,1) - half4(minInput,minInput,minInput,0)), 1.0)
@@ -205,6 +214,12 @@
 		float _LevelsOpacityValue3;
 		float _LevelsOpacityGradient3;
 		float _LevelsOpacityTolerance3;
+		
+		float4 _VerticalDeform[5];
+		/*float _VerticalDeformX;
+		float _VerticalDeformStart;
+		float _VerticalDeformEnd;
+		float _VerticalDeformAmount;*/
 
 		struct Input {
 			float2 uv_MainTex : TEXCOORD0;
@@ -275,7 +290,27 @@
 		}
 
 		void surf(Input IN, inout SurfaceOutput o) {
-			fixed4 col = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+			float2 uv = IN.uv_MainTex;
+			//float vd = 1 - distance(1 - uv.x, _VerticalDeformX);
+			float _VerticalDeform_Length = 5;
+			for (int di = 0; di < _VerticalDeform_Length; di++) {
+				float _VerticalDeformStart = _VerticalDeform[di].r;
+				float _VerticalDeformEnd = _VerticalDeform[di].g;
+				float _VerticalDeformX = _VerticalDeform[di].b;
+				float _VerticalDeformAmount = _VerticalDeform[di].a;
+
+				float vd = _VerticalDeformEnd - distance(_VerticalDeformEnd - _VerticalDeformStart - uv.x, _VerticalDeformX);
+				float d = lerp(0, 0.15* (1 - distance(uv.x, 0.5)), pow(vd, 2));
+
+				_VerticalDeformEnd = 1 - _VerticalDeformEnd;
+				_VerticalDeformStart = 1 - _VerticalDeformStart;
+
+				if (uv.x > _VerticalDeformStart || uv.x < _VerticalDeformEnd) d = 0;
+
+				uv -= float2(0, lerp(0, uv.y,_VerticalDeformAmount*d));
+			}
+
+			fixed4 col = tex2D(_MainTex, uv) * _Color;
 			col.rgb = !_InvertInput ? col.rgb : 1 - col.rgb;
 
 			col = shiftHue(col, _Hue);

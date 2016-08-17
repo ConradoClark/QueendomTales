@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 using System.Collections;
+using System.Collections.Generic;
 
 [ExecuteInEditMode]
 public class FrostyCollision : MonoBehaviour
@@ -23,6 +24,8 @@ public class FrostyCollision : MonoBehaviour
     [Header("Clamp Direction")]
     public bool overrideClampDirection;
     public Vector2 clampDirection;
+    [Header("Precision")]
+    public float rayPrecision = 5;
 
     void Start()
     {
@@ -38,15 +41,22 @@ public class FrostyCollision : MonoBehaviour
     {
         allHits = GetCollisions();
         Debug.DrawRay(this.GetOrigin(), new Vector2(direction.y, direction.x) * size, color);
-        Debug.DrawRay(this.GetOrigin(), direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
-        Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
+        //Debug.DrawRay(this.GetOrigin(), direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
+        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
 
         var d = GetValidDirection();
-        Debug.DrawRay(this.GetOrigin(), d * GetValidSpeed(d),color);
-        Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, d * GetValidSpeed(d), color);
-        Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 2, d * GetValidSpeed(d), color);
-        Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 4, d * GetValidSpeed(d), color);
-        Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * 2 / 3, d * GetValidSpeed(d), color);
+        //Debug.DrawRay(this.GetOrigin(), d * GetValidSpeed(d),color);
+        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, d * GetValidSpeed(d), color);
+
+        for (int i = 0; i < rayPrecision; i++)
+        {
+            Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * (size) / (rayPrecision-1) * i, d * GetValidSpeed(d), color);
+        }
+
+        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * Mathf.Pow(1, 2) / 1, d * GetValidSpeed(d), color);
+        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 2, d * GetValidSpeed(d), color);
+        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 4, d * GetValidSpeed(d), color);
+        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * 2 / 3, d * GetValidSpeed(d), color);
     }
 
     private Vector3 GetOrigin()
@@ -63,22 +73,32 @@ public class FrostyCollision : MonoBehaviour
         }
     }
 
-    public RaycastHit2D[] GetCollisions()
+    private RaycastHit2D[] GetCollisions()
     {
         Vector2 validDirection = GetValidDirection();
         float validSpeed = GetValidSpeed(validDirection);
 
-        var hits1 = Physics2D.RaycastAll(this.GetOrigin(), validDirection, validSpeed);
+        List<RaycastHit2D[]> raycasts = new List<RaycastHit2D[]>();
 
-        var hits2 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, validDirection, validSpeed);
+        //0var first = Physics2D.RaycastAll(this.GetOrigin(), validDirection, validSpeed);
+        //var last = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, validDirection, validSpeed);
 
-        var hits3 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 2, validDirection, validSpeed);
+        for (int i = 0; i < rayPrecision; i++)
+        {
+            raycasts.Add(Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / (rayPrecision-1) * i, validDirection, validSpeed));
+        }
 
-        var hits4 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 4, validDirection, validSpeed);
+        //var hits1 = Physics2D.RaycastAll(this.GetOrigin(), validDirection, validSpeed);
 
-        var hits5 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * 2 / 3, validDirection, validSpeed);
+        //var hits2 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, validDirection, validSpeed);
 
-        return new[] { hits1, hits2, hits3, hits4, hits5 }.SelectMany(h => h).Where(h => FrostyTag.AnyFromComponent(tags, h.collider)).ToArray();
+        //var hits3 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 2, validDirection, validSpeed);
+
+        //var hits4 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 4, validDirection, validSpeed);
+
+        //var hits5 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * 2 / 3, validDirection, validSpeed);
+
+        return raycasts.SelectMany(h => h).Where(h => FrostyTag.AnyFromComponent(tags, h.collider)).ToArray();
     }
 
     public float GetValidSpeed(Vector2 validDirection)

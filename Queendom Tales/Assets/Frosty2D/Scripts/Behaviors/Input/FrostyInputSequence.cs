@@ -31,13 +31,13 @@ public class FrostyInputSequence : FrostyInputActionFragment
         evaluation = null;
     }
 
-    void OnGUI()
-    {
-        GUI.contentColor = new Color(0, 0.55f, 1);
-        GUI.Label(new Rect(150, 335, 1000, 100), "Hold back for 1 second, press forward and attack for the thing.");
-        GUI.contentColor = Color.green;
-        GUI.Label(new Rect(150, 350, 1000, 100), debugText);
-    }
+    //void OnGUI()
+    //{
+    //    GUI.contentColor = new Color(0, 0.55f, 1);
+    //    GUI.Label(new Rect(150, 335, 1000, 100), "Attack (Combo) Z -> Z -> Z");
+    //    GUI.contentColor = Color.green;
+    //    GUI.Label(new Rect(150, 350, 1000, 100), debugText);
+    //}
 
     void Update()
     {
@@ -102,6 +102,7 @@ public class FrostyInputSequence : FrostyInputActionFragment
 
         debugText += "Sequence complete! ";
         debugDelay = 1f;
+        currentMove = actionFragments.Length;
         yield return true;
     }
 }

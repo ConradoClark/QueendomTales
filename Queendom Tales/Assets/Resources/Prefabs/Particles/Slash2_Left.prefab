@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11422338}
   - 114: {fileID: 11413780}
   m_Layer: 0
-  m_Name: Slash2_Right
+  m_Name: Slash2_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: -2, z: 0}
+  m_LocalPosition: {x: -10, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -79,7 +79,7 @@ ParticleSystem:
   serializedVersion: 2
   lengthInSec: 0.5
   startDelay:
-    scalar: 0.35
+    scalar: 0.25
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -440,7 +440,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startRotation:
-      scalar: -0.17453292
+      scalar: 3.3161256
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -833,14 +833,14 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
-          inSlope: -0.6931818
-          outSlope: -0.6931818
+          value: 0.29921257
+          inSlope: 0.7007874
+          outSlope: 0.7007874
           tangentMode: 10
         - time: 1
-          value: 0.3068182
-          inSlope: -0.6931818
-          outSlope: -0.6931818
+          value: 1
+          inSlope: 0.7007874
+          outSlope: 0.7007874
           tangentMode: 10
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -912,7 +912,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0

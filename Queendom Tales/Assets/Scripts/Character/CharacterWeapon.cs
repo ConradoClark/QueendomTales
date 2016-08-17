@@ -3,65 +3,89 @@ using System.Collections;
 
 public class CharacterWeapon : MonoBehaviour
 {
-    public int currentComboSlot;
-    public float comboTimeout;
+    public int currentComboSlot { get; private set; }
     public Character character;
     public int chargeEventStep = 1;
     public delegate void weaponEvent(int currentComboSlot);
     public delegate void chargeEvent(int currentCharge);
     public event weaponEvent onSwing;
-    //public event weaponEvent 
+    public FrostyInputSequence combo;
 
-    public virtual IEnumerator Standby()
+    [Header("Effects")]
+    public GameObject Slash1Prefab_Right;
+    public GameObject Slash1Prefab_Left;
+    public Vector3 Slash1Offset;
+
+    public GameObject Slash2Prefab_Right;
+    public GameObject Slash2Prefab_Left;
+    public Vector3 Slash2Offset;
+
+    public GameObject Slash3Prefab_Right;
+    public GameObject Slash3Prefab_Left;
+    public Vector3 Slash3Offset;
+
+    void Start()
     {
-        while (!Input.GetKeyDown(KeyCode.Z))
-        {
-            yield return 1;
-        }
         StartCoroutine(Combo());
     }
+    //void OnGUI()
+    //{
+    //    GUI.contentColor = new Color(0, 0.55f, 1);
+    //    GUI.Label(new Rect(150, 200, 1000, 100), combo.currentMove.ToString());
+    //}
+    
 
     public virtual IEnumerator Combo()
     {
-        IEnumerator result = null;
-        bool pressedComboButton = false;
-
-        currentComboSlot = 1;
-        while (currentComboSlot < character.CurrentStats.ComboLength)
+        while (this.enabled)
         {
-            result = WaitForInput();
-            pressedComboButton = false;
-            while(!result.MoveNext())
+            this.combo.EvaluateInput().MoveNext();
+            this.currentComboSlot = combo.currentMove;
+            if (this.currentComboSlot == character.CurrentStats.ComboLength)
             {
-                pressedComboButton = (bool) result.Current;
-                yield return 1;
-            }
-
-            if (!pressedComboButton)
-            {
-                StartCoroutine(Standby());
+                StartCoroutine(Finisher());
                 yield break;
             }
-
-            yield return 1;
-            currentComboSlot++;
-        }
-
-        result = WaitForInput();
-        pressedComboButton = false;
-        while (!result.MoveNext())
-        {
-            pressedComboButton = (bool)result.Current;
             yield return 1;
         }
+        //IEnumerator result = null;
+        //bool pressedComboButton = false;
 
-        if (!pressedComboButton)
-        {
-            StartCoroutine(Standby());
-            yield break;
-        }
+        //currentComboSlot = 1;
+        //while (currentComboSlot < character.CurrentStats.ComboLength)
+        //{
+        //    result = combo.EvaluateInput();
+        //    while(result.MoveNext() || pressedComboButton)
+        //    {
+        //        pressedComboButton |= currentComboSlot < combo.currentMove;
+        //        yield return 1;
+        //    }
 
-        StartCoroutine(Finisher());
+        //    if (!pressedComboButton)
+        //    {
+        //        StartCoroutine(Standby());
+        //        yield break;
+        //    }
+
+        //    yield return 1;
+        //    currentComboSlot++;
+        //}
+
+        //result = combo.EvaluateInput();
+        //pressedComboButton = false;
+        //while (!result.MoveNext())
+        //{
+        //    pressedComboButton = (bool)result.Current;
+        //    yield return 1;
+        //}
+
+        //if (!pressedComboButton)
+        //{
+        //    StartCoroutine(Standby());
+        //    yield break;
+        //}
+
+        //StartCoroutine(Finisher());
     }
 
     public virtual IEnumerator Charge()
@@ -71,27 +95,8 @@ public class CharacterWeapon : MonoBehaviour
 
     public virtual IEnumerator Finisher()
     {
-        StartCoroutine(Standby());
+        Debug.Log("FINISH! ");
+        StartCoroutine(Combo());
         yield break;
-    }
-
-    private IEnumerator WaitForInput()
-    {
-        bool pressedComboButton = false;
-        float currentComboTimeout = comboTimeout;
-        while (currentComboTimeout > 0 && !pressedComboButton)
-        {            
-            pressedComboButton |= Input.GetKeyDown(KeyCode.Z);
-            currentComboTimeout -= Time.deltaTime;
-            if (pressedComboButton)
-            {
-                yield return true;
-                yield break;
-            }else
-            {
-                yield return false;
-            }
-        }
-        yield return pressedComboButton;
     }
 }

@@ -257,6 +257,18 @@ Material:
         name: _VAutoScroll
       second: 0
     - first:
+        name: _VerticalDeformAmount
+      second: -0.66
+    - first:
+        name: _VerticalDeformEnd
+      second: 0.782
+    - first:
+        name: _VerticalDeformStart
+      second: 0
+    - first:
+        name: _VerticalDeformX
+      second: 0
+    - first:
         name: _ZWrite
       second: 1
     m_Colors:

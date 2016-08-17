@@ -18,7 +18,7 @@ public class FullCharacterController : MonoBehaviour
     public FrostySlopeMovement slopeMovementL;
     public FrostyInputActionFragment lockOnAction;
 
-    float turnDelay = 0.3f;
+    float turnDelay = 0.15f;
     float currentTurnDelay = 0f;
     bool turning = false;
 

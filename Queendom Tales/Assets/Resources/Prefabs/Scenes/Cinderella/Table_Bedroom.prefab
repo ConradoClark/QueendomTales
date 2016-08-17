@@ -240,6 +240,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011409552190}
   - 108: {fileID: 108000010863201006}
+  - 114: {fileID: 114000011432476128}
   m_Layer: 0
   m_Name: Candlelight
   m_TagString: Untagged
@@ -256,6 +257,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013328943954}
   - 212: {fileID: 212000012306560506}
+  - 114: {fileID: 114000013681406210}
   m_Layer: 0
   m_Name: Candle_Halo
   m_TagString: Untagged
@@ -370,6 +372,84 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000011432476128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010297914914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc0a8919768bfd45b33d7ed69e1f0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightSource: {fileID: 108000010863201006}
+  varianceIntensity: 0.4
+  varianceDelay: 1
+  flickerFrequency: 0.1
+  flickerFrequencyRandomness: 0.25
+  flickerAmplitude: 0.15
+  flickerRange: 0.25
+  waitToStart: 0
+  colorVarianceIntensity: 0.5
+  colorVarianceDelay: 1
+  colorVariance:
+    key0:
+      serializedVersion: 2
+      rgba: 4286611705
+    key1:
+      serializedVersion: 2
+      rgba: 4293227654
+    key2:
+      serializedVersion: 2
+      rgba: 0
+    key3:
+      serializedVersion: 2
+      rgba: 0
+    key4:
+      serializedVersion: 2
+      rgba: 0
+    key5:
+      serializedVersion: 2
+      rgba: 0
+    key6:
+      serializedVersion: 2
+      rgba: 0
+    key7:
+      serializedVersion: 2
+      rgba: 0
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+--- !u!114 &114000013681406210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010310028674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a593e69a840ba0f4e894cc9a8c595e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  varianceIntensity: 3
+  varianceDelay: 1
+  waitToStart: 0
 --- !u!212 &212000012306560506
 SpriteRenderer:
   m_ObjectHideFlags: 1

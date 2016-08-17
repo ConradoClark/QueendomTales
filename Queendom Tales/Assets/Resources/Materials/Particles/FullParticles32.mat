@@ -248,6 +248,12 @@ Material:
         name: _LevelsRMinInput
       second: 0
     - first:
+        name: _LightInfluence
+      second: 1
+    - first:
+        name: _LightStrength
+      second: 1.53
+    - first:
         name: _Luminance
       second: 0
     - first:

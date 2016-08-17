@@ -8,9 +8,10 @@ public class Slash2Behavior : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         Character chara = GetCharacter(animator);
-        var obj = GameObject.Instantiate(animator.GetFloat("x") == -1 ? chara.Slash2Prefab_Left : chara.Slash2Prefab_Right);
+        var obj = GameObject.Instantiate(animator.GetFloat("x") == -1 ? chara.CurrentWeapon.Slash2Prefab_Left : chara.CurrentWeapon.Slash2Prefab_Right);
+        Vector3 pos = obj.transform.localPosition;
         obj.transform.SetParent(animator.transform, false);
-        obj.transform.localPosition = GetCharacter(animator).Slash2Offset * animator.GetFloat("x");
+        obj.transform.localPosition = pos + GetCharacter(animator).CurrentWeapon.Slash2Offset * animator.GetFloat("x");
 
         animator.SetBool("combo", false);
         animator.SetFloat("comboTime", 0f);
@@ -27,18 +28,6 @@ public class Slash2Behavior : StateMachineBehaviour
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            //animator.SetBool("combo", true);
-        }
-
-        animator.SetFloat("comboTime", animator.GetFloat("comboTime") + Time.smoothDeltaTime);
-
-        if (animator.GetFloat("comboTime") > 0.35f && animator.GetBool("combo"))
-        {
-            var rnd = Random.Range(1, 3);
-            animator.CrossFade("Melee " + (rnd % 2 == 0 ? rnd + 1 : rnd), 0.15f);
-        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

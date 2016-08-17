@@ -367,6 +367,7 @@
 		struct Input {
 			float2 uv_MainTex;
 		};
+
 		void surf(Input IN, inout SurfaceOutput o) {
 			fixed4 col = tex2D(_MainTex, IN.uv_MainTex);
 			if (col.a > 0.1) {

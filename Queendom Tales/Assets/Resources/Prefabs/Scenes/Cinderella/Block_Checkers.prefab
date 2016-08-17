@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 248, y: -144, z: 6}
+  m_LocalPosition: {x: -40, y: -144, z: 6}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -43,17 +43,20 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -92,12 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66d4dce74e1b574788a9386875f5196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseShader: {fileID: 4800000, guid: 6e53a9a32eae38a428451993513c7c87, type: 3}
+  baseShader: {fileID: 4800000, guid: ec95e5d5fae0ddf40a36c619881c7983, type: 3}
   sharedMaterial: {fileID: 0}
   sprite: {fileID: 21300000, guid: 7641405ebe387d046a222114f1950144, type: 3}
   numberOfTiles: {x: 1, y: 1}
   tilingType: 0
-  instanceID: 116068
+  instanceID: -81248
 --- !u!114 &11456594
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Star
+  m_Name: Star - Closed
   m_Shader: {fileID: 4800000, guid: 002547e589b9a1242ade914929688a94, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -56,7 +56,7 @@ Material:
       second:
         m_Texture: {fileID: 2800000, guid: 242f0f1364cb5e9498504560118dcd6b, type: 3}
         m_Scale: {x: 0.25, y: 0.25}
-        m_Offset: {x: 0.25, y: 0.25}
+        m_Offset: {x: 0.5, y: 0.25}
     - first:
         name: _MetallicGlossMap
       second:
@@ -248,8 +248,14 @@ Material:
         name: _LevelsRMinInput
       second: 0
     - first:
+        name: _LightInfluence
+      second: 0.75
+    - first:
+        name: _LightStrength
+      second: 1.5
+    - first:
         name: _Luminance
-      second: 1
+      second: 0
     - first:
         name: _Metallic
       second: 0
@@ -267,7 +273,7 @@ Material:
       second: 0.02
     - first:
         name: _Saturation
-      second: 1
+      second: 0.23
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -325,10 +331,10 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 0}
     - first:
         name: _CutoffColor15
-      second: {r: 0, g: 0, b: 0, a: 0}
+      second: {r: 0.18003894, g: 0.66176474, b: 0.48236337, a: 1}
     - first:
         name: _CutoffColor50
-      second: {r: 0, g: 0, b: 0, a: 0}
+      second: {r: 1, g: 0, b: 0, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}

@@ -5,6 +5,10 @@
 		[Header(Texture)]
 		_MainTex ("Main Texture", 2D) = "white" {}
 
+		[Header(Mixed Lighting)]
+		_LightInfluence("Light Influence", Range(0,1)) = 0
+		_LightStrength("Light Strength", Range(1,10)) = 1
+
 		[Header(Color)]
 		_Color("Tint", Color) = (1,1,1,1)
 		_Saturation("Saturation", Range(-1,1)) = 0
@@ -387,5 +391,26 @@
 
 			ENDCG
 		}
+
+		Blend DstAlpha Zero
+		BlendOp Add
+
+			CGPROGRAM
+		#pragma surface surf Lambert alpha:fade
+		sampler2D _MainTex;
+		float _LightInfluence;
+		float _LightStrength;
+
+		struct Input {
+			float2 uv_MainTex;
+		};
+		void surf(Input IN, inout SurfaceOutput o) {
+			fixed4 col = tex2D(_MainTex, IN.uv_MainTex);
+			if (col.a > 0.1) {
+				o.Albedo = col.rgb* _LightInfluence* _LightStrength;
+			}
+			o.Alpha = col.a* _LightInfluence*0.5;
+		}
+		ENDCG
 	}
 }

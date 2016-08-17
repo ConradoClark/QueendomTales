@@ -78,6 +78,7 @@
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Effects\Lifetime.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Graphics\FrostyImageEffect.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Graphics\FrostySnapToGrid.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Graphics\FrostySpriteDeformation.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Graphics\FrostyTiledSprite.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyInput.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostyInputActionFragment.cs" />
@@ -118,11 +119,15 @@
     <Compile Include="Assets\Scripts\CreateOnClick.cs" />
     <Compile Include="Assets\Scripts\Effects\FadeParticle.cs" />
     <Compile Include="Assets\Scripts\Effects\FadeSize.cs" />
+    <Compile Include="Assets\Scripts\Effects\LightVariance.cs" />
+    <Compile Include="Assets\Scripts\Effects\ShurikenStartColorRandomization.cs" />
+    <Compile Include="Assets\Scripts\Effects\SizeVariance.cs" />
     <Compile Include="Assets\Scripts\FollowMouseLightTest.cs" />
     <Compile Include="Assets\Scripts\Helper\FixParticleRandomizeBug.cs" />
     <Compile Include="Assets\Scripts\Helper\MonoBehaviourExtended.cs" />
     <Compile Include="Assets\Scripts\Helper\Singleton.cs" />
     <Compile Include="Assets\Scripts\Helper\Toolbox.cs" />
+    <Compile Include="Assets\Scripts\InvertedLightTest.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetCursor.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetableObject.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetableObjectManager.cs" />

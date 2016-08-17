@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a7f8940e172f74cbd2e1b5a1bb320e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  lifeTime: 0.75
 --- !u!114 &114000010976175688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 198000012070349160}
-  speed: 0.5
+  speed: 0.75
 --- !u!114 &114000012883713016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 198000010844009962}
-  speed: 0.5
+  speed: 0.75
 --- !u!198 &198000010844009962
 ParticleSystem:
   m_ObjectHideFlags: 1
