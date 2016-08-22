@@ -86,7 +86,7 @@
 
 		[Header(UV Scrolling)]
 		_HAutoScroll ("Scroll - Horizontal Scrolling Speed", float) = 0
-		_VAutoScroll("Scroll - Vertical Scrolling Speed", float) = 0
+		_VAutoScroll("Scroll - Vertical Scrolling Speed", float) = 0 
 
 		[Header(FadeIn Effects)]
 		[MaterialToggle] _FadeInStripsHorizontal("FadeIn - HorizontalStrips", float) = 0

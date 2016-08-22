@@ -8,7 +8,7 @@
 		[Header(Mixed Lighting)]
 		_LightInfluence("Light Influence", Range(0,1)) = 0
 		_LightStrength("Light Strength", Range(1,10)) = 1
-
+			 
 		[Header(Color)]
 		_Color("Tint", Color) = (1,1,1,1)
 		_Saturation("Saturation", Range(-1,1)) = 0

@@ -872,6 +872,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010663495308}
   - 61: {fileID: 61000010136445970}
+  - 114: {fileID: 114000011138048888}
   m_Layer: 0
   m_Name: Bounding
   m_TagString: Untagged
@@ -1402,7 +1403,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.6, y: -12.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.362965}
+  m_LocalEulerAnglesHint: {x: -1.3932227, y: 0, z: 12.459145}
   m_Children: []
   m_Father: {fileID: 4000013347733164}
   m_RootOrder: 7
@@ -1455,7 +1456,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.2130663}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.6127825}
   m_Children: []
   m_Father: {fileID: 4000013347733164}
   m_RootOrder: 2
@@ -1497,7 +1498,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: -1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.2130663}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.6127825}
   m_Children: []
   m_Father: {fileID: 4000013347733164}
   m_RootOrder: 5
@@ -1588,7 +1589,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.4753776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.1503768}
   m_Children: []
   m_Father: {fileID: 4000013347733164}
   m_RootOrder: 0
@@ -1688,7 +1689,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.8219843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.1093633}
   m_Children: []
   m_Father: {fileID: 4000013347733164}
   m_RootOrder: 6
@@ -1740,7 +1741,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 34.638783}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 28.680243}
   m_Children: []
   m_Father: {fileID: 4000013347733164}
   m_RootOrder: 4
@@ -1792,7 +1793,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -32}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.259656}
   m_Children: []
   m_Father: {fileID: 4000013347733164}
   m_RootOrder: 3
@@ -2335,6 +2336,7 @@ MonoBehaviour:
   speedFactor: 1.5
   overrideClampDirection: 1
   clampDirection: {x: 0, y: -1}
+  rayPrecision: 5
 --- !u!114 &114000010080245474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2360,6 +2362,7 @@ MonoBehaviour:
   speedFactor: 1
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
+  rayPrecision: 5
 --- !u!114 &114000010080251194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2390,17 +2393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 114000011977526774}
-  Slash1Prefab_Right: {fileID: 185778, guid: 1468a16bba198ed46ac626737d74bbab, type: 2}
-  Slash1Prefab_Left: {fileID: 185778, guid: 7c79905a40670c64ea2130ee2335962b, type: 2}
-  Slash1Offset: {x: 10, y: 0, z: 0}
-  Slash2Prefab_Right: {fileID: 185778, guid: d4c544dfd8aa0eb4db0fd0e5b5ce7bb7, type: 2}
-  Slash2Prefab_Left: {fileID: 185778, guid: d4c544dfd8aa0eb4db0fd0e5b5ce7bb7, type: 2}
-  Slash2Offset: {x: 15, y: -5, z: 0}
-  Slash3Prefab_Right: {fileID: 1000012045402838, guid: d34d64469de0f8a48bca60282267d237,
-    type: 2}
-  Slash3Prefab_Left: {fileID: 1000012045402838, guid: d34d64469de0f8a48bca60282267d237,
-    type: 2}
-  Slash3Offset: {x: 15, y: -5, z: 0}
   CurrentStats:
     Level: 1
     HP: 100
@@ -2419,7 +2411,7 @@ MonoBehaviour:
     Defense: 1
     ComboLength: 3
     FinisherDamage: 1
-  CurrentWeapon: {fileID: 0}
+  CurrentWeapon: {fileID: 114000010699291226}
 --- !u!114 &114000010212354758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2575,6 +2567,17 @@ MonoBehaviour:
   character: {fileID: 114000010145533882}
   chargeEventStep: 1
   combo: {fileID: 114000011027491360}
+  Slash1Prefab_Right: {fileID: 185778, guid: 1468a16bba198ed46ac626737d74bbab, type: 2}
+  Slash1Prefab_Left: {fileID: 185778, guid: 7c79905a40670c64ea2130ee2335962b, type: 2}
+  Slash1Offset: {x: 10, y: 0, z: 0}
+  Slash2Prefab_Right: {fileID: 185778, guid: d4c544dfd8aa0eb4db0fd0e5b5ce7bb7, type: 2}
+  Slash2Prefab_Left: {fileID: 185778, guid: e4b657e710e9511499ffc1d9e7ef7d44, type: 2}
+  Slash2Offset: {x: 0, y: 0, z: 0}
+  Slash3Prefab_Right: {fileID: 1000012045402838, guid: d34d64469de0f8a48bca60282267d237,
+    type: 2}
+  Slash3Prefab_Left: {fileID: 1000012045402838, guid: d34d64469de0f8a48bca60282267d237,
+    type: 2}
+  Slash3Offset: {x: 0, y: 0, z: 0}
 --- !u!114 &114000010705883446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2670,6 +2673,7 @@ MonoBehaviour:
   speedFactor: 1
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
+  rayPrecision: 5
 --- !u!114 &114000010856600276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2690,7 +2694,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0.2
-  debug: 1
+  debug: 0
 --- !u!114 &114000010929807562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2764,6 +2768,18 @@ MonoBehaviour:
   - {fileID: 114000013526257920}
   - {fileID: 114000013526257920}
   - {fileID: 114000013526257920}
+--- !u!114 &114000011138048888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012819514756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96de1b86575ed9e42a726baedc3be726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: 05000000
 --- !u!114 &114000011180723132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2842,6 +2858,7 @@ MonoBehaviour:
   speedFactor: 1
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
+  rayPrecision: 5
 --- !u!114 &114000011435091420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3525,6 +3542,7 @@ MonoBehaviour:
   speedFactor: 1
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
+  rayPrecision: 5
 --- !u!114 &114000013329832192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3666,6 +3684,7 @@ MonoBehaviour:
   speedFactor: 1.5
   overrideClampDirection: 1
   clampDirection: {x: 0, y: -1}
+  rayPrecision: 5
 --- !u!114 &114000013877759900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3702,6 +3721,7 @@ MonoBehaviour:
   speedFactor: 1
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
+  rayPrecision: 5
 --- !u!114 &114000013910203448
 MonoBehaviour:
   m_ObjectHideFlags: 1

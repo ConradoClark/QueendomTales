@@ -10,7 +10,7 @@
 		_Saturation("Saturation", Range(-1,1)) = 0
 		_Hue("Hue Shifting", Range(0,255)) = 0
 		_Luminance("Luminance", Range(-1,1)) = 0
-		_Opacity("Opacity", Range(0,1)) = 1
+		_Opacity("Opacity", Range(0,1)) = 1 
 		_Colorize("Colorize",Color) = (1,1,1,0)
 		[MaterialToggle] _InvertInput("Invert Colors Before Processing",float) = 0
 		[MaterialToggle] _InvertOutput("Invert Colors After Processing",float) = 0
