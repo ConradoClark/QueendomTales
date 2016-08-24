@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[AddComponentMenu("Queendom-Tales/Targeting/Targetable Object Manager")]
 public class TargetableObjectManager : MonoBehaviour
 {
     public List<TargetableObject> objects;

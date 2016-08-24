@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Queendom-Tales/Character/Walking Poof Effect")]
 public class WalkingPoof : MonoBehaviour
 {
     public FrostyKinematics kinematics;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Queendom-Tales/Character/Homing Movement")]
 public class HomingMovement : MonoBehaviour
 {
     public TargetCursor cursor;

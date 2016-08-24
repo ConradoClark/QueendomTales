@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Queendom-Tales/Enemies/Basic Enemy Behaviour")]
 public class BasicEnemy : MonoBehaviour
 {
     public CharacterStats stats;

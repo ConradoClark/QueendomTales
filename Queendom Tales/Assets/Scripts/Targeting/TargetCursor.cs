@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 
+[AddComponentMenu("Queendom-Tales/Targeting/Target Cursor")]
 public class TargetCursor : MonoBehaviour
 {
     [Header("Animation")]

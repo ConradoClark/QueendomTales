@@ -97,14 +97,6 @@
 		_FadeInStripsVerticalStrips("FadeIn - VerticalStrips - Number of Strips per UV", float) = 1
 		[MaterialToggle] _FadeInStripsVerticalReverse("FadeIn - VerticalStrips - Reverse", float) = 0
 		_FadeInStripsVerticalProgress("FadeIn - VerticalStrips - Progress",Range(0,1)) = 0
-
-		//_VerticalDeform("Vertical Deformation", Vector) = (0,0,0,0)
-
-	/*	[Header(Deformation Effects)]
-		_VerticalDeformStart("Vertical Deformation Start", Range(0,1)) = 0
-		_VerticalDeformEnd("Vertical Deformation End", Range(0,1)) = 1
-		_VerticalDeformX ("Vertical Deformation X", Range(0,1)) = 0
-		_VerticalDeformAmount("Vertical Deformation Amount", Range(-1,1)) = 0*/
 	}
 	SubShader
 	{
@@ -192,7 +184,6 @@
 		}*/
 
 		sampler2D _MainTex;
-		//float4 _MainTex_ST;
 		float4 _MainTex_TexelSize;
 		fixed4 _Color;
 		half _Saturation;
@@ -283,10 +274,6 @@
 		float _LevelsOpacityTolerance3;
 		
 		float4 _VerticalDeform[5];
-		/*float _VerticalDeformX;
-		float _VerticalDeformStart;
-		float _VerticalDeformEnd;
-		float _VerticalDeformAmount;*/
 
 		struct Input {
 			float2 uv_MainTex : TEXCOORD0;
@@ -358,8 +345,9 @@
 
 		void surf(Input IN, inout SurfaceOutput o) {
 			float2 uv = IN.uv_MainTex;
-			//float vd = 1 - distance(1 - uv.x, _VerticalDeformX);
 			float _VerticalDeform_Length = 5;
+
+			// Vertical Deformation
 			for (int di = 0; di < _VerticalDeform_Length; di++) {
 				float _VerticalDeformStart = _VerticalDeform[di].r;
 				float _VerticalDeformEnd = _VerticalDeform[di].g;

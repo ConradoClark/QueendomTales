@@ -1,0 +1,24 @@
+﻿using UnityEngine;
+using System.Collections;
+
+[AddComponentMenu("Queendom-Tales/Effects/Particles/Fade Particle Effect")]
+public class FadeParticle : MonoBehaviour
+{
+
+    public ParticleSystem ps;
+    float opacity=1;
+    public float speed = 1;
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        var psr = ps.GetComponent<ParticleSystemRenderer>();
+        psr.material.SetFloat("_Opacity", opacity);
+        opacity -= Time.deltaTime*2 * speed;
+    }
+}
