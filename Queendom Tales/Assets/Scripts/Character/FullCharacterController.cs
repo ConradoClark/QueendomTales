@@ -99,12 +99,12 @@ public class FullCharacterController : MonoBehaviour
     {        
         float inputAxisX = Input.GetAxisRaw("Horizontal");
         bool lockOnBackwards = currentTurnDelay > 0 || (targetCursor.lockedOn && targetCursor.GetLockOnFacingDirection().x != inputAxisX);
-        characterAnimator.SetFloat("xSpeed", (kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX * (lockOnBackwards ? -1 : 1) * slopeMovementR.animSpeed * slopeMovementL.animSpeed);
+        characterAnimator.SetFloat("xSpeed", 0.5f*(kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX * (lockOnBackwards ? -1 : 1) * slopeMovementR.animSpeed * slopeMovementL.animSpeed);
         characterAnimator.SetFloat("ySpeed", (kinematics.GetSpeed(Vector2.up)));
     }
 
     public Vector2 GetFacingDirection()
     {
-        return facingDirection;
+        return new Vector2(characterAnimator.GetFloat("x"),0) * (targetCursor.lockedOn ? targetCursor.GetLockOnFacingDirection().x : 1);
     }
 }

@@ -8,6 +8,7 @@
 		[Header(Mixed Lighting)]
 		_LightInfluence("Light Influence", Range(0,1)) = 0
 		_LightStrength("Light Strength", Range(1,10)) = 1
+		_VertexColorOnSurfaceInfluence("Vertex Color on Surface Influence", Range(0,1)) = 0
 			 
 		[Header(Color)]
 		_Color("Tint", Color) = (1,1,1,1)
@@ -395,21 +396,25 @@
 		Blend DstAlpha Zero
 		BlendOp Add
 
-			CGPROGRAM
+		CGPROGRAM
 		#pragma surface surf Lambert alpha:fade
 		sampler2D _MainTex;
 		float _LightInfluence;
 		float _LightStrength;
+		float _VertexColorOnSurfaceInfluence;
+		fixed4 _Color;
+		float _Opacity;
 
 		struct Input {
 			float2 uv_MainTex;
+			float4 vertColor : COLOR;
 		};
 		void surf(Input IN, inout SurfaceOutput o) {
 			fixed4 col = tex2D(_MainTex, IN.uv_MainTex);
 			if (col.a > 0.1) {
-				o.Albedo = col.rgb* _LightInfluence* _LightStrength;
+				o.Albedo = col.rgb* _LightInfluence* _LightStrength * _Color * lerp(fixed4(1,1,1,1), IN.vertColor, _VertexColorOnSurfaceInfluence);
 			}
-			o.Alpha = col.a* _LightInfluence*0.5;
+			o.Alpha = col.a* _LightInfluence*0.5 * _Color.a * lerp(1,IN.vertColor.a, _VertexColorOnSurfaceInfluence) * _Opacity;
 		}
 		ENDCG
 	}

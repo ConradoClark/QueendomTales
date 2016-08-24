@@ -124,6 +124,73 @@
 		#define LevelsControlInputRange(color, minInput, maxInput) min(max(color - half4(minInput,minInput,minInput,0), 0.0) / ( half4(maxInput,maxInput,maxInput,1) - half4(minInput,minInput,minInput,0)), 1.0)
 		#define LevelsControlInput(color, minInput, gamma, maxInput) GammaCorrection(LevelsControlInputRange(color, minInput/255, maxInput/255), gamma)
 
+		/*float4 rampa(float4 color, float step) {
+			float each = 1 / step;
+			bool r=false, g = false, b = false,a=false;
+			for (int i = 1; i < step+1; i++) {
+				if (color.r < each*i && !r) {
+					color.r = each*(i - 1) + color.r*0.2;
+					r = true;
+				}
+				if (color.g < each*i && !g) {
+					color.g = each*(i - 1) + color.g*0.2;;
+					g = true;
+				}
+				if (color.b < each*i && !b) {
+					color.b = each*(i - 1) + color.b*0.2;;
+					b = true;
+				}
+				if (color.a < each*i && !b) {
+					color.a = each*(i - 1) + color.a*0.2;;
+					a = true;
+				}
+			}
+			return color;
+		}
+
+		float3 ramp3(float3 color, float step) {
+			float each = 1 / step;
+			bool r = false, g = false, b = false;
+			for (int i = 1; i < step + 1; i++) {
+				if (color.r < each*i && !r) {
+					color.r = each*(i - 1);
+					r = true;
+				}
+				if (color.g < each*i && !g) {
+					color.g = each*(i - 1);
+					g = true;
+				}
+				if (color.b < each*i && !b) {
+					color.b = each*(i - 1);
+					b = true;
+				}
+			}
+			return color;
+		}
+
+		float ramp(float val, float step) {
+			float each = 1 / step;
+			bool r = false;
+			for (int i = 1; i < step + 1; i++) {
+				if (val < each*i && !r) {
+					val = each*(i - 1);
+					r = true;
+				}
+			}
+			return val;
+		}
+
+		half4 LightingRampLambert(SurfaceOutput s, half3 lightDir, half atten) {
+			half NdotL = dot(s.Normal, lightDir);
+			half4 c;
+
+			half light = ramp(NdotL,10) * ramp(atten, 12);
+			c.rgb = s.Albedo * _LightColor0.rgb * light;
+			c.a = s.Alpha;
+
+			return c;
+		}*/
+
 		sampler2D _MainTex;
 		//float4 _MainTex_ST;
 		float4 _MainTex_TexelSize;

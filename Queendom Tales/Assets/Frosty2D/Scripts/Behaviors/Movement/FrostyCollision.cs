@@ -40,7 +40,8 @@ public class FrostyCollision : MonoBehaviour
     void LateUpdate()
     {
         allHits = GetCollisions();
-        Debug.DrawRay(this.GetOrigin(), new Vector2(direction.y, direction.x) * size, color);
+        var orig = this.GetOrigin();
+        Debug.DrawRay(new Vector3(orig.x,orig.y,orig.z), new Vector2(direction.y, direction.x) * size, color);
         //Debug.DrawRay(this.GetOrigin(), direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
         //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
 

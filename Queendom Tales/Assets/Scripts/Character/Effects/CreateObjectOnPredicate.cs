@@ -57,8 +57,9 @@ public class CreateObjectOnPredicate : MonoBehaviour
             {
                 yield return 1;
             }
-            StartCoroutine(WaitForNextActivation());
         }
+
+        StartCoroutine(WaitForNextActivation());
     }
 
     void CreatePrefab()

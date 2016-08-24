@@ -6,9 +6,10 @@ public class AttackBehavior : StateMachineBehaviour
     private Character character;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+
+    }
 
     Character GetCharacter(Animator animator)
     {
@@ -21,14 +22,17 @@ public class AttackBehavior : StateMachineBehaviour
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            //Character chara = GetCharacter(animator);
-            animator.CrossFade("Melee 1", 0f);
-            //var obj = GameObject.Instantiate(animator.GetFloat("x") == -1 ? chara.Slash1Prefab_Left : chara.Slash1Prefab_Right);
-            //obj.transform.SetParent(animator.transform, false);
-            //obj.transform.localPosition = GetCharacter(animator).Slash1Offset * animator.GetFloat("x");
-        }
+        //character = GetCharacter(animator);
+        //if (character.CurrentWeapon.IsAttacking)
+        //{
+        //    character.CurrentWeapon.IsAttacking = false;
+
+        //    if (character.CurrentWeapon.attackAnimations.Length <= 0) return;
+        //    var nextAnim = Random.Range(0, character.CurrentWeapon.attackAnimations.Length);
+
+        //    //animator.CrossFade(character.CurrentWeapon.attackAnimations[nextAnim], 0f);
+        //    animator.Play(character.CurrentWeapon.attackAnimations[nextAnim]);
+        //}
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -38,7 +42,6 @@ public class AttackBehavior : StateMachineBehaviour
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //
     //}
 
     // OnStateIK is called right after Animator.OnAnimatorIK(). Code that sets up animation IK (inverse kinematics) should be implemented here.

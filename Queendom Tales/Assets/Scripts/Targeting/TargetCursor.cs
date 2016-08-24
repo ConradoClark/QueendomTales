@@ -16,7 +16,8 @@ public class TargetCursor : MonoBehaviour
     public FrostyMovementPredicateCustom lockOnLeft;
     [Header("Lock-On (Leave empty)")]
     public bool lockedOn;
-    public TargetableObject lockOnTarget;    
+    public TargetableObject lockOnTarget;
+    public TargetableObject currentTarget;
 
     void Start()
     {
@@ -142,12 +143,13 @@ public class TargetCursor : MonoBehaviour
 
         if (foundDistance > minimumDistance * (lockedOn ? 2 : 1))
         {
-            target = null;
+            target = currentTarget = null;
+
             return false;
         }
         else
         {
-            target = foundObject;
+            target = currentTarget = foundObject;
             return true;
         }
     }

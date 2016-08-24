@@ -12,6 +12,13 @@ public class FrostyKinematics : MonoBehaviour
     private const int CLAMP_DOWN = 2;
     private const int CLAMP_LEFT = 3;
     private float[] clamp;
+    public float pauseTime;
+    private float MAXIMUM_PAUSE_TIME = 10f;    
+
+    public void PauseKinematics(float duration)
+    {
+        this.pauseTime = duration;
+    }
 
     void Start()
     {
@@ -22,6 +29,9 @@ public class FrostyKinematics : MonoBehaviour
 
     void Update()
     {
+        pauseTime = Mathf.Clamp(pauseTime - Time.deltaTime, 0, MAXIMUM_PAUSE_TIME);
+        if (pauseTime>0f) return;
+
         Move();
     }
 

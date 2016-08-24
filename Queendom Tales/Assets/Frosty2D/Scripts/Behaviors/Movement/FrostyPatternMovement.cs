@@ -93,6 +93,16 @@ public class FrostyPatternMovement : MonoBehaviour
         return sum.normalized;
     }
 
+    public void SetDirection(Vector2 direction)
+    {
+        Vector2 sum = Vector2.zero;
+        for (int i = 0; i < patterns.Length; i++)
+        {
+            FrostySingleMovementPattern pattern = patterns[i];
+            pattern.direction = direction;
+        }
+    }
+
     public bool IsActive()
     {
         return patterns.Any(p => p.active);

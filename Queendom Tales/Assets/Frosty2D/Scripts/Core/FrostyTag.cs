@@ -10,9 +10,10 @@ public class FrostyTag : MonoBehaviour
     {
         Platform = 1,
         Wall = 2,
-        Ceiling = 3,
-        Slope = 4,
-        Actor = 5
+        Ceiling = 4,
+        Slope = 8,
+        Actor = 16,
+        Enemy = 32
     }
 
     public FrostyTags[] tags = new FrostyTags[0];
@@ -29,6 +30,6 @@ public class FrostyTag : MonoBehaviour
     public static bool AnyFromComponent(FrostyTag tag, Component comp)
     {
         FrostyTag compTag = comp.GetComponent<FrostyTag>();
-        return compTag != null && tag != null ? tag.Any(compTag) : false;
+        return (compTag != null && tag != null) ? tag.Any(compTag) : false;
     }
 }
