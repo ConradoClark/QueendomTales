@@ -28,7 +28,7 @@ GameObject:
   - 61: {fileID: 6187496}
   - 114: {fileID: 11477896}
   m_Layer: 0
-  m_Name: Table_Bedroom
+  m_Name: 01A.Prefab - Table_Bedroom
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -248,7 +248,7 @@ GameObject:
   - 114: {fileID: 114000010145533882}
   - 114: {fileID: 114000010243723884}
   m_Layer: 0
-  m_Name: Full
+  m_Name: 01C - MainCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010801679338
 GameObject:
   m_ObjectHideFlags: 1
@@ -847,7 +847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012283077066
 GameObject:
   m_ObjectHideFlags: 1
@@ -1425,7 +1425,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010797917294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -30, z: 0}
+  m_LocalPosition: {x: 0, y: -40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1714,7 +1714,7 @@ Transform:
   m_GameObject: {fileID: 1000012946822166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 101.24634, y: 15.124527, z: 0.125}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013484161002}
@@ -2869,32 +2869,32 @@ MonoBehaviour:
   weaponEffects:
   - Prefab_Right: {fileID: 185778, guid: 1468a16bba198ed46ac626737d74bbab, type: 2}
     Prefab_Left: {fileID: 185778, guid: 7c79905a40670c64ea2130ee2335962b, type: 2}
-    Offset: {x: 10, y: 0, z: 0}
+    Offset: {x: 15, y: -10, z: 0}
     Animation: Melee 1
     Movement: {fileID: 114000010970292246}
     Hit: {fileID: 114000011769088098}
-    HitDelay: 0.5
+    HitDelay: 0.2
     HitDuration: 0.35
     AttackMultiplier: 1
   - Prefab_Right: {fileID: 185778, guid: d4c544dfd8aa0eb4db0fd0e5b5ce7bb7, type: 2}
     Prefab_Left: {fileID: 185778, guid: e4b657e710e9511499ffc1d9e7ef7d44, type: 2}
-    Offset: {x: 5, y: -5, z: 0}
+    Offset: {x: 15, y: -10, z: 0}
     Animation: Melee 2
     Movement: {fileID: 114000010970292246}
     Hit: {fileID: 114000013873686688}
-    HitDelay: 0
-    HitDuration: 0
+    HitDelay: 0.2
+    HitDuration: 0.35
     AttackMultiplier: 1
   - Prefab_Right: {fileID: 1000012045402838, guid: d34d64469de0f8a48bca60282267d237,
       type: 2}
     Prefab_Left: {fileID: 1000012045402838, guid: 89491e562f68935488a34e6b093087d9,
       type: 2}
-    Offset: {x: 10, y: -10, z: 0}
+    Offset: {x: 15, y: -10, z: 0}
     Animation: Melee 3
     Movement: {fileID: 114000010970292246}
     Hit: {fileID: 114000012851685482}
-    HitDelay: 0
-    HitDuration: 0
+    HitDelay: 0.15
+    HitDuration: 0.25
     AttackMultiplier: 1
   homing: {fileID: 114000011289950990}
   comboCooldown: 0.5
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d511c0324a420584280717cebb09b42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: -8, y: -9}
+  offset: {x: -10, y: -9}
   direction: {x: -1, y: 0}
   size: 39
   color: {r: 0.87736994, g: 0.97794116, b: 0.41706312, a: 1}
@@ -3508,7 +3508,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010797917294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9584cd867d4d93e49ba9d0ce49c660c4, type: 3}
   m_Name: 
@@ -3619,6 +3619,7 @@ MonoBehaviour:
   slopeMovementR: {fileID: 114000011599851836}
   slopeMovementL: {fileID: 114000012558072936}
   lockOnAction: {fileID: 114000010634915800}
+  turnDelay: 0.15
 --- !u!114 &114000012043133178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3844,7 +3845,7 @@ MonoBehaviour:
   condition: {fileID: 114000010637626954}
   poofObject: {fileID: 185778, guid: ab8119b1b9f94fd4f9b8c2346d25fdd7, type: 2}
   frequency: 0.35
-  offset: {x: 0, y: -17, z: 0.1}
+  offset: {x: 0, y: -23, z: 0.1}
   minSpeed: 0.65
 --- !u!114 &114000012891066672
 MonoBehaviour:
@@ -4028,7 +4029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d511c0324a420584280717cebb09b42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 8, y: -9}
+  offset: {x: 10, y: -9}
   direction: {x: 1, y: 0}
   size: 39
   color: {r: 0.87736994, g: 0.97794116, b: 0.41706312, a: 1}
@@ -4093,7 +4094,7 @@ MonoBehaviour:
   inputManager: {fileID: 114000010929807562}
   actionName: ClickAttack
   minTime: 0
-  maxTime: 1
+  maxTime: 0.35
   fragmentType: 1
   usedAction: Attack 1
 --- !u!114 &114000013562253844
@@ -4291,7 +4292,7 @@ MonoBehaviour:
   condition: {fileID: 114000010637626954}
   poofObject: {fileID: 185778, guid: ab8119b1b9f94fd4f9b8c2346d25fdd7, type: 2}
   frequency: 0.35
-  offset: {x: 0, y: -17, z: 0.1}
+  offset: {x: 0, y: -23, z: 0.1}
   minSpeed: 0.65
 --- !u!114 &114000014000152040
 MonoBehaviour:
@@ -6367,7 +6368,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: b9c946eabd75fb24db6324814af8b128, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

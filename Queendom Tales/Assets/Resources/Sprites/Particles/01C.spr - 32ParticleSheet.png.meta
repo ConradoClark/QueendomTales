@@ -1,11 +1,22 @@
 fileFormatVersion: 2
 guid: 242f0f1364cb5e9498504560118dcd6b
-timeCreated: 1469455932
+timeCreated: 1472070052
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Vertical Speed
     21300002: SmokePoof
+    21300004: 01C.spr - 32ParticleSheet_0
+    21300006: 01C.spr - 32ParticleSheet_1
+    21300008: 01C.spr - 32ParticleSheet_2
+    21300010: 01C.spr - 32ParticleSheet_3
+    21300012: 01C.spr - 32ParticleSheet_4
+    21300014: 01C.spr - 32ParticleSheet_5
+    21300016: 01C.spr - 32ParticleSheet_6
+    21300018: 01C.spr - 32ParticleSheet_7
+    21300020: 01C.spr - 32ParticleSheet_8
+    21300022: 01C.spr - 32ParticleSheet_9
+    21300024: 01C.spr - 32ParticleSheet_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,7 +66,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vertical Speed
+      name: 01C.spr - 32ParticleSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -63,12 +74,12 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SmokePoof
+      name: 01C.spr - 32ParticleSheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -76,7 +87,124 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

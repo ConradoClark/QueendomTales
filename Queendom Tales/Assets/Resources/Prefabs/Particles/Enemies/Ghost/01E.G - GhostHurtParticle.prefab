@@ -28,7 +28,7 @@ GameObject:
   - 108: {fileID: 108000013912407734}
   - 114: {fileID: 114000010912887536}
   m_Layer: 0
-  m_Name: GhostHurtParticle
+  m_Name: 01E.G - GhostHurtParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11422338}
   - 114: {fileID: 11413780}
   m_Layer: 0
-  m_Name: Slash1_Right
+  m_Name: 01C.W.KS - Slash1_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c57268ac8645c4ab2b5760086541c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!198 &19814372
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -834,13 +835,13 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
+          value: 0.29133856
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
         - time: 1
           value: 1
-          inSlope: 1
+          inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
@@ -1777,7 +1778,7 @@ ParticleSystemRenderer:
   m_LengthScale: 2
   m_SortingFudge: 0
   m_NormalDirection: 1
-  m_RenderAlignment: 0
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
@@ -1902,6 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c57268ac8645c4ab2b5760086541c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!114 &114000011445177518
 MonoBehaviour:
   m_ObjectHideFlags: 1

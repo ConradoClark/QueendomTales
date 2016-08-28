@@ -16,13 +16,13 @@ public class CharacterWeapon : MonoBehaviour
     [Header("Animation")]
     public FrostyMovementPredicateCustom IsAttackingPredicate;
     public Animator animator;
-    public FrostyMovementPredicate isOnAir;   
+    public FrostyMovementPredicate isOnAir;
 
     [Header("Effects")]
     public WeaponEffect[] weaponEffects;
     public HomingMovement homing;
 
-    [Header("Cooldown")]    
+    [Header("Cooldown")]
     public float comboCooldown;
     public float attackCooldown;
     public bool IsAttacking { get; set; }
@@ -52,7 +52,11 @@ public class CharacterWeapon : MonoBehaviour
         {
             homing.enableMovement = true;
             rotating = true;
-            currentAngle += angle * currentSide;
+            if (currentComboSlot == 0)
+            {
+                currentSide = character.controller.targetCursor.currentTarget != null && this.transform.position.y > character.controller.targetCursor.currentTarget.transform.position.y ? -1 : 1;
+            }
+            currentAngle += angle * currentSide * character.controller.GetFacingDirection().x;            
             currentSide = -currentSide;
         }
         else
@@ -70,7 +74,6 @@ public class CharacterWeapon : MonoBehaviour
         Vector3 pos = obj.transform.localPosition;
         obj.transform.SetParent(animator.transform, false);
         obj.transform.localPosition = pos + new Vector3(effect.Offset.x * character.controller.GetFacingDirection().x, effect.Offset.y);
-       
 
         if (effect.Movement != null)
         {
@@ -78,19 +81,21 @@ public class CharacterWeapon : MonoBehaviour
             effect.Movement.Reactivate(false, true);
         }
 
-        var ps = obj.GetComponent<ParticleSystem>();
-        var f = ps.startRotation3D;
-        f.z-= angle / 90f;
-        ps.startRotation3D = f;
+        obj.transform.Rotate(new Vector3(0, 0, angle));
+
+        var pss = obj.GetComponentsInChildren<ParticleSystem>();
 
         if (IsFinisher)
         {
             obj.transform.localScale = new Vector3(1.5f, 1.5f, 2);
-            ps.startColor = Color.yellow;
+            foreach(var ps in pss)
+            {
+                ps.startColor = Color.yellow;
+            }
             this.IsFinisher = false;
         }
 
-        effect.Hit.transform.localPosition = new Vector3(-10,0,0);
+        effect.Hit.transform.localPosition = new Vector3(-10, 0, 0);
         effect.Hit.direction = (Quaternion.AngleAxis(angle, Vector2.right) * character.controller.GetFacingDirection()).normalized;
         StartCoroutine(HitTest(effect));
     }
@@ -104,8 +109,6 @@ public class CharacterWeapon : MonoBehaviour
         {
             currentAngle = 0f;
         }
-
-
     }
 
     public virtual IEnumerator HitTest(WeaponEffect effect)
@@ -118,9 +121,9 @@ public class CharacterWeapon : MonoBehaviour
         }
 
         effect.Hit.enabled = true;
-        yield return 1; 
+        yield return 1;
 
-        Dictionary<int,BasicEnemy> colliders = new Dictionary<int, BasicEnemy>();
+        Dictionary<int, BasicEnemy> colliders = new Dictionary<int, BasicEnemy>();
         List<int> exclusion = new List<int>();
 
         delayElapsed = 0f;
@@ -142,7 +145,7 @@ public class CharacterWeapon : MonoBehaviour
                 if (atk >= 0)
                 {
                     character.controller.kinematics.PauseKinematics(0.1f);
-                    enemy.Value.TryDamage((uint) atk);
+                    enemy.Value.TryDamage((uint)atk);
                     exclusion.Add(enemy.Key);
                 }
             }
@@ -210,8 +213,8 @@ public class CharacterWeapon : MonoBehaviour
         homing.enableMovement = false;
         yield return new WaitForSeconds(comboCooldown);
 
-        currentComboSlot = 0;        
-        StartCoroutine(Combo());        
+        currentComboSlot = 0;
+        StartCoroutine(Combo());
         yield break;
     }
 }
