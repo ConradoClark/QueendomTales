@@ -94,7 +94,6 @@ public class FullCharacterController : MonoBehaviour
         CheckGlobalStates();
         CheckAttacks();
 
-
         characterAnimator.speed = Toolbox.Instance.frostyTime.GetLayerMultiplier(timeLayer);
     }
 
