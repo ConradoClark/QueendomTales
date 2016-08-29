@@ -17,6 +17,7 @@ public class FrostyMovementPredicateCondition : FrostyMovementPredicate
     public float preserveForSeconds;
     bool? preservedValue;
     Stack<bool> startedCoroutines = new Stack<bool>();
+    public TimeLayers timeLayer;
 
     public bool debug;
 
@@ -75,7 +76,7 @@ public class FrostyMovementPredicateCondition : FrostyMovementPredicate
 
         preservedValue = valueToPreserve = predicate.Value;
         startedCoroutines.Push(valueToPreserve);
-        yield return new WaitForSeconds(preserveForSeconds);
+        yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, preserveForSeconds);
 
         startedCoroutines.Pop();
         preservedValue = startedCoroutines.Count == 0 ? null : preservedValue;

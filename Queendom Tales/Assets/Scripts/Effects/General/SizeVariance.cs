@@ -11,6 +11,7 @@ public class SizeVariance : MonoBehaviour
     private bool started = false;
     private Vector2 size;
     private Vector2 newSize;
+    public TimeLayers timeLayer;
 
     void Start()
     {
@@ -23,14 +24,14 @@ public class SizeVariance : MonoBehaviour
     {
         if (!started) return;
         newSize = Vector2.zero;
-        elapsedTime += Time.deltaTime;
+        elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
     }
 
     IEnumerator VarySize()
     {
         if (waitToStart > 0f)
         {
-            yield return new WaitForSeconds(waitToStart);
+            yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, waitToStart);
         }
         started = true;
         while (this.enabled)

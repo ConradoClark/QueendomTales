@@ -4,6 +4,8 @@ using System.Collections;
 public class Lifetime : MonoBehaviour
 {
     public float lifeTime;
+    public TimeLayers timeLayer;
+
     void Start()
     {
         StartCoroutine(WaitAndDie());
@@ -11,7 +13,7 @@ public class Lifetime : MonoBehaviour
 
     IEnumerator WaitAndDie()
     {
-        yield return new WaitForSeconds(lifeTime);
+        yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, lifeTime);
         GameObject.Destroy(this.gameObject);
     }
 }

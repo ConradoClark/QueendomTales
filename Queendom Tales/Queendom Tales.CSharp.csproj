@@ -102,6 +102,9 @@
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\MovementPredicates\FrostyMovementReversePredicate.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\MovementPredicates\FrostyPredicateAnd.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\MovementPredicates\FrostyPredicateOr.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Time\FrostyTime.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Time\FrostyTimeLayer.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Time\FrostyTimeLayerGroup.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\FrostyTag.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementControllerInput.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementDampener.cs" />
@@ -110,6 +113,12 @@
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostyMovementPredicateCondition.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\Movement\FrostySingleMovementPattern.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Core\PixelTransform.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Core\Time\TimeLayerArray.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Core\Time\TimeLayers.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Helper\Architecture\MonoBehaviourExtended.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Helper\Architecture\Singleton.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Helper\Architecture\Toolbox.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Helper\Fixes\FixParticleRandomizeBug.cs" />
     <Compile Include="Assets\Scripts\BattleTest.cs" />
     <Compile Include="Assets\Scripts\Character\Animation\AttackBehavior.cs" />
     <Compile Include="Assets\Scripts\Character\Base\Behaviors\Character.cs" />
@@ -125,11 +134,8 @@
     <Compile Include="Assets\Scripts\Effects\Particles\FadeParticle.cs" />
     <Compile Include="Assets\Scripts\Effects\Particles\ShurikenStartColorRandomization.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemy.cs" />
-    <Compile Include="Assets\Scripts\Helper\Architecture\MonoBehaviourExtended.cs" />
-    <Compile Include="Assets\Scripts\Helper\Architecture\Singleton.cs" />
-    <Compile Include="Assets\Scripts\Helper\Architecture\Toolbox.cs" />
-    <Compile Include="Assets\Scripts\Helper\Fixes\FixParticleRandomizeBug.cs" />
     <Compile Include="Assets\Scripts\Instance\CreateObjectOnPredicate.cs" />
+    <Compile Include="Assets\Scripts\QTToolbox.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetCursor.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetableObject.cs" />
     <Compile Include="Assets\Scripts\Targeting\TargetableObjectManager.cs" />

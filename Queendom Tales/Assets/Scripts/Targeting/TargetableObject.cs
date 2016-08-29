@@ -18,14 +18,14 @@ public class TargetableObject : MonoBehaviour
 
     void OnEnable()
     {
-        Toolbox.Instance.targetableObjectManager.AddTarget(this);
+        QTToolbox.Instance.targetableObjectManager.AddTarget(this);
     }
 
     void OnDisable()
     {
-        if (!Toolbox.IsApplicationQuitting())
+        if (!QTToolbox.IsApplicationQuitting())
         {
-            Toolbox.Instance.targetableObjectManager.RemoveTarget(this);
+            QTToolbox.Instance.targetableObjectManager.RemoveTarget(this);
         }
     }
 }

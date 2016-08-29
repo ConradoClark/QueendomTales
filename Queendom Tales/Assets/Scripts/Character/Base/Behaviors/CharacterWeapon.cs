@@ -10,7 +10,6 @@ public class CharacterWeapon : MonoBehaviour
     public int chargeEventStep = 1;
     public delegate void weaponEvent(int currentComboSlot);
     public delegate void chargeEvent(int currentCharge);
-    public event weaponEvent onSwing;
     public FrostyInputSequence combo;
 
     [Header("Animation")]
@@ -32,6 +31,9 @@ public class CharacterWeapon : MonoBehaviour
     private float currentAngle;
     private float angleVelocity;
     private float currentSide = 1;
+
+    public TimeLayers timeLayer;
+    public TimeLayers globalTimeLayer;
 
     void Start()
     {
@@ -64,7 +66,7 @@ public class CharacterWeapon : MonoBehaviour
             homing.enableMovement = false;
         }
 
-        var nextAnim = rotating && currentComboSlot == 0 ? 2 : Random.Range(0, character.CurrentWeapon.weaponEffects.Length);
+        var nextAnim = isOnAir.Value && rotating && currentComboSlot == 0 ? 2 : Random.Range(0, character.CurrentWeapon.weaponEffects.Length);
 
         var effect = character.CurrentWeapon.weaponEffects[nextAnim];
 
@@ -116,7 +118,7 @@ public class CharacterWeapon : MonoBehaviour
         float delayElapsed = 0f;
         while (delayElapsed < effect.HitDelay)
         {
-            delayElapsed += Time.deltaTime;
+            delayElapsed += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
             yield return 1;
         }
 
@@ -126,8 +128,9 @@ public class CharacterWeapon : MonoBehaviour
         Dictionary<int, BasicEnemy> colliders = new Dictionary<int, BasicEnemy>();
         List<int> exclusion = new List<int>();
 
-        delayElapsed = 0f;
+        float lockTime = 0f;
 
+        delayElapsed = 0f;
         while (delayElapsed < effect.HitDuration)
         {
             foreach (var hit in effect.Hit.AllHits)
@@ -144,8 +147,9 @@ public class CharacterWeapon : MonoBehaviour
                 var atk = (character.CurrentStats.Attack * effect.AttackMultiplier);
                 if (atk >= 0)
                 {
-                    character.controller.kinematics.PauseKinematics(0.1f);
                     enemy.Value.TryDamage((uint)atk);
+                    Toolbox.Instance.frostyTime.SetLayerMultiplier(timeLayer, 0.1f);
+                    lockTime = 0.25f;
                     exclusion.Add(enemy.Key);
                 }
             }
@@ -158,9 +162,15 @@ public class CharacterWeapon : MonoBehaviour
                 }
             }
 
-            delayElapsed += Time.deltaTime;
+            lockTime = Mathf.Clamp(lockTime - Toolbox.Instance.frostyTime.GetDeltaTime(globalTimeLayer), 0, lockTime);
+            if (lockTime <= 0)
+            {
+                Toolbox.Instance.frostyTime.SetLayerMultiplier(timeLayer, 1.0f);
+            }
+            delayElapsed += Toolbox.Instance.frostyTime.GetDeltaTime(globalTimeLayer);
             yield return 1;
         }
+        Toolbox.Instance.frostyTime.SetLayerMultiplier(timeLayer, 1.0f);
         effect.Hit.enabled = false;
     }
 
@@ -185,7 +195,7 @@ public class CharacterWeapon : MonoBehaviour
                 }
                 Attack();
                 IsAttackingPredicate.SetValue(true);
-                yield return new WaitForSeconds(attackCooldown);
+                yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, attackCooldown);
             }
 
             this.currentComboSlot = combo.currentMove;
@@ -211,7 +221,7 @@ public class CharacterWeapon : MonoBehaviour
         IsAttackingPredicate.SetValue(false);
         currentAngle = 0f;
         homing.enableMovement = false;
-        yield return new WaitForSeconds(comboCooldown);
+        yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, comboCooldown);
 
         currentComboSlot = 0;
         StartCoroutine(Combo());

@@ -13,6 +13,7 @@ public class FrostySpriteDeformation : MonoBehaviour {
     private Vector4[] v4 = new Vector4[5];
     private float[] dampSpeed = new float[5];
     public float deformationDampening;
+    public TimeLayers timeLayer;
 
     void Start () {
 	
@@ -52,7 +53,7 @@ public class FrostySpriteDeformation : MonoBehaviour {
         spriteRenderer.material.SetVectorArray("_VerticalDeform", v4.ToArray());
         for (i = 0; i < 5; i++)
         {
-            v4[i].w += Time.deltaTime*2;
+            v4[i].w += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer)*2;
             v4[i].w = Mathf.Clamp(v4[i].w, -1, 0);
         }
 	}

@@ -13,6 +13,7 @@ public class FrostyMovementController : MonoBehaviour
     bool isEvaluating = false;
     bool isReleasing = false;
     IEnumerator<bool> enumerator;
+    public TimeLayers timeLayer;
 
     void Update()
     {
@@ -72,7 +73,7 @@ public class FrostyMovementController : MonoBehaviour
 
             if (isReleasing)
             {
-                currentReleaseTolerance -= Time.deltaTime;
+                currentReleaseTolerance -= Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
                 if (currentReleaseTolerance <= 0) isReleasing = false;
             }
         }

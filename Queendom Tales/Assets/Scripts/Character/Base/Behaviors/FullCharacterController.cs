@@ -9,8 +9,6 @@ public class FullCharacterController : MonoBehaviour
     public FrostyMovementPredicate grounded;
     public FrostyMovementPredicate landing;
     public FrostyPatternMovement jump;
-    private bool updatingAnimator;
-    private bool createdAttackPrefab;
     private Vector2 facingDirection;
     public TargetCursor targetCursor;
     public FrostyMovementPredicate rightSlope;
@@ -19,6 +17,7 @@ public class FullCharacterController : MonoBehaviour
     public FrostySlopeMovement slopeMovementL;
     public FrostyInputActionFragment lockOnAction;    
     public float turnDelay = 0.1f;
+    public TimeLayers timeLayer;
 
     float currentTurnDelay = 0f;
     bool turning = false;
@@ -70,7 +69,7 @@ public class FullCharacterController : MonoBehaviour
 
         if (currentTurnDelay > 0)
         {
-            currentTurnDelay -= Time.deltaTime;
+            currentTurnDelay -= Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
         }
     }
 
@@ -94,6 +93,9 @@ public class FullCharacterController : MonoBehaviour
     {
         CheckGlobalStates();
         CheckAttacks();
+
+
+        characterAnimator.speed = Toolbox.Instance.frostyTime.GetLayerMultiplier(timeLayer);
     }
 
     void LateUpdate()
@@ -106,6 +108,6 @@ public class FullCharacterController : MonoBehaviour
 
     public Vector2 GetFacingDirection()
     {
-        return new Vector2(characterAnimator.GetFloat("x"),0) * (targetCursor.lockedOn ? targetCursor.GetLockOnFacingDirection().x : 1);
+        return new Vector2(characterAnimator.GetFloat("x"), 0);
     }
 }

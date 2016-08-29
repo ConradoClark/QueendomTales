@@ -15,6 +15,7 @@ public class FrostySlopeMovement : MonoBehaviour
     private Vector2 normal;
     private float timeElapsed;
     public float animSpeed { get; private set; }
+    public TimeLayers timeLayer;
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class FrostySlopeMovement : MonoBehaviour
             timeElapsed = 0;
         }
 
-        timeElapsed += Time.smoothDeltaTime;
+        timeElapsed += Toolbox.Instance.frostyTime.GetSmoothDeltaTime(timeLayer);
         if (!jumpMovement.IsActive())
         {
             bool sameDir = slopeDirection.x * direction > 0;
@@ -56,10 +57,10 @@ public class FrostySlopeMovement : MonoBehaviour
         speed_y = direction == -1 && timeElapsed < 0.3f ? speed_y : 0;
         if (speed_x > 0)
         {
-            speed_x = Mathf.Clamp(speed_x - Time.smoothDeltaTime, 0, float.MaxValue);
+            speed_x = Mathf.Clamp(speed_x - Toolbox.Instance.frostyTime.GetSmoothDeltaTime(timeLayer), 0, float.MaxValue);
         }else
         {
-            speed_x = Mathf.Clamp(speed_x + Time.smoothDeltaTime, float.MinValue, 0);
+            speed_x = Mathf.Clamp(speed_x + Toolbox.Instance.frostyTime.GetSmoothDeltaTime(timeLayer), float.MinValue, 0);
         }
     }
 }

@@ -21,6 +21,7 @@ public class LightVariance : MonoBehaviour
     public Gradient colorVariance;
     private Color lightColor;
     private Color newColor;
+    public TimeLayers timeLayer;
 
     public void OverrideInitialIntensity(float intensity)
     {
@@ -41,14 +42,14 @@ public class LightVariance : MonoBehaviour
         if (!started) return;
         newIntensity = 0f;
         newColor = this.lightColor;
-        elapsedTime += Time.deltaTime;
+        elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
     }
 
     IEnumerator VaryIntensity()
     {
         if (waitToStart>0f)
         {
-            yield return new WaitForSeconds(waitToStart);
+            yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, waitToStart);
         }
         started = true;
         while (this.enabled)
@@ -67,7 +68,7 @@ public class LightVariance : MonoBehaviour
         while (this.enabled)
         {
             newIntensity += flickerAmplitude * Random.Range(-flickerRange, flickerRange);
-            yield return new WaitForSeconds(flickerFrequency + Random.Range(-flickerFrequencyRandomness, flickerFrequencyRandomness));
+            yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, flickerFrequency + Random.Range(-flickerFrequencyRandomness, flickerFrequencyRandomness));
         }
     }
 

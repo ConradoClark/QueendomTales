@@ -246,7 +246,6 @@ GameObject:
   - 114: {fileID: 114000013877759900}
   - 114: {fileID: 114000011977526774}
   - 114: {fileID: 114000010145533882}
-  - 114: {fileID: 114000010243723884}
   m_Layer: 0
   m_Name: 01C - MainCharacter
   m_TagString: Untagged
@@ -288,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010801679338
 GameObject:
   m_ObjectHideFlags: 1
@@ -847,7 +846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000012283077066
 GameObject:
   m_ObjectHideFlags: 1
@@ -2566,6 +2565,7 @@ MonoBehaviour:
   - {fileID: 114000013562253844}
   - {fileID: 114000011613556110}
   movementDampeners: []
+  timeLayer: 2
 --- !u!114 &114000010036178920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2583,6 +2583,7 @@ MonoBehaviour:
   maxTime: 0
   fragmentType: 2
   usedAction: Right
+  timeLayer: 2
 --- !u!114 &114000010071278352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2701,18 +2702,7 @@ MonoBehaviour:
   maxTime: 0.2
   fragmentType: 1
   usedAction: Right
---- !u!114 &114000010243723884
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010714607486}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3074fb071f277cc4bb545d3efaef18f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  f: 0
+  timeLayer: 0
 --- !u!114 &114000010291423696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2748,6 +2738,7 @@ MonoBehaviour:
   - {fileID: 114000012987368658}
   - {fileID: 114000010212354758}
   - {fileID: 114000011203587450}
+  timeLayer: 0
 --- !u!114 &114000010389666708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2780,6 +2771,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000010548752392
 MonoBehaviour:
@@ -2810,6 +2802,7 @@ MonoBehaviour:
   maxTime: 1.5
   fragmentType: 2
   usedAction: Left
+  timeLayer: 0
 --- !u!114 &114000010634915800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2827,6 +2820,7 @@ MonoBehaviour:
   maxTime: 0
   fragmentType: 1
   usedAction: Lockon
+  timeLayer: 2
 --- !u!114 &114000010637626954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2869,7 +2863,7 @@ MonoBehaviour:
   weaponEffects:
   - Prefab_Right: {fileID: 185778, guid: 1468a16bba198ed46ac626737d74bbab, type: 2}
     Prefab_Left: {fileID: 185778, guid: 7c79905a40670c64ea2130ee2335962b, type: 2}
-    Offset: {x: 15, y: -10, z: 0}
+    Offset: {x: 15, y: -7, z: 0}
     Animation: Melee 1
     Movement: {fileID: 114000010970292246}
     Hit: {fileID: 114000011769088098}
@@ -2898,7 +2892,9 @@ MonoBehaviour:
     AttackMultiplier: 1
   homing: {fileID: 114000011289950990}
   comboCooldown: 0.5
-  attackCooldown: 0.35
+  attackCooldown: 0.25
+  timeLayer: 2
+  globalTimeLayer: 0
 --- !u!114 &114000010705883446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3015,6 +3011,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0.2
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000010929807562
 MonoBehaviour:
@@ -3060,6 +3057,7 @@ MonoBehaviour:
   createAtStart: 0
   offset: {x: 0, y: 0, z: 0}
   attachToTransform: {fileID: 4000010447359590}
+  timeLayer: 2
 --- !u!114 &114000010970292246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3128,6 +3126,7 @@ MonoBehaviour:
   deactivateOnPredicate: []
   abortOnPredicate: []
   movementDampeners: []
+  timeLayer: 2
 --- !u!114 &114000010972382506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3157,6 +3156,7 @@ MonoBehaviour:
   - {fileID: 114000013526257920}
   - {fileID: 114000013526257920}
   - {fileID: 114000013526257920}
+  timeLayer: 2
 --- !u!114 &114000011138048888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3212,6 +3212,7 @@ MonoBehaviour:
   maxTime: 0.25
   fragmentType: 1
   usedAction: Jump
+  timeLayer: 0
 --- !u!114 &114000011289418790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3236,6 +3237,7 @@ MonoBehaviour:
     priority: 0
     repeatWhenInactive: 1
   releaseTolerance: 0
+  timeLayer: 2
 --- !u!114 &114000011289950990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3251,6 +3253,7 @@ MonoBehaviour:
   character: {fileID: 114000011977526774}
   speed: 35
   enableMovement: 0
+  timeLayer: 2
 --- !u!114 &114000011314493690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3297,6 +3300,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0.1
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000011443787758
 MonoBehaviour:
@@ -3348,6 +3352,7 @@ MonoBehaviour:
   maxTime: 0
   fragmentType: 1
   usedAction: Attack
+  timeLayer: 2
 --- !u!114 &114000011599851836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3365,6 +3370,7 @@ MonoBehaviour:
   onCollisionEvent: {fileID: 114000012306171404}
   jumpMovement: {fileID: 114000010006604460}
   onGround: {fileID: 114000011731034854}
+  timeLayer: 2
 --- !u!114 &114000011613556110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3396,6 +3402,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000011717896532
 MonoBehaviour:
@@ -3429,6 +3436,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0.2
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000011741651246
 MonoBehaviour:
@@ -3447,6 +3455,7 @@ MonoBehaviour:
   - {fileID: 114000010627273866}
   - {fileID: 114000012043133178}
   - {fileID: 114000012981791304}
+  timeLayer: 0
 --- !u!114 &114000011769088098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3508,7 +3517,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010797917294}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9584cd867d4d93e49ba9d0ce49c660c4, type: 3}
   m_Name: 
@@ -3520,6 +3529,7 @@ MonoBehaviour:
   createAtStart: 0
   offset: {x: 0, y: 0, z: 0}
   attachToTransform: {fileID: 0}
+  timeLayer: 2
 --- !u!114 &114000011962466234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3538,13 +3548,13 @@ MonoBehaviour:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 2.492735
-        outSlope: 2.492735
+        inSlope: 5
+        outSlope: 5
         tangentMode: 10
-      - time: 0.40116578
+      - time: 0.2
         value: 1
-        inSlope: 2.492735
-        outSlope: 2.492735
+        inSlope: 5
+        outSlope: 5
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3597,6 +3607,7 @@ MonoBehaviour:
   - {fileID: 114000012891066672}
   - {fileID: 114000013205465232}
   - {fileID: 114000012993119568}
+  timeLayer: 2
 --- !u!114 &114000011977526774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3620,6 +3631,7 @@ MonoBehaviour:
   slopeMovementL: {fileID: 114000012558072936}
   lockOnAction: {fileID: 114000010634915800}
   turnDelay: 0.15
+  timeLayer: 2
 --- !u!114 &114000012043133178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3700,6 +3712,7 @@ MonoBehaviour:
     priority: 0
     repeatWhenInactive: 0
   releaseTolerance: 0
+  timeLayer: 2
 --- !u!114 &114000012414649084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3732,6 +3745,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0.3
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000012506075616
 MonoBehaviour:
@@ -3773,6 +3787,7 @@ MonoBehaviour:
   onCollisionEvent: {fileID: 114000012826032408}
   jumpMovement: {fileID: 114000010006604460}
   onGround: {fileID: 114000011731034854}
+  timeLayer: 2
 --- !u!114 &114000012795814360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3847,6 +3862,7 @@ MonoBehaviour:
   frequency: 0.35
   offset: {x: 0, y: -23, z: 0.1}
   minSpeed: 0.65
+  timeLayer: 2
 --- !u!114 &114000012891066672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3879,6 +3895,7 @@ MonoBehaviour:
   maxTime: 0
   fragmentType: 2
   usedAction: Left
+  timeLayer: 2
 --- !u!114 &114000012981791304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3896,6 +3913,7 @@ MonoBehaviour:
   maxTime: 0.5
   fragmentType: 1
   usedAction: Attack 1
+  timeLayer: 0
 --- !u!114 &114000012987368658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3913,6 +3931,7 @@ MonoBehaviour:
   maxTime: 0.2
   fragmentType: 1
   usedAction: Left
+  timeLayer: 0
 --- !u!114 &114000012993119568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4001,6 +4020,7 @@ MonoBehaviour:
   - {fileID: 114000014209334942}
   - {fileID: 114000011898716532}
   movementDampeners: []
+  timeLayer: 2
 --- !u!114 &114000013060948256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4018,6 +4038,7 @@ MonoBehaviour:
   maxTime: 0
   fragmentType: 1
   usedAction: Jump
+  timeLayer: 2
 --- !u!114 &114000013124624048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4079,6 +4100,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000013526257920
 MonoBehaviour:
@@ -4097,6 +4119,7 @@ MonoBehaviour:
   maxTime: 0.35
   fragmentType: 1
   usedAction: Attack 1
+  timeLayer: 0
 --- !u!114 &114000013562253844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4117,6 +4140,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000013624077068
 MonoBehaviour:
@@ -4138,6 +4162,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0.1
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000013652105742
 MonoBehaviour:
@@ -4163,6 +4188,7 @@ MonoBehaviour:
     priority: 0
     repeatWhenInactive: 1
   releaseTolerance: 0
+  timeLayer: 2
 --- !u!114 &114000013733357070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4294,6 +4320,7 @@ MonoBehaviour:
   frequency: 0.35
   offset: {x: 0, y: -23, z: 0.1}
   minSpeed: 0.65
+  timeLayer: 2
 --- !u!114 &114000014000152040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4323,6 +4350,7 @@ MonoBehaviour:
   maxTime: 0.2
   fragmentType: 1
   usedAction: Right
+  timeLayer: 0
 --- !u!114 &114000014066817894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4351,6 +4379,7 @@ MonoBehaviour:
   maxTime: 0.2
   fragmentType: 2
   usedAction: Right
+  timeLayer: 0
 --- !u!114 &114000014203825526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4398,6 +4427,7 @@ MonoBehaviour:
   changeOnlyAfterSeconds: 0
   changeOnlyBeforeSeconds: 0
   preserveForSeconds: 0.2
+  timeLayer: 2
   debug: 0
 --- !u!114 &114000014226994712
 MonoBehaviour:
@@ -4428,13 +4458,13 @@ MonoBehaviour:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 2.492735
-        outSlope: 2.492735
+        inSlope: 5
+        outSlope: 5
         tangentMode: 10
-      - time: 0.40116578
+      - time: 0.2
         value: 1
-        inSlope: 2.492735
-        outSlope: 2.492735
+        inSlope: 5
+        outSlope: 5
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -4487,6 +4517,7 @@ MonoBehaviour:
   - {fileID: 114000014206787254}
   - {fileID: 114000013205465232}
   - {fileID: 114000012993119568}
+  timeLayer: 2
 --- !u!198 &198000012117585264
 ParticleSystem:
   m_ObjectHideFlags: 1

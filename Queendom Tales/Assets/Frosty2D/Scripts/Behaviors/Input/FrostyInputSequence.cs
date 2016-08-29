@@ -9,6 +9,7 @@ public class FrostyInputSequence : FrostyInputActionFragment
     private IEnumerator<bool> evaluation;
 
     public int currentMove { get; private set; }
+    public TimeLayers timeLayer;
 
     string debugText;
     float debugDelay = 0f;
@@ -43,7 +44,7 @@ public class FrostyInputSequence : FrostyInputActionFragment
     {
         if (debugDelay > 0f)
         {
-            debugDelay -= Time.deltaTime;
+            debugDelay -= Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
         }
     }
 

@@ -129,9 +129,9 @@ public class TargetCursor : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < Toolbox.Instance.targetableObjectManager.objects.Count; i++)
+            for (int i = 0; i < QTToolbox.Instance.targetableObjectManager.objects.Count; i++)
             {
-                TargetableObject obj = Toolbox.Instance.targetableObjectManager.objects[i];
+                TargetableObject obj = QTToolbox.Instance.targetableObjectManager.objects[i];
                 float distance = Vector2.Distance(obj.transform.position, player.transform.position);
                 bool isFacing = (obj.transform.position.x * player.GetFacingDirection().x > player.transform.position.x * player.GetFacingDirection().x);
                 if (distance < foundDistance && isFacing)

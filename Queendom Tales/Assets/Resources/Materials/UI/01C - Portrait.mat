@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: 01C - Portrait
   m_Shader: {fileID: 4800000, guid: 6e53a9a32eae38a428451993513c7c87, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: _EMISSION _ENABLECUTOFFCOLORIZATION_ON
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -24,7 +24,7 @@ Material:
     - first:
         name: _CutoffTexture
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5b303ff28ad9368468a2edd759cf458d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -111,7 +111,7 @@ Material:
       second: 0
     - first:
         name: _EnableCutoffColorization
-      second: 0
+      second: 1
     - first:
         name: _FadeInStripsHorizontal
       second: 0
@@ -325,10 +325,10 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 0}
     - first:
         name: _CutoffColor15
-      second: {r: 0, g: 0, b: 0, a: 0}
+      second: {r: 1, g: 0, b: 0, a: 0.341}
     - first:
         name: _CutoffColor50
-      second: {r: 0, g: 0, b: 0, a: 0}
+      second: {r: 0.75735295, g: 0.011137554, b: 0.7367679, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}

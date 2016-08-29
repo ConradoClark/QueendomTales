@@ -13,6 +13,7 @@ public class BattleTest : MonoBehaviour {
     public Material battleBorder;
     private Color originalAmbient;
     public Color battleLight;
+    public TimeLayers timeLayer;
 
     void Start () {
         levelSong.Play();
@@ -47,7 +48,7 @@ public class BattleTest : MonoBehaviour {
             source.volume = 1-lerp;
             target.volume = lerp;
 
-            lerp += Time.deltaTime * (battle ? 1 : -1);
+            lerp += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer) * (battle ? 1 : -1);
             lerp = Mathf.Clamp(lerp, 0, 1);
 
             for (int i = 0; i < borders.Length; i++)

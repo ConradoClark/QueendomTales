@@ -11,6 +11,7 @@ public class CreateObjectOnPredicate : MonoBehaviour
     public bool createAtStart;
     public Vector3 offset;
     public Transform attachToTransform;
+    public TimeLayers timeLayer;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class CreateObjectOnPredicate : MonoBehaviour
         {
             while (predicate.Value)
             {
-                yield return new WaitForSeconds(loopingInterval);
+                yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, loopingInterval);
                 CreatePrefab();
             }
         }else

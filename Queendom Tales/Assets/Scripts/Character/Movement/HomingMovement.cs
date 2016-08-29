@@ -11,6 +11,7 @@ public class HomingMovement : MonoBehaviour
 
     private float xVelocity;
     private float yVelocity;
+    public TimeLayers timeLayer;
 
     void Update()
     {
@@ -21,8 +22,11 @@ public class HomingMovement : MonoBehaviour
 
         x = character.kinematics.transform.position.x - x;
         y = -character.kinematics.transform.position.y + y;
-        
-        character.kinematics.ApplyMovement(new Vector2(Mathf.Sign(x) * character.GetFacingDirection().x , 0), x);
-        character.kinematics.ApplyMovement(new Vector2(0, Mathf.Sign(y)), y* Mathf.Sign(y));
+
+        x *= Toolbox.Instance.frostyTime.GetLayerMultiplier(timeLayer);
+        y *= Toolbox.Instance.frostyTime.GetLayerMultiplier(timeLayer);
+
+        character.kinematics.ApplyMovement(new Vector2(Mathf.Sign(x) * character.GetFacingDirection().x, 0), x);
+        character.kinematics.ApplyMovement(new Vector2(0, Mathf.Sign(y)), y * Mathf.Sign(y));
     }
 }
