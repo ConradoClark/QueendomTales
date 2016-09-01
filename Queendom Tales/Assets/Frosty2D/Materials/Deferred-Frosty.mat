@@ -168,7 +168,7 @@ Material:
       second: 0.273
     - first:
         name: _Luminance
-      second: 0
+      second: -0
     - first:
         name: _Opacity
       second: 1

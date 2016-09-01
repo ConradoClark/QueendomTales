@@ -70,7 +70,8 @@ public class CharacterWeapon : MonoBehaviour
 
         var effect = character.CurrentWeapon.weaponEffects[nextAnim];
 
-        animator.CrossFade(effect.Animation, 0f, 0, 0f);
+        animator.SetFloat("attackSpeed", 1f - 0.5f * character.CurrentWeapon.attackCooldown);
+        animator.CrossFade(effect.Animation, 0f, 0, 0f);        
 
         var obj = GameObject.Instantiate(character.controller.GetFacingDirection().x == -1 ? effect.Prefab_Left : effect.Prefab_Right);
         Vector3 pos = obj.transform.localPosition;
@@ -118,7 +119,7 @@ public class CharacterWeapon : MonoBehaviour
         float delayElapsed = 0f;
         while (delayElapsed < effect.HitDelay)
         {
-            delayElapsed += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            delayElapsed += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return 1;
         }
 
@@ -148,8 +149,8 @@ public class CharacterWeapon : MonoBehaviour
                 if (atk >= 0)
                 {
                     enemy.Value.TryDamage((uint)atk);
-                    Toolbox.Instance.frostyTime.SetLayerMultiplier(timeLayer, 0.1f);
-                    lockTime = 0.25f;
+                    Toolbox.Instance.time.SetLayerMultiplier(timeLayer, 0.1f);
+                    lockTime = 0.2f;
                     exclusion.Add(enemy.Key);
                 }
             }
@@ -162,15 +163,15 @@ public class CharacterWeapon : MonoBehaviour
                 }
             }
 
-            lockTime = Mathf.Clamp(lockTime - Toolbox.Instance.frostyTime.GetDeltaTime(globalTimeLayer), 0, lockTime);
+            lockTime = Mathf.Clamp(lockTime - Toolbox.Instance.time.GetDeltaTime(globalTimeLayer), 0, lockTime);
             if (lockTime <= 0)
             {
-                Toolbox.Instance.frostyTime.SetLayerMultiplier(timeLayer, 1.0f);
+                Toolbox.Instance.time.SetLayerMultiplier(timeLayer, 1.0f);
             }
-            delayElapsed += Toolbox.Instance.frostyTime.GetDeltaTime(globalTimeLayer);
+            delayElapsed += Toolbox.Instance.time.GetDeltaTime(globalTimeLayer);
             yield return 1;
         }
-        Toolbox.Instance.frostyTime.SetLayerMultiplier(timeLayer, 1.0f);
+        Toolbox.Instance.time.SetLayerMultiplier(timeLayer, 1.0f);
         effect.Hit.enabled = false;
     }
 
@@ -195,7 +196,7 @@ public class CharacterWeapon : MonoBehaviour
                 }
                 Attack();
                 IsAttackingPredicate.SetValue(true);
-                yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, attackCooldown);
+                yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, attackCooldown);
             }
 
             this.currentComboSlot = combo.currentMove;
@@ -221,7 +222,7 @@ public class CharacterWeapon : MonoBehaviour
         IsAttackingPredicate.SetValue(false);
         currentAngle = 0f;
         homing.enableMovement = false;
-        yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, comboCooldown);
+        yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, comboCooldown);
 
         currentComboSlot = 0;
         StartCoroutine(Combo());

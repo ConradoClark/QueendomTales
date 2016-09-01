@@ -76,7 +76,7 @@ public class FrostyMovementPredicateCondition : FrostyMovementPredicate
 
         preservedValue = valueToPreserve = predicate.Value;
         startedCoroutines.Push(valueToPreserve);
-        yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, preserveForSeconds);
+        yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, preserveForSeconds);
 
         startedCoroutines.Pop();
         preservedValue = startedCoroutines.Count == 0 ? null : preservedValue;

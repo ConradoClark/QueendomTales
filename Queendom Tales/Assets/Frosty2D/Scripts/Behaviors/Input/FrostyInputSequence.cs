@@ -44,7 +44,7 @@ public class FrostyInputSequence : FrostyInputActionFragment
     {
         if (debugDelay > 0f)
         {
-            debugDelay -= Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            debugDelay -= Toolbox.Instance.time.GetDeltaTime(timeLayer);
         }
     }
 

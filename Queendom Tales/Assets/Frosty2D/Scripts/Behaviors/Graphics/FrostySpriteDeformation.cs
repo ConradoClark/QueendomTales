@@ -53,7 +53,7 @@ public class FrostySpriteDeformation : MonoBehaviour {
         spriteRenderer.material.SetVectorArray("_VerticalDeform", v4.ToArray());
         for (i = 0; i < 5; i++)
         {
-            v4[i].w += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer)*2;
+            v4[i].w += Toolbox.Instance.time.GetDeltaTime(timeLayer)*2;
             v4[i].w = Mathf.Clamp(v4[i].w, -1, 0);
         }
 	}

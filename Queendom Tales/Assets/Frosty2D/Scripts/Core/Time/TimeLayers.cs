@@ -8,5 +8,6 @@ public enum TimeLayers
     Game,
     Player,
     Enemies,
-    Borders
+    Borders,
+    World
 }

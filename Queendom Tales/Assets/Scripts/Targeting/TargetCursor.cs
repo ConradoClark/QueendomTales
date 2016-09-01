@@ -60,12 +60,19 @@ public class TargetCursor : MonoBehaviour
         LockOff();
         animator.SetBool(LockOn_Animator, false);
         animator.SetBool(NoTarget_Animator, false);
+
         this.transform.SetParent(target.transform, false);
         this.transform.localPosition = target.cursorOffset;
 
         TargetableObject closestTarget = target;
+
         while (targetingEnabled)
         {
+            if (!closestTarget.enabled)
+            {
+                this.transform.SetParent(target.transform, false);
+            }
+
             if (this.lockedOn)
             {
                 this.lockOnTarget = closestTarget;
@@ -132,6 +139,7 @@ public class TargetCursor : MonoBehaviour
             for (int i = 0; i < QTToolbox.Instance.targetableObjectManager.objects.Count; i++)
             {
                 TargetableObject obj = QTToolbox.Instance.targetableObjectManager.objects[i];
+                if (!obj.enabled) continue;
                 float distance = Vector2.Distance(obj.transform.position, player.transform.position);
                 bool isFacing = (obj.transform.position.x * player.GetFacingDirection().x > player.transform.position.x * player.GetFacingDirection().x);
                 if (distance < foundDistance && isFacing)
@@ -145,7 +153,6 @@ public class TargetCursor : MonoBehaviour
         if (foundDistance > minimumDistance * (lockedOn ? 2 : 1))
         {
             target = currentTarget = null;
-
             return false;
         }
         else

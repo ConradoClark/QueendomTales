@@ -23,8 +23,8 @@ public class HomingMovement : MonoBehaviour
         x = character.kinematics.transform.position.x - x;
         y = -character.kinematics.transform.position.y + y;
 
-        x *= Toolbox.Instance.frostyTime.GetLayerMultiplier(timeLayer);
-        y *= Toolbox.Instance.frostyTime.GetLayerMultiplier(timeLayer);
+        x *= Toolbox.Instance.time.GetLayerMultiplier(timeLayer);
+        y *= Toolbox.Instance.time.GetLayerMultiplier(timeLayer);
 
         character.kinematics.ApplyMovement(new Vector2(Mathf.Sign(x) * character.GetFacingDirection().x, 0), x);
         character.kinematics.ApplyMovement(new Vector2(0, Mathf.Sign(y)), y * Mathf.Sign(y));

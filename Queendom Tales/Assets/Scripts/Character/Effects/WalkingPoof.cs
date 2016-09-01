@@ -7,7 +7,7 @@ public class WalkingPoof : MonoBehaviour
     public FrostyKinematics kinematics;
     public FrostyPatternMovement movement;
     public FrostyMovementPredicate condition;
-    public GameObject poofObject;
+    public FrostyPoolInstance poofObject;
     public float frequency;
     public Vector3 offset;
     public float minSpeed;
@@ -29,15 +29,15 @@ public class WalkingPoof : MonoBehaviour
 
     IEnumerator CreatePoof()
     {        
-        yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, frequency);
+        yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, frequency);
         while (movement.IsActive())
         {
             if (condition.Value && kinematics.GetSpeed(movement.GetDirection()) > minSpeed)
-            {
-                var poof = GameObject.Instantiate(poofObject);
+            {                
+                var poof = Toolbox.Instance.pool.Retrieve(poofObject);
                 poof.transform.position = this.transform.position + offset;
             }
-            yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, frequency);
+            yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, frequency);
         }
         StartCoroutine(WaitForActivation());
     }

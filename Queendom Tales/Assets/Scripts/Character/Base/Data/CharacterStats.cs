@@ -15,4 +15,5 @@ public class CharacterStats
     
     public int ComboLength;
     public int FinisherDamage;
+    public int Experience;
 }

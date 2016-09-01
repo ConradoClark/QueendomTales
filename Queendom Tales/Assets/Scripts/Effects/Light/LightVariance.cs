@@ -42,14 +42,14 @@ public class LightVariance : MonoBehaviour
         if (!started) return;
         newIntensity = 0f;
         newColor = this.lightColor;
-        elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+        elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
     }
 
     IEnumerator VaryIntensity()
     {
         if (waitToStart>0f)
         {
-            yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, waitToStart);
+            yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, waitToStart);
         }
         started = true;
         while (this.enabled)
@@ -68,7 +68,7 @@ public class LightVariance : MonoBehaviour
         while (this.enabled)
         {
             newIntensity += flickerAmplitude * Random.Range(-flickerRange, flickerRange);
-            yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, flickerFrequency + Random.Range(-flickerFrequencyRandomness, flickerFrequencyRandomness));
+            yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, flickerFrequency + Random.Range(-flickerFrequencyRandomness, flickerFrequencyRandomness));
         }
     }
 

@@ -17,6 +17,8 @@ public class FrostySlopeMovement : MonoBehaviour
     public float animSpeed { get; private set; }
     public TimeLayers timeLayer;
 
+    private float speed_xdamp;
+
     void Start()
     {
         animSpeed = 1f;
@@ -33,7 +35,7 @@ public class FrostySlopeMovement : MonoBehaviour
             timeElapsed = 0;
         }
 
-        timeElapsed += Toolbox.Instance.frostyTime.GetSmoothDeltaTime(timeLayer);
+        timeElapsed += Toolbox.Instance.time.GetSmoothDeltaTime(timeLayer);
         if (!jumpMovement.IsActive())
         {
             bool sameDir = slopeDirection.x * direction > 0;
@@ -55,12 +57,18 @@ public class FrostySlopeMovement : MonoBehaviour
 
         kinematics.ApplyMovement(new Vector2(slopeDirection.x / 2, 0), (normal * speed_x).magnitude * direction * (direction == -1 ? 4 : 1)/5f);
         speed_y = direction == -1 && timeElapsed < 0.3f ? speed_y : 0;
-        if (speed_x > 0)
+        if (speed_x >= 0)
         {
-            speed_x = Mathf.Clamp(speed_x - Toolbox.Instance.frostyTime.GetSmoothDeltaTime(timeLayer), 0, float.MaxValue);
-        }else
+            speed_x = Mathf.Clamp(speed_x - Toolbox.Instance.time.GetSmoothDeltaTime(timeLayer), 0, float.MaxValue);
+        }
+        else
         {
-            speed_x = Mathf.Clamp(speed_x + Toolbox.Instance.frostyTime.GetSmoothDeltaTime(timeLayer), float.MinValue, 0);
+            speed_x = Mathf.Clamp(speed_x + Toolbox.Instance.time.GetSmoothDeltaTime(timeLayer), float.MinValue, 0);
+        }
+
+        if (!isColliding.Value && onGround.Value)
+        {
+            speed_x=0f;
         }
     }
 }

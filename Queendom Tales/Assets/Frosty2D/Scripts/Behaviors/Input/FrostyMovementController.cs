@@ -73,7 +73,7 @@ public class FrostyMovementController : MonoBehaviour
 
             if (isReleasing)
             {
-                currentReleaseTolerance -= Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+                currentReleaseTolerance -= Toolbox.Instance.time.GetDeltaTime(timeLayer);
                 if (currentReleaseTolerance <= 0) isReleasing = false;
             }
         }

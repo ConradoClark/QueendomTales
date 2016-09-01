@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Lifetime : MonoBehaviour
+public class Lifetime : FrostyPoolableObject
 {
     public float lifeTime;
     public TimeLayers timeLayer;
@@ -13,7 +13,14 @@ public class Lifetime : MonoBehaviour
 
     IEnumerator WaitAndDie()
     {
-        yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, lifeTime);
-        GameObject.Destroy(this.gameObject);
+        yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, lifeTime);
+        Toolbox.Instance.pool.Release(this, this.gameObject);
+    }
+
+    public override void ResetState()
+    {
+        base.ResetState();
+        StopAllCoroutines();
+        StartCoroutine(WaitAndDie());
     }
 }

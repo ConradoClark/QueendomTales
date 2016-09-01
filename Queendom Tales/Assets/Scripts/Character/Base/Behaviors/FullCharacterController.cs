@@ -69,7 +69,7 @@ public class FullCharacterController : MonoBehaviour
 
         if (currentTurnDelay > 0)
         {
-            currentTurnDelay -= Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            currentTurnDelay -= Toolbox.Instance.time.GetDeltaTime(timeLayer);
         }
     }
 
@@ -94,7 +94,7 @@ public class FullCharacterController : MonoBehaviour
         CheckGlobalStates();
         CheckAttacks();
 
-        characterAnimator.speed = Toolbox.Instance.frostyTime.GetLayerMultiplier(timeLayer);
+        characterAnimator.speed = Toolbox.Instance.time.GetLayerMultiplier(timeLayer);
     }
 
     void LateUpdate()

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 242f0f1364cb5e9498504560118dcd6b
-timeCreated: 1472070052
+timeCreated: 1472565529
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -17,6 +17,7 @@ TextureImporter:
     21300020: 01C.spr - 32ParticleSheet_8
     21300022: 01C.spr - 32ParticleSheet_9
     21300024: 01C.spr - 32ParticleSheet_10
+    21300026: 01C.spr - 32ParticleSheet_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -200,6 +201,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 01C.spr - 32ParticleSheet_11
+      rect:
+        serializedVersion: 2
+        x: 96
         y: 32
         width: 32
         height: 32

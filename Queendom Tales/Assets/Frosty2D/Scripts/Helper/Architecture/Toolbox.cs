@@ -5,12 +5,15 @@ using System.Collections;
 [DisallowMultipleComponent]
 public class Toolbox : Singleton<Toolbox>
 {
-    public FrostyTime frostyTime;
+    public FrostyTime time;
+    public FrostyPoolManager pool;
+
     protected Toolbox() { } // guarantee this will be always a singleton only - can't use the constructor!
     
     void Awake()
     {
-        frostyTime = RegisterComponent<FrostyTime>();
+        time = RegisterComponent<FrostyTime>();
+        pool = RegisterComponent<FrostyPoolManager>();
     }
 
     // (optional) allow runtime registration of global objects

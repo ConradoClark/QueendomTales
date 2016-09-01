@@ -2,9 +2,17 @@
 using System.Collections;
 
 [AddComponentMenu("Queendom-Tales/Instance/Create Object on Predicate")]
-public class CreateObjectOnPredicate : MonoBehaviour
+public class CreateObjectOnPredicate : FrostyPoolableObject
 {
-    public GameObject prefabToCreate;
+    public enum ObjectMode
+    {
+        PoolInstance,
+        PoolableObject
+    }
+
+    public ObjectMode Mode = ObjectMode.PoolInstance;
+    public FrostyPoolInstance prefabPoolInstance;
+    public FrostyPoolableObject prefabPoolableObject;
     public FrostyMovementPredicate predicate;
     public bool looping;
     public float loopingInterval;
@@ -50,7 +58,7 @@ public class CreateObjectOnPredicate : MonoBehaviour
         {
             while (predicate.Value)
             {
-                yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, loopingInterval);
+                yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, loopingInterval);
                 CreatePrefab();
             }
         }else
@@ -66,11 +74,26 @@ public class CreateObjectOnPredicate : MonoBehaviour
 
     void CreatePrefab()
     {
-        var obj = Instantiate(prefabToCreate);
+        GameObject obj = null;
+        if (this.Mode == ObjectMode.PoolInstance)
+        {
+            obj = Toolbox.Instance.pool.Retrieve(prefabPoolInstance);
+        }else
+        {
+            obj = Toolbox.Instance.pool.Retrieve(prefabPoolableObject);
+        }
+
         obj.transform.position = transform.position + offset;
         if (attachToTransform != null)
         {
             obj.transform.SetParent(attachToTransform, true);
         }
+    }
+
+    public override void ResetState()
+    {
+        base.ResetState();
+        StopAllCoroutines();
+        StartCoroutine(WaitForNextActivation());
     }
 }

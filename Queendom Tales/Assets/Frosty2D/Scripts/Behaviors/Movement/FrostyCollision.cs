@@ -11,7 +11,7 @@ public class FrostyCollision : MonoBehaviour
     public Vector2 direction;
     public float size;
     public Color color = Color.magenta;
-    [Header("References")]    
+    [Header("References")]
     public FrostyKinematics movement;
     public FrostyTag tags;
     [Header("Raycast Parameters")]
@@ -26,38 +26,20 @@ public class FrostyCollision : MonoBehaviour
     public Vector2 clampDirection;
     [Header("Precision")]
     public float rayPrecision = 5;
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
+    public bool ignoreBorders = false;
 
     void LateUpdate()
     {
         allHits = GetCollisions();
         var orig = this.GetOrigin();
-        Debug.DrawRay(new Vector3(orig.x,orig.y,orig.z), new Vector2(direction.y, direction.x) * size, color);
-        //Debug.DrawRay(this.GetOrigin(), direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
-        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, direction * (movement != null ? movement.GetSpeed(direction) : raySize), color);
+        Debug.DrawRay(new Vector3(orig.x, orig.y, orig.z), new Vector2(direction.y, direction.x) * size, color);
 
         var d = GetValidDirection();
-        //Debug.DrawRay(this.GetOrigin(), d * GetValidSpeed(d),color);
-        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, d * GetValidSpeed(d), color);
-
         for (int i = 0; i < rayPrecision; i++)
         {
-            Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * (size) / (rayPrecision-1) * i, d * GetValidSpeed(d), color);
+            if (ignoreBorders && (i == 0 || i == rayPrecision - 1)) continue;
+            Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * (size) / (rayPrecision - 1) * i, d * GetValidSpeed(d), color);
         }
-
-        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * Mathf.Pow(1, 2) / 1, d * GetValidSpeed(d), color);
-        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 2, d * GetValidSpeed(d), color);
-        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 4, d * GetValidSpeed(d), color);
-        //Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * 2 / 3, d * GetValidSpeed(d), color);
     }
 
     private Vector3 GetOrigin()
@@ -81,23 +63,11 @@ public class FrostyCollision : MonoBehaviour
 
         List<RaycastHit2D[]> raycasts = new List<RaycastHit2D[]>();
 
-        //0var first = Physics2D.RaycastAll(this.GetOrigin(), validDirection, validSpeed);
-        //var last = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, validDirection, validSpeed);
-
         for (int i = 0; i < rayPrecision; i++)
         {
-            raycasts.Add(Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / (rayPrecision-1) * i, validDirection, validSpeed));
+            if (ignoreBorders && (i == 0 || i == rayPrecision - 1)) continue;
+            raycasts.Add(Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / (rayPrecision - 1) * i, validDirection, validSpeed));
         }
-
-        //var hits1 = Physics2D.RaycastAll(this.GetOrigin(), validDirection, validSpeed);
-
-        //var hits2 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size, validDirection, validSpeed);
-
-        //var hits3 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 2, validDirection, validSpeed);
-
-        //var hits4 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size / 4, validDirection, validSpeed);
-
-        //var hits5 = Physics2D.RaycastAll(this.GetOrigin() + new Vector3(direction.y, direction.x) * size * 2 / 3, validDirection, validSpeed);
 
         return raycasts.SelectMany(h => h).Where(h => FrostyTag.AnyFromComponent(tags, h.collider)).ToArray();
     }

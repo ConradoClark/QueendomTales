@@ -15,14 +15,19 @@ public class FrostyKinematics : MonoBehaviour
     public float pauseTime;
     private float MAXIMUM_PAUSE_TIME = 10f;
     private TimeLayers timeLayer;
+    private bool init = false;
+
+    private Vector2[] intentions;
 
     public void PauseKinematics(float duration)
     {
+        if (!init) return;
         this.pauseTime = duration;
     }
 
     void Start()
     {
+        init = true;
         forces = new List<Vector2>();
         clamp = new float[4];
         this.ResetMovement();
@@ -30,7 +35,7 @@ public class FrostyKinematics : MonoBehaviour
 
     void Update()
     {
-        pauseTime = Mathf.Clamp(pauseTime - Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer), 0, MAXIMUM_PAUSE_TIME);
+        pauseTime = Mathf.Clamp(pauseTime - Toolbox.Instance.time.GetDeltaTime(timeLayer), 0, MAXIMUM_PAUSE_TIME);
         if (pauseTime>0f) return;
 
         Move();
@@ -43,13 +48,23 @@ public class FrostyKinematics : MonoBehaviour
 
     public float GetSpeed(Vector2 direction)
     {
+        if (!init) return 0f;
+
         if (forces == null) forces = new List<Vector2>();
         direction.Normalize();
         return Vector2.Dot(direction, forces.Any() ? forces.Aggregate((v1, v2) => v1 + v2) : Vector2.zero);
     }
 
+    public float GetSpeedIntention(Vector2 direction)
+    {
+        if (intentions == null) return 0f;
+        direction.Normalize();
+        return Vector2.Dot(direction, intentions.Any() ? intentions.Aggregate((v1, v2) => v1 + v2) : Vector2.zero);
+    }
+
     private void Move()
     {
+        intentions = forces.ToArray();
         Vector3 allForces = forces.Any() ? forces.Aggregate((v1, v2) => v1 + v2) : Vector2.zero;
         allForces += this.transform.position;
         float clampX = Mathf.Clamp(allForces.x, float.IsNaN(clamp[CLAMP_LEFT]) ? allForces.x : clamp[CLAMP_LEFT],
@@ -70,11 +85,13 @@ public class FrostyKinematics : MonoBehaviour
 
     public void ApplyMovement(Vector2 direction, float speed)
     {
+        if (!init) return;
         forces.Add(direction.normalized * speed);
     }
 
     public void ClampPosition(Vector2 direction, float value)
     {
+        if (!init) return;
         Vector2 point = direction.normalized * value;
 
         clamp[CLAMP_RIGHT] = direction.x <= 0 ? clamp[CLAMP_RIGHT] : Mathf.Min(clamp[CLAMP_RIGHT], point.x);
@@ -82,10 +99,5 @@ public class FrostyKinematics : MonoBehaviour
 
         clamp[CLAMP_UP] = direction.y <= 0 ? clamp[CLAMP_UP] : Mathf.Min(clamp[CLAMP_UP], -point.y);
         clamp[CLAMP_DOWN] = direction.y >= 0 ? clamp[CLAMP_DOWN] : Mathf.Max(clamp[CLAMP_DOWN], -point.y);
-
-        //clamp[CLAMP_UP] = Mathf.Min(clamp[CLAMP_UP] <= 0 ? position.y : clamp[CLAMP_UP], position.y);
-        //clamp[CLAMP_DOWN] = Mathf.Min(clamp[CLAMP_DOWN] <= 0 ? -position.y : clamp[CLAMP_DOWN], -position.y);
-        //clamp[CLAMP_RIGHT] = Mathf.Min(clamp[CLAMP_RIGHT] <= 0 ? position.x : clamp[CLAMP_RIGHT], position.x);
-        //clamp[CLAMP_LEFT] = Mathf.Min(clamp[CLAMP_LEFT] <= 0 ? -position.x : clamp[CLAMP_LEFT], -position.x);
     }
 }

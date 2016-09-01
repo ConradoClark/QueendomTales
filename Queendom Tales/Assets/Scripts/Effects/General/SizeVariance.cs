@@ -24,14 +24,14 @@ public class SizeVariance : MonoBehaviour
     {
         if (!started) return;
         newSize = Vector2.zero;
-        elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+        elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
     }
 
     IEnumerator VarySize()
     {
         if (waitToStart > 0f)
         {
-            yield return Toolbox.Instance.frostyTime.WaitForSeconds(timeLayer, waitToStart);
+            yield return Toolbox.Instance.time.WaitForSeconds(timeLayer, waitToStart);
         }
         started = true;
         while (this.enabled)

@@ -56,7 +56,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         elapsedTime = 0f;
         while (elapsedTime < minTime)
         {
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
         }
 
@@ -67,7 +67,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
                 yield return false;
                 yield break;
             }
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
         }
         yield return true;
@@ -78,7 +78,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         elapsedTime = 0f;
         while (elapsedTime < minTime)
         {
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
         }
 
@@ -90,7 +90,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
                 yield break;
             }
 
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
         }
 
@@ -113,7 +113,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
                 yield return false;
                 yield break;
             }
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
         }
 
@@ -129,7 +129,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         elapsedTime = 0f;
         while (elapsedTime < maxTime && inputManager.GetActionHeld(this.usedAction))
         {
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
         }
 
@@ -141,13 +141,13 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         elapsedTime = 0f;
         while (elapsedTime < minTime)
         {
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
         }
 
         while (elapsedTime < maxTime)
         {
-            elapsedTime += Toolbox.Instance.frostyTime.GetDeltaTime(timeLayer);
+            elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             if (inputManager.GetActionClicked(this.usedAction))
             {
                 yield return false;

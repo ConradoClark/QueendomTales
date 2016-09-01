@@ -24,7 +24,6 @@ GameObject:
   - 114: {fileID: 114000010272988290}
   - 114: {fileID: 114000013514882888}
   - 114: {fileID: 114000010089295766}
-  - 114: {fileID: 114000010725439166}
   - 108: {fileID: 108000013912407734}
   - 114: {fileID: 114000010912887536}
   m_Layer: 0
@@ -108,19 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 198000012740609442}
---- !u!114 &114000010725439166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011825415520}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0788b777b2c36374bb2f4e8b129844b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 198000012740609442}
-  speed: 1
 --- !u!114 &114000010912887536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +171,7 @@ MonoBehaviour:
     atime7: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  timeLayer: 0
 --- !u!114 &114000013514882888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,7 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a7f8940e172f74cbd2e1b5a1bb320e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolInstance: {fileID: 0}
   lifeTime: 1
+  timeLayer: 2
 --- !u!198 &198000012740609442
 ParticleSystem:
   m_ObjectHideFlags: 1

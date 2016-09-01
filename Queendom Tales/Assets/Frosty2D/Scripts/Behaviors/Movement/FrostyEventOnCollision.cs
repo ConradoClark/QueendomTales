@@ -52,5 +52,13 @@ public class FrostyEventOnCollision : FrostyOnCollision
         {
             PredicateOnCollision.SetValue(value);
         }
+
+        if (ExtraPredicatesOnCollision != null)
+        {
+            for (int i = 0; i < ExtraPredicatesOnCollision.Length; i++)
+            {
+                ExtraPredicatesOnCollision[i].SetValue(ExtraPredicatesOnCollision[i].Value || value);
+            }
+        }
     }
 }

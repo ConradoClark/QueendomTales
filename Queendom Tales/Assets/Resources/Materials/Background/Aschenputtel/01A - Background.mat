@@ -237,10 +237,10 @@ Material:
       second: 0.274
     - first:
         name: _LightStrength
-      second: 2.19
+      second: 2.24
     - first:
         name: _Luminance
-      second: -0.43
+      second: 0
     - first:
         name: _Metallic
       second: 0
@@ -252,7 +252,7 @@ Material:
       second: 1
     - first:
         name: _Opacity
-      second: 0.285
+      second: 0.192
     - first:
         name: _Parallax
       second: 0.02

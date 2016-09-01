@@ -66,7 +66,7 @@ public class FrostyPatternMovement : MonoBehaviour
         {
             FrostySingleMovementPattern pattern = patterns[i];
             float speed;
-            Vector2 dir = pattern.Evaluate(Toolbox.Instance.frostyTime.GetFixedDeltaTime(timeLayer), out speed);
+            Vector2 dir = pattern.Evaluate(Toolbox.Instance.time.GetFixedDeltaTime(timeLayer), out speed);
             rawMovement += (dir.normalized * speed) * dampAmount;
         }
 

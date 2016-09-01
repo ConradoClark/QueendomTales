@@ -41,10 +41,17 @@ public class FrostyTiledSprite : MonoBehaviour
     private bool shouldRecreateMaterial;
     private bool forceUpdate;
 
+    public bool dynamicSprite;
+
     void Start()
     {
         var mr = this.gameObject.GetComponent<MeshRenderer>();
-        mr.sharedMaterial.mainTexture.wrapMode = TextureWrapMode.Repeat;
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+        {
+            mr.sharedMaterial.mainTexture.wrapMode = TextureWrapMode.Repeat;
+        }
+#endif
     }
 
     void GenerateQuads()
@@ -227,9 +234,13 @@ public class FrostyTiledSprite : MonoBehaviour
 
     void Update()
     {
-#if UNITY_EDITOR
-        if (!Application.isPlaying)
+        if (!Application.isPlaying || dynamicSprite)
         {
+            if (dynamicSprite)
+            {
+                Debug.Log("HI");
+            }
+
             GenerateQuads();
 
             // Recreates material if object is a copy
@@ -249,8 +260,11 @@ public class FrostyTiledSprite : MonoBehaviour
                     }
                 }
             }
+            if (Application.isPlaying)
+            {
+                dynamicSprite = false;
+            }
         }
-#endif
     }
 
 }
