@@ -17,8 +17,11 @@ public class HomingMovement : MonoBehaviour
     {
         if (cursor.currentTarget == null || !enableMovement) return;
 
-        float x = Mathf.SmoothDamp(character.kinematics.transform.position.x, cursor.currentTarget.transform.position.x, ref xVelocity, 0.15f, speed);
-        float y = Mathf.SmoothDamp(character.kinematics.transform.position.y, cursor.currentTarget.transform.position.y, ref yVelocity, 0.15f, speed);
+        float xOffset = cursor.currentTarget.transform.position.x >= character.kinematics.transform.position.x ? 15 : -15;
+        float yOffset = Mathf.Clamp(Mathf.Abs(character.kinematics.transform.position.y - cursor.currentTarget.transform.position.y), 1, 20);
+
+        float x = Mathf.SmoothDamp(character.kinematics.transform.position.x, cursor.currentTarget.transform.position.x - xOffset, ref xVelocity, 0.25f, speed);
+        float y = Mathf.SmoothDamp(character.kinematics.transform.position.y, cursor.currentTarget.transform.position.y * yOffset/ 20, ref yVelocity, 0.25f, speed);
 
         x = character.kinematics.transform.position.x - x;
         y = -character.kinematics.transform.position.y + y;

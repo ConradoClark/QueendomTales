@@ -11,6 +11,8 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
     public string usedAction;
     private IEnumerator<bool> evaluation;
     public TimeLayers timeLayer;
+    public float bufferTime;
+    private float buffer;
 
     public override IEnumerator<bool> EvaluateInput()
     {
@@ -51,6 +53,16 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         }
     }
 
+    void Update()
+    {
+        if (bufferTime > 0f && inputManager.activeInput.GetActionClicked(this.usedAction))
+        {
+            buffer = bufferTime;
+        }
+        buffer -= Toolbox.Instance.time.GetDeltaTime(timeLayer);
+        buffer = Mathf.Clamp(buffer, 0, buffer);
+    }
+
     protected override IEnumerator<bool> EvaluateNoInput()
     {
         elapsedTime = 0f;
@@ -62,7 +74,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
 
         while (elapsedTime < maxTime)
         {
-            if (inputManager.GetActionHeld(this.usedAction))
+            if (inputManager.activeInput.GetActionHeld(this.usedAction))
             {
                 yield return false;
                 yield break;
@@ -84,7 +96,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
 
         while (elapsedTime < maxTime)
         {
-            if (inputManager.GetActionClicked(this.usedAction))
+            if (buffer > 0 || inputManager.activeInput.GetActionClicked(this.usedAction))
             {
                 yield return true;
                 yield break;
@@ -94,7 +106,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
             yield return false;
         }
 
-        if (inputManager.GetActionClicked(this.usedAction))
+        if (buffer > 0 || inputManager.activeInput.GetActionClicked(this.usedAction))
         {
             yield return true;
             yield break;
@@ -108,7 +120,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         elapsedTime = 0f;
         while (elapsedTime < minTime)
         {
-            if (!inputManager.GetActionHeld(this.usedAction))
+            if (!inputManager.activeInput.GetActionHeld(this.usedAction))
             {
                 yield return false;
                 yield break;
@@ -119,7 +131,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
 
         if (minTime == 0f)
         {
-            if (!inputManager.GetActionHeld(this.usedAction))
+            if (!inputManager.activeInput.GetActionHeld(this.usedAction))
             {
                 yield return false;
                 yield break;
@@ -127,7 +139,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         }
 
         elapsedTime = 0f;
-        while (elapsedTime < maxTime && inputManager.GetActionHeld(this.usedAction))
+        while (elapsedTime < maxTime && inputManager.activeInput.GetActionHeld(this.usedAction))
         {
             elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
             yield return false;
@@ -148,13 +160,13 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
         while (elapsedTime < maxTime)
         {
             elapsedTime += Toolbox.Instance.time.GetDeltaTime(timeLayer);
-            if (inputManager.GetActionClicked(this.usedAction))
+            if (inputManager.activeInput.GetActionClicked(this.usedAction))
             {
                 yield return false;
                 yield break;
             }
 
-            if (inputManager.GetActionReleased(this.usedAction))
+            if (inputManager.activeInput.GetActionReleased(this.usedAction))
             {
                 yield return true;
                 yield break;
@@ -162,7 +174,7 @@ public class FrostySingleInputFragment : FrostyInputActionFragment
             yield return false;
         }
 
-        if (inputManager.GetActionReleased(this.usedAction))
+        if (inputManager.activeInput.GetActionReleased(this.usedAction))
         {
             yield return true;
             yield break;

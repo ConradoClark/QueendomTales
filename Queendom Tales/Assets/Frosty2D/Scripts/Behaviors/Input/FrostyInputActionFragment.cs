@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class FrostyInputActionFragment : MonoBehaviour {
 
-    public FrostyInput inputManager;
+    public FrostyInputManager inputManager;
     public enum InputFragmentType
     {
         NoInput,

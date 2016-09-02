@@ -150,7 +150,7 @@ public class CharacterWeapon : MonoBehaviour
                 {
                     enemy.Value.TryDamage((uint)atk);
                     Toolbox.Instance.time.SetLayerMultiplier(timeLayer, 0.1f);
-                    lockTime = 0.2f;
+                    lockTime = 0.15f;
                     exclusion.Add(enemy.Key);
                 }
             }

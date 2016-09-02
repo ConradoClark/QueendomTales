@@ -39,7 +39,6 @@ public class FrostyKeyboardInput : FrostyInput {
         {
             if (func(keys[i].Key)) return true;
         }
-
         return false;
     }
 }

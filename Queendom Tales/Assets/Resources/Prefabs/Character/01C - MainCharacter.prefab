@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012981283342}
-  - 114: {fileID: 114000010929807562}
   - 114: {fileID: 114000014000152040}
   m_Layer: 0
   m_Name: Input
@@ -152,22 +151,6 @@ GameObject:
   - 114: {fileID: 114000011435091420}
   m_Layer: 0
   m_Name: TopColDelayed
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000010246387680
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000013551327008}
-  - 114: {fileID: 114000012987368658}
-  m_Layer: 0
-  m_Name: ClickLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,38 +186,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000010571760704
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000012684478988}
-  - 114: {fileID: 114000010212354758}
-  m_Layer: 0
-  m_Name: ClickRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000010687989980
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000012148756602}
-  - 114: {fileID: 114000011741651246}
-  m_Layer: 0
-  m_Name: AlecFuCombo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1000010708376036
 GameObject:
   m_ObjectHideFlags: 1
@@ -336,22 +287,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000010809289290
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000010195778262}
-  - 114: {fileID: 114000014035904756}
-  m_Layer: 0
-  m_Name: CRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000010836342760
 GameObject:
   m_ObjectHideFlags: 1
@@ -363,22 +298,6 @@ GameObject:
   - 114: {fileID: 114000012440977712}
   m_Layer: 0
   m_Name: dblJumpTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000010867294234
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000013882874938}
-  - 114: {fileID: 114000010627273866}
-  m_Layer: 0
-  m_Name: HoldLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,22 +467,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000011401020836
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000012767706556}
-  - 114: {fileID: 114000014115067348}
-  m_Layer: 0
-  m_Name: HRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000011417235216
 GameObject:
   m_ObjectHideFlags: 1
@@ -707,38 +610,6 @@ GameObject:
   - 114: {fileID: 114000012377459560}
   m_Layer: 0
   m_Name: Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000011745950384
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000013943984454}
-  - 114: {fileID: 114000011203587450}
-  m_Layer: 0
-  m_Name: ClickJump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000011865094496
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000013383050968}
-  - 114: {fileID: 114000012043133178}
-  m_Layer: 0
-  m_Name: ClickOrHoldRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,22 +943,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000012723925462
+--- !u!1 &1000012739597906
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000011562059484}
-  - 114: {fileID: 114000010323228854}
+  - 4: {fileID: 4000012030704162}
+  - 114: {fileID: 114000012647191080}
   m_Layer: 0
-  m_Name: RightRightCombo
+  m_Name: Keyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000012819514756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,22 +1040,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000013089779356
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000014000698704}
-  - 114: {fileID: 114000012981791304}
-  m_Layer: 0
-  m_Name: ClickAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000013187615310
 GameObject:
   m_ObjectHideFlags: 1
@@ -1196,6 +1051,22 @@ GameObject:
   - 114: {fileID: 114000012993119568}
   m_Layer: 0
   m_Name: WalkAttackAirDampener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013187847312
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010279870830}
+  - 114: {fileID: 114000010437321912}
+  m_Layer: 0
+  m_Name: Gamepad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1500,19 +1371,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012512370162}
   m_RootOrder: 2
---- !u!4 &4000010195778262
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010809289290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000013383050968}
-  m_RootOrder: 0
 --- !u!4 &4000010228490642
 Transform:
   m_ObjectHideFlags: 1
@@ -1558,6 +1416,19 @@ Transform:
   - {fileID: 4000013481673016}
   m_Father: {fileID: 4000010097700384}
   m_RootOrder: 0
+--- !u!4 &4000010279870830
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013187847312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012981283342}
+  m_RootOrder: 7
 --- !u!4 &4000010317979398
 Transform:
   m_ObjectHideFlags: 1
@@ -1788,22 +1659,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012981283342}
   m_RootOrder: 0
---- !u!4 &4000011562059484
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012723925462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 4000012684478988}
-  - {fileID: 4000013551327008}
-  - {fileID: 4000013943984454}
-  m_Father: {fileID: 4000012981283342}
-  m_RootOrder: 5
 --- !u!4 &4000011625825340
 Transform:
   m_ObjectHideFlags: 1
@@ -1905,20 +1760,17 @@ Transform:
   - {fileID: 4000013560603658}
   m_Father: {fileID: 4000010447359590}
   m_RootOrder: 3
---- !u!4 &4000012148756602
+--- !u!4 &4000012030704162
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010687989980}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1000012739597906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 4000013882874938}
-  - {fileID: 4000013383050968}
-  - {fileID: 4000014000698704}
+  m_Children: []
   m_Father: {fileID: 4000012981283342}
   m_RootOrder: 6
 --- !u!4 &4000012156683686
@@ -1974,7 +1826,7 @@ Transform:
   m_Children:
   - {fileID: 4000014101607338}
   m_Father: {fileID: 4000012981283342}
-  m_RootOrder: 7
+  m_RootOrder: 5
 --- !u!4 &4000012436669172
 Transform:
   m_ObjectHideFlags: 1
@@ -2075,19 +1927,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012949110836}
   m_RootOrder: 3
---- !u!4 &4000012684478988
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010571760704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000011562059484}
-  m_RootOrder: 0
 --- !u!4 &4000012704788188
 Transform:
   m_ObjectHideFlags: 1
@@ -2153,19 +1992,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000013391371454}
   m_RootOrder: 0
---- !u!4 &4000012767706556
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011401020836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000013383050968}
-  m_RootOrder: 1
 --- !u!4 &4000012864670212
 Transform:
   m_ObjectHideFlags: 1
@@ -2227,9 +2053,9 @@ Transform:
   - {fileID: 4000012227034114}
   - {fileID: 4000012930966666}
   - {fileID: 4000013633974934}
-  - {fileID: 4000011562059484}
-  - {fileID: 4000012148756602}
   - {fileID: 4000012414165960}
+  - {fileID: 4000012030704162}
+  - {fileID: 4000010279870830}
   m_Father: {fileID: 4000010447359590}
   m_RootOrder: 5
 --- !u!4 &4000013097069038
@@ -2333,21 +2159,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000014180070162}
   m_RootOrder: 1
---- !u!4 &4000013383050968
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011865094496}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 4000010195778262}
-  - {fileID: 4000012767706556}
-  m_Father: {fileID: 4000012148756602}
-  m_RootOrder: 1
 --- !u!4 &4000013391371454
 Transform:
   m_ObjectHideFlags: 1
@@ -2401,19 +2212,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012949110836}
   m_RootOrder: 0
---- !u!4 &4000013551327008
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010246387680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000011562059484}
-  m_RootOrder: 1
 --- !u!4 &4000013560603658
 Transform:
   m_ObjectHideFlags: 1
@@ -2506,19 +2304,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012016330066}
   m_RootOrder: 1
---- !u!4 &4000013882874938
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010867294234}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000012148756602}
-  m_RootOrder: 0
 --- !u!4 &4000013885611964
 Transform:
   m_ObjectHideFlags: 1
@@ -2533,19 +2318,6 @@ Transform:
   - {fileID: 4000012583602766}
   m_Father: {fileID: 4000010097700384}
   m_RootOrder: 6
---- !u!4 &4000013943984454
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011745950384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000011562059484}
-  m_RootOrder: 2
 --- !u!4 &4000013977444986
 Transform:
   m_ObjectHideFlags: 1
@@ -2572,19 +2344,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012949110836}
   m_RootOrder: 5
---- !u!4 &4000014000698704
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013089779356}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000012148756602}
-  m_RootOrder: 2
 --- !u!4 &4000014093625782
 Transform:
   m_ObjectHideFlags: 1
@@ -2817,13 +2576,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
+  inputManager: {fileID: 114000014000152040}
   actionName: HoldRight
   minTime: 0
   maxTime: 0
   fragmentType: 2
   usedAction: Right
   timeLayer: 2
+  bufferTime: 0
 --- !u!114 &114000010071278352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2944,24 +2704,6 @@ MonoBehaviour:
   predicates:
   - {fileID: 114000010705883446}
   - {fileID: 114000013100508336}
---- !u!114 &114000010212354758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010571760704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: ClickRight
-  minTime: 0
-  maxTime: 0.2
-  fragmentType: 1
-  usedAction: Right
-  timeLayer: 0
 --- !u!114 &114000010291423696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2981,24 +2723,6 @@ MonoBehaviour:
   clamp: 1
   useTriggerDistance: 1
   triggerDistance: 0.5
---- !u!114 &114000010323228854
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012723925462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63063b9a5f10b3b4eafdcf4d881670f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  actionName: Left+Right
-  actionFragments:
-  - {fileID: 114000012987368658}
-  - {fileID: 114000010212354758}
-  - {fileID: 114000011203587450}
-  timeLayer: 0
 --- !u!114 &114000010389666708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3011,6 +2735,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 20000000
+--- !u!114 &114000010437321912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013187847312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e0b87672e74ed48ace28c5cfd51688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonMapping:
+  - Action: Right
+    UnityAction: Right
+    isAxis: 1
+  - Action: Left
+    UnityAction: Left
+    isAxis: 1
+  - Action: Up
+    UnityAction: Up
+    isAxis: 1
+  - Action: Down
+    UnityAction: Down
+    isAxis: 1
+  - Action: Attack 1
+    UnityAction: Attack 1
+    isAxis: 0
+  - Action: Jump
+    UnityAction: Jump
+    isAxis: 0
+  - Action: Lockon
+    UnityAction: Lockon
+    isAxis: 0
 --- !u!114 &114000010481199572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3045,24 +2802,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 08000000
---- !u!114 &114000010627273866
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010867294234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: HoldLeft
-  minTime: 1
-  maxTime: 1.5
-  fragmentType: 2
-  usedAction: Left
-  timeLayer: 0
 --- !u!114 &114000010634915800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3074,13 +2813,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
+  inputManager: {fileID: 114000014000152040}
   actionName: Lockon
   minTime: 0
   maxTime: 0
   fragmentType: 1
   usedAction: Lockon
   timeLayer: 2
+  bufferTime: 0
 --- !u!114 &114000010637626954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3276,32 +3016,6 @@ MonoBehaviour:
   preserveForSeconds: 0.2
   timeLayer: 2
   debug: 0
---- !u!114 &114000010929807562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010166096866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c37a39606c1d24a95cc16b7cc411f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyMapping:
-  - Action: Right
-    Key: 275
-  - Action: Left
-    Key: 276
-  - Action: Up
-    Key: 273
-  - Action: Down
-    Key: 274
-  - Action: Attack 1
-    Key: 122
-  - Action: Jump
-    Key: 120
-  - Action: Lockon
-    Key: 99
 --- !u!114 &114000010947330262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3416,7 +3130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63063b9a5f10b3b4eafdcf4d881670f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
+  inputManager: {fileID: 114000014000152040}
   actionName: NormalAttackCombo
   actionFragments:
   - {fileID: 114000013526257920}
@@ -3461,24 +3175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 02000000
---- !u!114 &114000011203587450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011745950384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: ClickJump
-  minTime: 0
-  maxTime: 0.25
-  fragmentType: 1
-  usedAction: Jump
-  timeLayer: 0
 --- !u!114 &114000011223826940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3530,7 +3226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 114000012250214004}
   character: {fileID: 114000011977526774}
-  speed: 35
+  speed: 100
   enableMovement: 0
   timeLayer: 2
 --- !u!114 &114000011314493690
@@ -3626,13 +3322,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
+  inputManager: {fileID: 114000014000152040}
   actionName: PressAttack
   minTime: 0
   maxTime: 0
   fragmentType: 1
   usedAction: Attack
   timeLayer: 2
+  bufferTime: 0
 --- !u!114 &114000011599851836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3731,24 +3428,6 @@ MonoBehaviour:
   preserveForSeconds: 0.2
   timeLayer: 2
   debug: 0
---- !u!114 &114000011741651246
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010687989980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63063b9a5f10b3b4eafdcf4d881670f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: AlecFu
-  actionFragments:
-  - {fileID: 114000010627273866}
-  - {fileID: 114000012043133178}
-  - {fileID: 114000012981791304}
-  timeLayer: 0
 --- !u!114 &114000011769088098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3846,13 +3525,13 @@ MonoBehaviour:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 5
-        outSlope: 5
+        inSlope: 10
+        outSlope: 10
         tangentMode: 10
-      - time: 0.2
+      - time: 0.1
         value: 1
-        inSlope: 5
-        outSlope: 5
+        inSlope: 10
+        outSlope: 10
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3928,25 +3607,10 @@ MonoBehaviour:
   slopeMovementR: {fileID: 114000011599851836}
   slopeMovementL: {fileID: 114000012558072936}
   lockOnAction: {fileID: 114000010634915800}
+  rightAction: {fileID: 114000010036178920}
+  leftAction: {fileID: 114000012894704332}
   turnDelay: 0.15
   timeLayer: 2
---- !u!114 &114000012043133178
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011865094496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00c6ae456c7e23d4593bd9f45897dd2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: Click or Hold Right
-  actionFragments:
-  - {fileID: 114000014035904756}
-  - {fileID: 114000014115067348}
-  AnyOfThem: 1
 --- !u!114 &114000012250214004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4103,6 +3767,32 @@ MonoBehaviour:
   jumpMovement: {fileID: 114000010006604460}
   onGround: {fileID: 114000011731034854}
   timeLayer: 2
+--- !u!114 &114000012647191080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012739597906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c37a39606c1d24a95cc16b7cc411f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyMapping:
+  - Action: Right
+    Key: 275
+  - Action: Left
+    Key: 276
+  - Action: Up
+    Key: 273
+  - Action: Down
+    Key: 274
+  - Action: Attack 1
+    Key: 122
+  - Action: Jump
+    Key: 120
+  - Action: Lockon
+    Key: 99
 --- !u!114 &114000012747247974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4218,49 +3908,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
+  inputManager: {fileID: 114000014000152040}
   actionName: HoldLeft
   minTime: 0
   maxTime: 0
   fragmentType: 2
   usedAction: Left
   timeLayer: 2
---- !u!114 &114000012981791304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013089779356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: ClickAttack
-  minTime: 0
-  maxTime: 0.5
-  fragmentType: 1
-  usedAction: Attack 1
-  timeLayer: 0
---- !u!114 &114000012987368658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010246387680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: ClickLeft
-  minTime: 0
-  maxTime: 0.2
-  fragmentType: 1
-  usedAction: Left
-  timeLayer: 0
+  bufferTime: 0
 --- !u!114 &114000012993119568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4361,13 +4016,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
+  inputManager: {fileID: 114000014000152040}
   actionName: PressJump
   minTime: 0
   maxTime: 0
   fragmentType: 1
   usedAction: Jump
   timeLayer: 2
+  bufferTime: 0.15
 --- !u!114 &114000013100508336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4468,13 +4124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
+  inputManager: {fileID: 114000014000152040}
   actionName: ClickAttack
   minTime: 0
   maxTime: 0.35
   fragmentType: 1
   usedAction: Attack 1
   timeLayer: 0
+  bufferTime: 0
 --- !u!114 &114000013562253844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4690,25 +4347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e47f77ece38e3448b4d435096f8852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeInput: {fileID: 114000010929807562}
---- !u!114 &114000014035904756
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010809289290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: ClickRight
-  minTime: 0
-  maxTime: 0.2
-  fragmentType: 1
-  usedAction: Right
-  timeLayer: 0
+  activeInput: {fileID: 114000010437321912}
 --- !u!114 &114000014066817894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4734,24 +4373,6 @@ MonoBehaviour:
   predicates:
   - {fileID: 114000014066817894}
   - {fileID: 114000012747247974}
---- !u!114 &114000014115067348
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011401020836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb98dfcdc5ad1f4fb2cf4f71bfe5f64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 114000010929807562}
-  actionName: ClickRight
-  minTime: 0
-  maxTime: 0.2
-  fragmentType: 2
-  usedAction: Right
-  timeLayer: 0
 --- !u!114 &114000014203825526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4830,13 +4451,13 @@ MonoBehaviour:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 5
-        outSlope: 5
+        inSlope: 10
+        outSlope: 10
         tangentMode: 10
-      - time: 0.2
+      - time: 0.1
         value: 1
-        inSlope: 5
-        outSlope: 5
+        inSlope: 10
+        outSlope: 10
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2

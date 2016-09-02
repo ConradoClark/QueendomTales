@@ -15,9 +15,14 @@ public class FullCharacterController : MonoBehaviour
     public FrostyMovementPredicate leftSlope;
     public FrostySlopeMovement slopeMovementR;
     public FrostySlopeMovement slopeMovementL;
-    public FrostyInputActionFragment lockOnAction;    
+    public FrostyInputActionFragment lockOnAction;
+    public FrostyInputActionFragment rightAction;
+    public FrostyInputActionFragment leftAction;
     public float turnDelay = 0.1f;
     public TimeLayers timeLayer;
+
+    private bool pressingLeft, pressingRight;
+    private float inputAxisX;
 
     float currentTurnDelay = 0f;
     bool turning = false;
@@ -37,7 +42,17 @@ public class FullCharacterController : MonoBehaviour
     {
         float currentFacingX = characterAnimator.GetFloat("x");
         float newX = currentFacingX;
-        float inputAxisX = Input.GetAxisRaw("Horizontal");
+
+        var rightInput = rightAction.EvaluateInput();
+        rightInput.MoveNext();
+
+        var leftInput = leftAction.EvaluateInput();
+        leftInput.MoveNext();
+
+        pressingRight = rightInput.Current;
+        pressingLeft = leftInput.Current;
+
+        inputAxisX = pressingRight ? 1 : (pressingLeft ? -1 : 0);
         bool isMoving = inputAxisX != 0;
 
         if (isMoving && !targetCursor.lockedOn)
@@ -98,8 +113,7 @@ public class FullCharacterController : MonoBehaviour
     }
 
     void LateUpdate()
-    {        
-        float inputAxisX = Input.GetAxisRaw("Horizontal");
+    {
         bool lockOnBackwards = currentTurnDelay > 0 || (targetCursor.lockedOn && targetCursor.GetLockOnFacingDirection().x != inputAxisX);
         characterAnimator.SetFloat("xSpeed", 0.5f*(kinematics.GetSpeed(Vector2.right) + 0.2f*inputAxisX) * inputAxisX * (lockOnBackwards ? -1 : 1) * slopeMovementR.animSpeed * slopeMovementL.animSpeed);
         characterAnimator.SetFloat("ySpeed", (kinematics.GetSpeed(Vector2.up)));
