@@ -2610,6 +2610,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 1, y: 0}
   rayPrecision: 4
+  runEveryNFrames: 1
   ignoreBorders: 1
 --- !u!114 &114000010080245474
 MonoBehaviour:
@@ -2637,6 +2638,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 5
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000010080251194
 MonoBehaviour:
@@ -2924,7 +2926,7 @@ MonoBehaviour:
   - {fileID: 114000013124624048}
   clamp: 1
   useTriggerDistance: 1
-  triggerDistance: 0.5
+  triggerDistance: 1
 --- !u!114 &114000010783039976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2943,7 +2945,7 @@ MonoBehaviour:
   - {fileID: 114000010837426004}
   clamp: 1
   useTriggerDistance: 1
-  triggerDistance: 0.5
+  triggerDistance: 1
 --- !u!114 &114000010800172986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2993,6 +2995,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 5
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000010856600276
 MonoBehaviour:
@@ -3174,7 +3177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96de1b86575ed9e42a726baedc3be726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 02000000
+  tags: 0200000040000000
 --- !u!114 &114000011223826940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3255,6 +3258,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 5
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000011435091420
 MonoBehaviour:
@@ -3454,6 +3458,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 4
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000011848262732
 MonoBehaviour:
@@ -3737,7 +3742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96de1b86575ed9e42a726baedc3be726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 02000000
+  tags: 0200000040000000
 --- !u!114 &114000012529304724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3862,6 +3867,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 3
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000012857613410
 MonoBehaviour:
@@ -4062,6 +4068,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 5
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000013205465232
 MonoBehaviour:
@@ -4239,6 +4246,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: -1, y: 0}
   rayPrecision: 4
+  runEveryNFrames: 1
   ignoreBorders: 1
 --- !u!114 &114000013873686688
 MonoBehaviour:
@@ -4266,6 +4274,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 4
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000013877759900
 MonoBehaviour:
@@ -4305,6 +4314,7 @@ MonoBehaviour:
   overrideClampDirection: 0
   clampDirection: {x: 0, y: 0}
   rayPrecision: 5
+  runEveryNFrames: 1
   ignoreBorders: 0
 --- !u!114 &114000013910203448
 MonoBehaviour:
@@ -4347,7 +4357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e47f77ece38e3448b4d435096f8852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeInput: {fileID: 114000010437321912}
+  activeInput: {fileID: 114000012647191080}
 --- !u!114 &114000014066817894
 MonoBehaviour:
   m_ObjectHideFlags: 1

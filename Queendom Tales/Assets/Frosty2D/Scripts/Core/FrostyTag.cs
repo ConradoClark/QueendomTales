@@ -13,7 +13,8 @@ public class FrostyTag : MonoBehaviour
         Ceiling = 4,
         Slope = 8,
         Actor = 16,
-        Enemy = 32
+        Enemy = 32,
+        Wall_Enemy = 64
     }
 
     public FrostyTags[] tags = new FrostyTags[0];

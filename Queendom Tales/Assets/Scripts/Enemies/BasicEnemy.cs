@@ -15,6 +15,7 @@ public class BasicEnemy : FrostyPoolableObject
     public float deathDelay;
     private bool dead;
 
+    public FrostyPoolableObject expCollectable;
     public FrostyPoolableObject dyingParticle;
     public TargetableObject targetableObject;
     public TimeLayers timeLayer;
@@ -78,6 +79,13 @@ public class BasicEnemy : FrostyPoolableObject
         if (dyingParticle == null) return;
         GameObject particle = Toolbox.Instance.pool.Retrieve(dyingParticle);
         particle.transform.position = this.transform.position + new Vector3(0, 0, dyingParticle.transform.localPosition.z);
+
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject exp = Toolbox.Instance.pool.Retrieve(expCollectable);
+            exp.transform.position = this.transform.position;
+        }
+
         dying = true;
     }
 

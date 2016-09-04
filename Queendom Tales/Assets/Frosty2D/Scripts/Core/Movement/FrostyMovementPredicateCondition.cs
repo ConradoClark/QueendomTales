@@ -21,13 +21,13 @@ public class FrostyMovementPredicateCondition : FrostyMovementPredicate
 
     public bool debug;
 
-    void OnGUI()
-    {
-        if (debug)
-        {
-            GUI.Label(new Rect(10,10,1000,100),this.Value.ToString());
-        }
-    }
+    //void OnGUI()
+    //{
+    //    if (debug)
+    //    {
+    //        GUI.Label(new Rect(10,10,1000,100),this.Value.ToString());
+    //    }
+    //}
 
     public override bool Value
     {

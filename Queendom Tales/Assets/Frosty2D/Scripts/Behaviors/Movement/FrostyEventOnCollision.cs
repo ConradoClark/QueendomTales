@@ -11,10 +11,15 @@ public class FrostyEventOnCollision : FrostyOnCollision
     public bool clamp = true;
     public bool useTriggerDistance = true;
     public float triggerDistance = 0.5f;
+    public float expireAfter = 0f;
+    private bool setForExpiration;
+    private float expiration;
+    public TimeLayers timeLayer;
 
     void Start()
     {
         impactOnPoints = new List<RaycastHit2D>();
+        expiration = expireAfter;
     }
 
     void Update()
@@ -34,15 +39,18 @@ public class FrostyEventOnCollision : FrostyOnCollision
                 RaycastHit2D hit = collision.AllHits[j];
                 if (hit.collider != null)
                 {
-                    if (!useTriggerDistance || hit.distance < triggerDistance)
+                    Vector2 validDirection = collision.GetClampDirection();
+                    float distance = Vector2.Distance(Vector2.Scale(((Vector2)collision.transform.position + collision.offset),validDirection),
+                                                      Vector2.Scale(hit.point,validDirection));
+                    if (!useTriggerDistance || distance <= triggerDistance)
                     {
                         value = true;
                         impactOnPoints.Add(hit);
+                        collision.Decay();
                     }
                     if (clamp)
                     {
-                        Vector2 validDirection = collision.GetClampDirection();
-                        kinematics.ClampPosition(validDirection, -validDirection.y * (transform.position.y + (validDirection * hit.distance).y) + validDirection.x * (transform.position.x + (validDirection * hit.distance).x));
+                        kinematics.ClampPosition(validDirection, -validDirection.y * (transform.position.y + (validDirection * distance).y) + validDirection.x * (transform.position.x + (validDirection * distance).x));
                     }
                 }
             }
@@ -59,6 +67,17 @@ public class FrostyEventOnCollision : FrostyOnCollision
             {
                 ExtraPredicatesOnCollision[i].SetValue(ExtraPredicatesOnCollision[i].Value || value);
             }
+        }
+
+        if (value && expireAfter>0 && !setForExpiration)
+        {
+            setForExpiration = true;
+        }
+
+        if (setForExpiration)
+        {
+            expiration -= Toolbox.Instance.time.GetDeltaTime(timeLayer);
+            if (expiration < 0) this.enabled = false;
         }
     }
 }

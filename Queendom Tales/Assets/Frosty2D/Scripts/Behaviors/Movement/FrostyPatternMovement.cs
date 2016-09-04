@@ -50,9 +50,15 @@ public class FrostyPatternMovement : MonoBehaviour
             this.Deactivate();
         }
 
-        if (abortOnPredicate.Any(pred => pred.Value) && this.IsActive())
+        bool active = this.IsActive();
+        if (abortOnPredicate.Any(pred => pred.Value) && active)
         {
             this.Abort();
+        }
+
+        if (!active)
+        {
+            return;
         }
 
         var damp = movementDampeners.Where(d => d.predicates.All(p => p.Value)).ToArray();
@@ -93,6 +99,16 @@ public class FrostyPatternMovement : MonoBehaviour
             sum += pattern.direction;
         }
         return sum.normalized;
+    }
+
+    public void SetHorizontalAxisSign(int sign)
+    {
+        Vector2 sum = Vector2.zero;
+        for (int i = 0; i < patterns.Length; i++)
+        {
+            FrostySingleMovementPattern pattern = patterns[i];
+            pattern.direction = new Vector2(Mathf.Sign(sign) * Mathf.Sign(pattern.direction.x) * pattern.direction.x, pattern.direction.y);
+        }
     }
 
     public void SetDirection(Vector2 direction)

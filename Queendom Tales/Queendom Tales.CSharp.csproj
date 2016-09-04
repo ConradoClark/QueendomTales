@@ -93,6 +93,7 @@
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Input\FrostySingleInputFragment.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyCollision.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyEventOnCollision.cs" />
+    <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyHorizontalBounce.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyKinematics.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyOnCollision.cs" />
     <Compile Include="Assets\Frosty2D\Scripts\Behaviors\Movement\FrostyPatternMovement.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Assets\Scripts\Character\Base\Data\WeaponEffect.cs" />
     <Compile Include="Assets\Scripts\Character\Effects\WalkingPoof.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\HomingMovement.cs" />
+    <Compile Include="Assets\Scripts\Collectables\RandomizeCollectableMovement.cs" />
     <Compile Include="Assets\Scripts\Effects\General\FadeSize.cs" />
     <Compile Include="Assets\Scripts\Effects\General\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Effects\General\SizeVariance.cs" />

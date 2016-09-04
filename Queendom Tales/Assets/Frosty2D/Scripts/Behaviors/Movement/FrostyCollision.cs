@@ -26,10 +26,40 @@ public class FrostyCollision : MonoBehaviour
     public Vector2 clampDirection;
     [Header("Precision")]
     public float rayPrecision = 5;
+    public int runEveryNFrames = 1;
     public bool ignoreBorders = false;
+    [Header("Performance")]
+    public bool decays = false;
+    public float decayTime;
+    private bool startedDecaying;
+    private float decayElapsed;
+    public TimeLayers timeLayer;
+    private int currentFrameCheck=0;
+
+    void Start()
+    {
+        currentFrameCheck = Random.Range(0, runEveryNFrames);
+        decayElapsed = decayTime;
+    }
+
+    void Update()
+    {
+        if (!decays) return;
+        if (startedDecaying && decayElapsed <= 0)
+        {
+            this.enabled = false;
+        }
+        decayElapsed -= Toolbox.Instance.time.GetDeltaTime(timeLayer);
+    }
 
     void LateUpdate()
     {
+        if (startedDecaying && decayElapsed <= 0) return;
+
+        currentFrameCheck--;
+
+        if (currentFrameCheck > 0) return;
+
         allHits = GetCollisions();
         var orig = this.GetOrigin();
         Debug.DrawRay(new Vector3(orig.x, orig.y, orig.z), new Vector2(direction.y, direction.x) * size, color);
@@ -40,6 +70,8 @@ public class FrostyCollision : MonoBehaviour
             if (ignoreBorders && (i == 0 || i == rayPrecision - 1)) continue;
             Debug.DrawRay(this.GetOrigin() + new Vector3(direction.y, direction.x) * (size) / (rayPrecision - 1) * i, d * GetValidSpeed(d), color);
         }
+
+        currentFrameCheck = runEveryNFrames;
     }
 
     private Vector3 GetOrigin()
@@ -85,5 +117,13 @@ public class FrostyCollision : MonoBehaviour
     public Vector2 GetClampDirection()
     {
         return !overrideClampDirection ? direction : clampDirection;
+    }
+
+    public void Decay()
+    {
+        if (decays)
+        {
+
+        }
     }
 }
