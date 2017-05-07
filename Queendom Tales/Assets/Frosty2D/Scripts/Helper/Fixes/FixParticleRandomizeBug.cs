@@ -8,8 +8,8 @@ public class FixParticleRandomizeBug : MonoBehaviour
 
     void Start()
     {
-        ps.Stop();
-        ps.randomSeed = (uint)Random.Range(0, uint.MaxValue);
-        ps.Play();
+        //ps.Stop();
+        //ps.randomSeed = (uint)Random.Range(0, uint.MaxValue);
+        //ps.Play();
     }
 }

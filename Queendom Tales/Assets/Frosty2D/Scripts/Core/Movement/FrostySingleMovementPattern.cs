@@ -62,7 +62,7 @@ namespace Assets.Frosty2D.Scripts.Core.Movement
                 repeat++;
                 if (!loopIndefinitely && repeat >= timesToRepeat)
                 {
-                    this.ChangeState(FrostySingleMovementPattern.STATE_DEACTIVATION);
+                    Deactivate();
                 }
             }
 
@@ -78,16 +78,27 @@ namespace Assets.Frosty2D.Scripts.Core.Movement
             return direction;
         }
 
-        public void Reactivate(bool keepSpeed = true, bool evenIfActive=true)
+        public void Reactivate(bool keepSpeed = true, bool evenIfActive = true)
         {
             if (active && !evenIfActive) return;
             this.active = true;
+
+            if (this.currentState == FrostySingleMovementPattern.STATE_DEACTIVATION && activation.length>0 && deactivation.length>0)
+            {
+                this.currentTime = (1f - deactivation.keys.Last().time) * activation.keys.Last().time;
+            }
+
             this.ChangeState(FrostySingleMovementPattern.STATE_ACTIVATION);
+            
             this.currentMinSpeed = keepSpeed ? this.speedWhenChanged : minSpeed;
         }
 
         public void Deactivate()
         {
+            if (this.currentState == FrostySingleMovementPattern.STATE_ACTIVATION && activation.length > 0 && deactivation.length > 0)
+            {
+                this.currentTime = (1f - activation.keys.Last().time) * deactivation.keys.Last().time;
+            }
             this.ChangeState(FrostySingleMovementPattern.STATE_DEACTIVATION);
         }
 

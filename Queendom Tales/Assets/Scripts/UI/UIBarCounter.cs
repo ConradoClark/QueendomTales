@@ -36,6 +36,7 @@ public class UIBarCounter : MonoBehaviour
 
     private float f;
     public bool debug;
+    public bool finished { get; private set; }
 
     public void Start()
     {
@@ -92,12 +93,20 @@ public class UIBarCounter : MonoBehaviour
 
         f = baseCutoff;
 
-        if (currentValue > snapshotValue)
+        if (Mathf.Abs(currentValue - snapshotValue) < 0.2f)
+        {
+            increaseTrail.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
+            bar.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
+            decreaseTrail.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
+            finished = true;
+        }
+        else if (currentValue > snapshotValue)
         {
             float increaseCutoff = Mathf.SmoothDamp(snapshotValue, currentValue, ref currentIncreaseTrailSpeed, 1f / trailEaseSpeed);
             increaseTrail.material.SetFloat("_CutoffFactor", increaseCutoff / maxValue);
             decreaseTrail.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
             bar.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
+            finished = false;
         }
         else if (currentValue < snapshotValue)
         {
@@ -105,13 +114,8 @@ public class UIBarCounter : MonoBehaviour
             increaseTrail.material.SetFloat("_CutoffFactor", decreaseCutoff / maxValue);
             bar.material.SetFloat("_CutoffFactor", decreaseCutoff / maxValue);
             decreaseTrail.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
-        }
-        else if (Mathf.Abs(currentValue - snapshotValue) < 0.5f)
-        {
-            increaseTrail.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
-            bar.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
-            decreaseTrail.material.SetFloat("_CutoffFactor", baseCutoff / maxValue);
-        }
+            finished = false;
+        }        
 
         if (extraCutoff != null)
         {

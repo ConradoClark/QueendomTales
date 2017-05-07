@@ -12,7 +12,7 @@ public class FrostyMovementController : MonoBehaviour
     private float currentReleaseTolerance = 0f;
     bool isEvaluating = false;
     bool isReleasing = false;
-    IEnumerator<bool> enumerator;
+    private IEnumerator<bool> enumerator;
     public TimeLayers timeLayer;
 
     void Update()
@@ -44,7 +44,7 @@ public class FrostyMovementController : MonoBehaviour
             bool isHeld = enumerator.Current;
             bool isReleased = !enumerator.Current && currentReleaseTolerance <= releaseTolerance;
 
-            if ((isHeld && !input.movement.IsActive()) && input.conditions.All(condition=>condition.Value))
+            if (isHeld && (!input.movement.IsActive() || input.movement.IsDeactivating) && input.conditions.All(condition=>condition.Value))
             {
                 if (input.toggle && !input.movement.HasFinished)
                 {
@@ -66,7 +66,7 @@ public class FrostyMovementController : MonoBehaviour
                 continue;
             }
 
-            if (isReleased && !input.toggle && input.deactivateOnRelease)
+            if (isReleased && isReleasing && !input.toggle && input.deactivateOnRelease && !input.movement.IsDeactivating)
             {
                 input.movement.Deactivate();
             }

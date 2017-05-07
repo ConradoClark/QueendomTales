@@ -16,9 +16,17 @@ public class BasicEnemy : FrostyPoolableObject
     private bool dead;
 
     public FrostyPoolableObject expCollectable;
+    public FrostyPoolableObject coinsCollectable;
     public FrostyPoolableObject dyingParticle;
     public TargetableObject targetableObject;
     public TimeLayers timeLayer;
+
+    public int expAmount;
+    public int minCoinAmount;
+    public int maxCoinAmount;
+
+    public string randomPool;
+    public int generatorSeed;
 
     void Start()
     {
@@ -30,6 +38,7 @@ public class BasicEnemy : FrostyPoolableObject
             FP = stats.FP,
             Level = stats.Level
         };
+        Toolbox.Instance.random.AddGenerator(randomPool, generatorSeed);
     }
 
     void Update()
@@ -80,9 +89,20 @@ public class BasicEnemy : FrostyPoolableObject
         GameObject particle = Toolbox.Instance.pool.Retrieve(dyingParticle);
         particle.transform.position = this.transform.position + new Vector3(0, 0, dyingParticle.transform.localPosition.z);
 
-        for (int i = 0; i < 10; i++)
+        float expPerc = (float)expAmount / QTToolbox.Instance.characterManager.character.OriginalStats.Experience * 100;
+        int expPercInt = (int)expPerc;
+
+        for (int i = 0; i < expPercInt; i++)
         {
             GameObject exp = Toolbox.Instance.pool.Retrieve(expCollectable);
+            exp.transform.position = this.transform.position;
+        }
+
+        int coins = Toolbox.Instance.random.GetRange(randomPool, minCoinAmount, maxCoinAmount + 1);
+        //Debug.Log(coins.ToString() + " coins");
+        for (int i = 0; i < coins; i++)
+        {
+            GameObject exp = Toolbox.Instance.pool.Retrieve(coinsCollectable);
             exp.transform.position = this.transform.position;
         }
 
@@ -103,7 +123,7 @@ public class BasicEnemy : FrostyPoolableObject
         };
 
         this.damaged = this.dead = this.dying = false;
-        animator.Stop();
+        animator.StopPlayback();
         animator.transform.localScale = Vector3.one;
         animator.transform.localRotation = Quaternion.identity;
         animator.Rebind();

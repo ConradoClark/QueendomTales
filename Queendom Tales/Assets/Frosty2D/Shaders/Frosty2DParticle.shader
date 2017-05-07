@@ -1,4 +1,6 @@
-﻿Shader "Frosty/Particle"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Frosty/Particle"
 {
 	Properties
 	{
@@ -249,7 +251,7 @@
 			v2f vert (appdata v)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.vertex = UnityPixelSnap(o.vertex);
 				o.screenPos = ComputeScreenPos(o.vertex);
 				o.color = v.color;

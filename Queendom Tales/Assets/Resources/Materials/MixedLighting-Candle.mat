@@ -8,303 +8,90 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: MixedLighting-Candle
   m_Shader: {fileID: 4800000, guid: ec95e5d5fae0ddf40a36c619881c7983, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
   m_CustomRenderQueue: 3000
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _Saturation
-        second: -1
-      data:
-        first:
-          name: _Hue
-        second: 0
-      data:
-        first:
-          name: _Luminance
-        second: -0.29
-      data:
-        first:
-          name: _Opacity
-        second: 1
-      data:
-        first:
-          name: _InvertInput
-        second: 0
-      data:
-        first:
-          name: _InvertOutput
-        second: 0
-      data:
-        first:
-          name: _ColorReplTolerance1
-        second: 0
-      data:
-        first:
-          name: _ColorReplTolerance2
-        second: 0
-      data:
-        first:
-          name: _ColorReplTolerance3
-        second: 0
-      data:
-        first:
-          name: _ColorReplTolerance4
-        second: 0
-      data:
-        first:
-          name: _ColorReplTolerance5
-        second: 0
-      data:
-        first:
-          name: _LevelsMinInput
-        second: 143
-      data:
-        first:
-          name: _LevelsGamma
-        second: 0.7
-      data:
-        first:
-          name: _LevelsMaxInput
-        second: 192
-      data:
-        first:
-          name: _LevelsRMinInput
-        second: 0
-      data:
-        first:
-          name: _LevelsRGamma
-        second: 1
-      data:
-        first:
-          name: _LevelsRMaxInput
-        second: 255
-      data:
-        first:
-          name: _LevelsGMinInput
-        second: 0
-      data:
-        first:
-          name: _LevelsGGamma
-        second: 1
-      data:
-        first:
-          name: _LevelsGMaxInput
-        second: 255
-      data:
-        first:
-          name: _LevelsBMinInput
-        second: 0
-      data:
-        first:
-          name: _LevelsBGamma
-        second: 1
-      data:
-        first:
-          name: _LevelsBMaxInput
-        second: 255
-      data:
-        first:
-          name: _LevelsCustom1MinInput
-        second: 0
-      data:
-        first:
-          name: _LevelsCustom1Gamma
-        second: 1
-      data:
-        first:
-          name: _LevelsCustom1MaxInput
-        second: 255
-      data:
-        first:
-          name: _LevelsCustom2MinInput
-        second: 0
-      data:
-        first:
-          name: _LevelsCustom2Gamma
-        second: 1
-      data:
-        first:
-          name: _LevelsCustom2MaxInput
-        second: 255
-      data:
-        first:
-          name: _LevelsCustom3MinInput
-        second: 0
-      data:
-        first:
-          name: _LevelsCustom3Gamma
-        second: 1
-      data:
-        first:
-          name: _LevelsCustom3MaxInput
-        second: 255
-      data:
-        first:
-          name: _LevelsOpacityValue
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityGradient
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityTolerance
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityValue2
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityGradient2
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityTolerance2
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityValue3
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityGradient3
-        second: 0
-      data:
-        first:
-          name: _LevelsOpacityTolerance3
-        second: 0
-      data:
-        first:
-          name: _HAutoScroll
-        second: 0
-      data:
-        first:
-          name: _VAutoScroll
-        second: 0
-      data:
-        first:
-          name: _FadeInStripsHorizontal
-        second: 0
-      data:
-        first:
-          name: _FadeInStripsHorizontalStrips
-        second: 1
-      data:
-        first:
-          name: _FadeInStripsHorizontalReverse
-        second: 0
-      data:
-        first:
-          name: _FadeInStripsHorizontalProgress
-        second: 0
-      data:
-        first:
-          name: _FadeInStripsVertical
-        second: 0
-      data:
-        first:
-          name: _FadeInStripsVerticalStrips
-        second: 1
-      data:
-        first:
-          name: _FadeInStripsVerticalReverse
-        second: 0
-      data:
-        first:
-          name: _FadeInStripsVerticalProgress
-        second: 0
-      data:
-        first:
-          name: _MaximumLight
-        second: 0
-      data:
-        first:
-          name: _LightInfluence
-        second: 0.76
+    - _ColorReplTolerance1: 0
+    - _ColorReplTolerance2: 0
+    - _ColorReplTolerance3: 0
+    - _ColorReplTolerance4: 0
+    - _ColorReplTolerance5: 0
+    - _FadeInStripsHorizontal: 0
+    - _FadeInStripsHorizontalProgress: 0
+    - _FadeInStripsHorizontalReverse: 0
+    - _FadeInStripsHorizontalStrips: 1
+    - _FadeInStripsVertical: 0
+    - _FadeInStripsVerticalProgress: 0
+    - _FadeInStripsVerticalReverse: 0
+    - _FadeInStripsVerticalStrips: 1
+    - _HAutoScroll: 0
+    - _Hue: 0
+    - _InvertInput: 0
+    - _InvertOutput: 0
+    - _LevelsBGamma: 1
+    - _LevelsBMaxInput: 255
+    - _LevelsBMinInput: 0
+    - _LevelsCustom1Gamma: 1
+    - _LevelsCustom1MaxInput: 255
+    - _LevelsCustom1MinInput: 0
+    - _LevelsCustom2Gamma: 1
+    - _LevelsCustom2MaxInput: 255
+    - _LevelsCustom2MinInput: 0
+    - _LevelsCustom3Gamma: 1
+    - _LevelsCustom3MaxInput: 255
+    - _LevelsCustom3MinInput: 0
+    - _LevelsGGamma: 1
+    - _LevelsGMaxInput: 255
+    - _LevelsGMinInput: 0
+    - _LevelsGamma: 0.7
+    - _LevelsMaxInput: 192
+    - _LevelsMinInput: 143
+    - _LevelsOpacityGradient: 0
+    - _LevelsOpacityGradient2: 0
+    - _LevelsOpacityGradient3: 0
+    - _LevelsOpacityTolerance: 0
+    - _LevelsOpacityTolerance2: 0
+    - _LevelsOpacityTolerance3: 0
+    - _LevelsOpacityValue: 0
+    - _LevelsOpacityValue2: 0
+    - _LevelsOpacityValue3: 0
+    - _LevelsRGamma: 1
+    - _LevelsRMaxInput: 255
+    - _LevelsRMinInput: 0
+    - _LightInfluence: 0.76
+    - _LightStrength: 1
+    - _Luminance: -0.29
+    - _MaximumLight: 0
+    - _Opacity: 1
+    - _Saturation: -1
+    - _VAutoScroll: 0
     m_Colors:
-      data:
-        first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _Colorize
-        second: {r: 0.24137974, g: 0, b: 1, a: 1}
-      data:
-        first:
-          name: _ColorReplSource1
-        second: {r: 0.18823531, g: 0.6, b: 0.8235295, a: 0}
-      data:
-        first:
-          name: _ColorReplTarget1
-        second: {r: 0.6965518, g: 0, b: 1, a: 1}
-      data:
-        first:
-          name: _ColorReplSource2
-        second: {r: 0.986207, g: 1, b: 0, a: 1}
-      data:
-        first:
-          name: _ColorReplTarget2
-        second: {r: 1, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _ColorReplSource3
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _ColorReplTarget3
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _ColorReplSource4
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _ColorReplTarget4
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _ColorReplSource5
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _ColorReplTarget5
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _LevelsCustom1Color
-        second: {r: 1, g: 1, b: 1, a: 0}
-      data:
-        first:
-          name: _LevelsCustom2Color
-        second: {r: 1, g: 1, b: 1, a: 0}
-      data:
-        first:
-          name: _LevelsCustom3Color
-        second: {r: 1, g: 1, b: 1, a: 0}
-      data:
-        first:
-          name: _LevelsOpacitySource
-        second: {r: 0.003921569, g: 0.21960786, b: 0.36862746, a: 1}
-      data:
-        first:
-          name: _LevelsOpacitySource2
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _LevelsOpacitySource3
-        second: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorReplSource1: {r: 0.18823531, g: 0.6, b: 0.8235295, a: 0}
+    - _ColorReplSource2: {r: 0.986207, g: 1, b: 0, a: 1}
+    - _ColorReplSource3: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorReplSource4: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorReplSource5: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorReplTarget1: {r: 0.6965518, g: 0, b: 1, a: 1}
+    - _ColorReplTarget2: {r: 1, g: 0, b: 0, a: 1}
+    - _ColorReplTarget3: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorReplTarget4: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorReplTarget5: {r: 1, g: 1, b: 1, a: 1}
+    - _Colorize: {r: 0.24137974, g: 0, b: 1, a: 1}
+    - _LevelsCustom1Color: {r: 1, g: 1, b: 1, a: 0}
+    - _LevelsCustom2Color: {r: 1, g: 1, b: 1, a: 0}
+    - _LevelsCustom3Color: {r: 1, g: 1, b: 1, a: 0}
+    - _LevelsOpacitySource: {r: 0.003921569, g: 0.21960786, b: 0.36862746, a: 1}
+    - _LevelsOpacitySource2: {r: 1, g: 1, b: 1, a: 1}
+    - _LevelsOpacitySource3: {r: 1, g: 1, b: 1, a: 1}

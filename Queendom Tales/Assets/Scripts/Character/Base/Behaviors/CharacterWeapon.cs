@@ -218,7 +218,6 @@ public class CharacterWeapon : MonoBehaviour
 
     public virtual IEnumerator Finisher()
     {
-        Debug.Log("FINISH! ");
         IsAttackingPredicate.SetValue(false);
         currentAngle = 0f;
         homing.enableMovement = false;

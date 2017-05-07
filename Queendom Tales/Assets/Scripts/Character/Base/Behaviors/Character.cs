@@ -15,14 +15,30 @@ public class Character : MonoBehaviour
     public CharacterWeapon CurrentWeapon;
     public CharacterUI UI { get; protected set; }
 
+    [Header("Currency")]
+    public int Coins;
+
     void Start()
     {
         UI.HPCounter.currentValue = CurrentStats.HP;
         UI.HPCounter.maxValue = OriginalStats.HP;
         UI.FPCounter.currentValue = CurrentStats.FP;
         UI.FPCounter.maxValue = OriginalStats.FP;
-        UI.ExpCounter.maxValue = OriginalStats.Experience;
+        UI.ExpCounter.maxValue = 100;
         UI.ExpCounter.currentValue = CurrentStats.Experience;
+    }
+
+    void Update()
+    {
+        if (this.CurrentStats.Experience == 100 && UI.ExpCounter.finished)
+        {
+            LevelUp();
+        }
+    }
+
+    private void LevelUp()
+    {
+        AddExp(-100, false);
     }
 
     public void ConnectUI(CharacterUI ui)
@@ -54,7 +70,7 @@ public class Character : MonoBehaviour
         }
         else if (amount < 0)
         {
-            UI.FPCounter.Decrease(amount, flash);
+            UI.FPCounter.Decrease(-amount, flash);
         }
     }
 
@@ -68,7 +84,25 @@ public class Character : MonoBehaviour
         }
         else if (amount < 0)
         {
-            UI.ExpCounter.Decrease(amount, flash);
+            UI.ExpCounter.Decrease(-amount, flash);
+        }
+    }
+
+    public void AddCoins(int amount)
+    {
+        Coins += amount;
+    }
+
+    public void Collect(Collectable.CollectableType type, float multiplier)
+    {
+        switch (type)
+        {
+            case Collectable.CollectableType.Coin:
+                AddCoins((int)multiplier);
+                break;
+            case Collectable.CollectableType.Exp:
+                AddExp((int)multiplier);
+                break;
         }
     }
 }

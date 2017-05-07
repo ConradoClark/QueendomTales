@@ -77,7 +77,7 @@ public class EnemySpawnZone : MonoBehaviour
         {
             GameObject enemy = Toolbox.Instance.pool.Retrieve(set.enemies[i].poolObject);
             enemy.transform.position = set.enemies[i].spawnPosition;
-            BasicEnemy basicEnemy = enemy.GetComponent<BasicEnemy>(); // not called every frame so it's ok            
+            BasicEnemy basicEnemy = enemy.GetComponentInChildren<BasicEnemy>(); // not called every frame so it's ok            
             enemies[i] = basicEnemy;
         }
 

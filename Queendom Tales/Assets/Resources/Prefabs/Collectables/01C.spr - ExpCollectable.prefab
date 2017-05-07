@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000014167926920}
   m_IsPrefabParent: 1
+--- !u!1 &1000010498199226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012808552552}
+  - 114: {fileID: 114000011059134840}
+  - 114: {fileID: 114000010416153162}
+  m_Layer: 0
+  m_Name: ExpCollectablePoolConnector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011131836960
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +182,8 @@ GameObject:
   - 114: {fileID: 114000014151601722}
   - 96: {fileID: 96000012723983134}
   - 114: {fileID: 114000013476664808}
+  - 114: {fileID: 114000013814950870}
+  - 114: {fileID: 114000012808135644}
   m_Layer: 0
   m_Name: 01C.spr - ExpCollectable
   m_TagString: Untagged
@@ -266,6 +285,19 @@ Transform:
   - {fileID: 4000010278989936}
   m_Father: {fileID: 4000013064199718}
   m_RootOrder: 0
+--- !u!4 &4000012808552552
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010498199226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013064199718}
+  m_RootOrder: 5
 --- !u!4 &4000013064199718
 Transform:
   m_ObjectHideFlags: 1
@@ -282,6 +314,7 @@ Transform:
   - {fileID: 4000011278921650}
   - {fileID: 4000011721736522}
   - {fileID: 4000013245293300}
+  - {fileID: 4000012808552552}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000013245293300
@@ -460,6 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d511c0324a420584280717cebb09b42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
   offset: {x: -4, y: 0}
   direction: {x: -1, y: 0}
   size: 9
@@ -477,6 +511,9 @@ MonoBehaviour:
   rayPrecision: 3
   runEveryNFrames: 5
   ignoreBorders: 1
+  decays: 1
+  decayTime: 10
+  timeLayer: 2
 --- !u!114 &114000010315084546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2288b7c597ad8443b23fda133c16ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
   PredicateOnCollision: {fileID: 114000012056377558}
   ExtraPredicatesOnCollision: []
   kinematics: {fileID: 114000012723026154}
@@ -496,8 +534,21 @@ MonoBehaviour:
   clamp: 0
   useTriggerDistance: 0
   triggerDistance: 0.5
-  expireAfter: 0
-  timeLayer: 0
+  expireAfter: 10
+  timeLayer: 2
+--- !u!114 &114000010416153162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010498199226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bc2ee2829c4fc46b73dd8c7b921e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: {fileID: 1000014167926920}
+  count: 1
 --- !u!114 &114000010470317538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -544,6 +595,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags: 
+--- !u!114 &114000011059134840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010498199226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2adf4ddefea8cd4ea7ceb5477137201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
 --- !u!114 &114000011265664586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -614,6 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2288b7c597ad8443b23fda133c16ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
   PredicateOnCollision: {fileID: 114000013411378432}
   ExtraPredicatesOnCollision: []
   kinematics: {fileID: 114000012723026154}
@@ -622,8 +686,8 @@ MonoBehaviour:
   clamp: 0
   useTriggerDistance: 0
   triggerDistance: 0.5
-  expireAfter: 0
-  timeLayer: 0
+  expireAfter: 10
+  timeLayer: 2
 --- !u!114 &114000012691485432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -635,6 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2288b7c597ad8443b23fda133c16ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
   PredicateOnCollision: {fileID: 114000012800961646}
   ExtraPredicatesOnCollision: []
   kinematics: {fileID: 114000012723026154}
@@ -668,6 +733,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14424bc71666ee74b95fdbd54f2753ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000012808135644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014167926920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a883cb7e23719498165fc13081e2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
+  delay: 1
+  timeLayer: 2
+  kinematics: {fileID: 114000012723026154}
+  speed: 900
+  damp: 0.01
+  minDistance: 9999
+  offset: {x: 5, y: -10}
+  movements:
+  - {fileID: 114000014151601722}
+  - {fileID: 114000010057395776}
 --- !u!114 &114000013032606058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -693,6 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d511c0324a420584280717cebb09b42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
   offset: {x: 0, y: -6}
   direction: {x: 0, y: -1}
   size: 5
@@ -710,6 +798,9 @@ MonoBehaviour:
   rayPrecision: 3
   runEveryNFrames: 20
   ignoreBorders: 1
+  decays: 1
+  decayTime: 10
+  timeLayer: 2
 --- !u!114 &114000013349020350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -721,6 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d511c0324a420584280717cebb09b42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
   offset: {x: 4, y: 0}
   direction: {x: 1, y: 0}
   size: 9
@@ -738,6 +830,9 @@ MonoBehaviour:
   rayPrecision: 3
   runEveryNFrames: 5
   ignoreBorders: 1
+  decays: 1
+  decayTime: 10
+  timeLayer: 2
 --- !u!114 &114000013364368266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -774,6 +869,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 114000014151601722}
   xMagnitude: 1
+--- !u!114 &114000013814950870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014167926920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602bcbaa9e7f7b24582f974cfdd07735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolInstance: {fileID: 114000010416153162}
+  delay: 1
+  timeLayer: 2
+  type: 1
+  collectableMultiplier: 1
+  targetOffset: {x: 5, y: -10}
+  minCollectDistance: 5
 --- !u!114 &114000014102806122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -888,7 +1001,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 04aa97ac43e044b4f95bfcf6864db38d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

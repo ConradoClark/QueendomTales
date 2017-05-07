@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [ExecuteInEditMode]
-public class FrostyCollision : MonoBehaviour
+public class FrostyCollision : FrostyPoolableObject
 {
     [Header("Collider Parameters")]
     public Vector2 offset;
@@ -34,7 +34,7 @@ public class FrostyCollision : MonoBehaviour
     private bool startedDecaying;
     private float decayElapsed;
     public TimeLayers timeLayer;
-    private int currentFrameCheck=0;
+    private int currentFrameCheck = 0;
 
     void Start()
     {
@@ -44,12 +44,23 @@ public class FrostyCollision : MonoBehaviour
 
     void Update()
     {
+        if (!Application.isPlaying) return;
+
         if (!decays) return;
         if (startedDecaying && decayElapsed <= 0)
         {
             this.enabled = false;
         }
+
         decayElapsed -= Toolbox.Instance.time.GetDeltaTime(timeLayer);
+    }
+
+    public override void ResetState()
+    {
+        base.ResetState();
+        this.startedDecaying = false;
+        this.decayElapsed = decayTime;
+        currentFrameCheck = Random.Range(0, runEveryNFrames);
     }
 
     void LateUpdate()

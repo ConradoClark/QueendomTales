@@ -80,4 +80,12 @@ public class FrostyEventOnCollision : FrostyOnCollision
             if (expiration < 0) this.enabled = false;
         }
     }
+
+    public override void ResetState()
+    {
+        base.ResetState();
+        this.enabled = true;
+        this.setForExpiration = false;
+        this.expiration = expireAfter;
+    }
 }

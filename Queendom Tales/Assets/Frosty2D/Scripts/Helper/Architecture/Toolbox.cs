@@ -7,6 +7,7 @@ public class Toolbox : Singleton<Toolbox>
 {
     public FrostyTime time;
     public FrostyPoolManager pool;
+    public FrostyRandom random;
 
     protected Toolbox() { } // guarantee this will be always a singleton only - can't use the constructor!
     
@@ -14,6 +15,7 @@ public class Toolbox : Singleton<Toolbox>
     {
         time = RegisterComponent<FrostyTime>();
         pool = RegisterComponent<FrostyPoolManager>();
+        random = RegisterComponent<FrostyRandom>();
     }
 
     // (optional) allow runtime registration of global objects

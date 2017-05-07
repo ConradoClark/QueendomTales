@@ -236,11 +236,6 @@ public class FrostyTiledSprite : MonoBehaviour
     {
         if (!Application.isPlaying || dynamicSprite)
         {
-            if (dynamicSprite)
-            {
-                Debug.Log("HI");
-            }
-
             GenerateQuads();
 
             // Recreates material if object is a copy
